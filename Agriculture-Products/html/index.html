@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>农产品</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .nav { overflow: hidden; background: #009946;  padding-left: 20px;  padding-right: 20px;  }
+        .nav li {  float: left; padding: 20px; color: #fff; font-size: 17px;cursor: pointer; }
+        .nav li:last-child {  float: right; }
+        .nav li:hover{color: #000;}
+        .menu{  display:flex;justify-content:center; }
+        .menu li{padding: 10px 20px;color: #444;border-bottom: 1px solid #009946;cursor: pointer;}
+        .menu li:first-child{padding-left: 0;color: #009946;}
+        .menu li:last-child{padding-right: 0}
+        .menu li:hover{color: #009946;}
+        .footer-menu{display: flex;margin-top: 30px;}
+        .footer-menu li{padding:10px 20px;background: #1ca458;color: #fff;}
+        .footer-menu li:first-child{border-top-left-radius: 5px;border-bottom-left-radius: 5px;padding-left: 30px;}
+        .footer-menu li:last-child{border-top-right-radius: 5px;border-bottom-right-radius: 5px;padding-right: 30px;}
+        .footer-nav{display: flex;margin-top: 30px;}
+        .footer-nav li{padding-right: 30px;color: #fff;}
+        .addCar{position:absolute;top:0;left:0;background:rgba(0, 0, 0, .3);width:100%;height:100%;display: flex;justify-content: center;align-items: center;}
+        .addCar > span:hover{background: #1ca458;border-radius: 50%;width:60px;height:60px;line-height: 60px;text-align: center;}
+   </style>
+</head>
+
+<body>
+    <div id="vmMain">
+        <!-- 顶部banner logo和导航栏  -->
+        <div class="banner relative">
+            <img class="w-full" src="../img/banner.jpg" alt="">
+            <div style="position:absolute;display: flex;top: 50px;width: 100%">
+                <div style="width:30%;padding: 0 30px">
+                    <img class="w-pre90" src="../img/logo.png" alt="">
+                </div>
+                <div class="w-pre70" style="margin-top: 30px">
+                    <div class="nav w-pre84">
+                        <li>首页</li>
+                        <li>分类</li>
+                        <li>种植基地</li>
+                        <li>在线留言</li>
+                        <li>联系我们</li>
+                        <li class="relative">
+                            <span class="iconfont icongouwuche "></span>
+                            <div style="position:absolute;top:5px;right:10px;width: 15px;height: 15px;text-align: center;line-height: 15px;;background: #fff;color: #009946;font-size: 10px">2</div>
+                        </li>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+        <!-- 产品 -->
+        <div class="w-pre80" style="margin:20px auto;">
+            <ul class="menu" >
+                <li>蔬菜</li>
+                <li>水果</li>
+                <li>茶叶</li>
+                <li>粮油</li>
+                <li>养殖</li>
+            </ul>
+            <div class="row m-t40">
+                <div v-for="i,index in list" @mouseenter="enter(index)" @mouseleave="leave(index)" class="col-xs-3 p-b30">
+                    <div style="padding:0 10px ;"> 
+                        <div class="relative pointer">
+                            <img class="w-full" :src="i.img" alt="">
+                            <div v-if="i.show" class="addCar">
+                                <span style="color:#fff;">
+                                    <span class="iconfont icongouwuche" style="font-size:30px;"></span>
+                                </span> 
+                            </div>
+                        </div>
+                        <div class="flex between m-t20">
+                            <div>{{i.name}}</div>
+                            <div class="c-9 s-13">{{i.address}}</div>
+                        </div>
+                        <div>  <img src="../img/xing.jpg" alt=""> </div>
+                        <div class="m-t10"> {{i.price}}  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div>
+            <div class="relative">
+                <img class="w-full vertical-align-middle" style=" vertical-align: middle;" src="../img/footer.jpg" alt="">
+                <div style="position:absolute; bottom: 50px;" class="w-full t-c"> 
+                        <span style="padding:10px 20px;background:#5bd65a;color:#fff;border-radius: 30px">查看更多</span> 
+                </div>
+            </div>
+            <div class="bg-green p-t30 p-b50 flex" style="margin-top:-2px;">
+                <div class="w-pre40 flex between">  
+                    <div></div>
+                    <div class="c-yellow-green">
+                        <div class="flex p-b10 p-t10"style="border-bottom:1px solid #048439">
+                            <div>
+                                <img class="w-40" src="../img/tu_03.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>地址 / ADDRESS</div>
+                                <div>绵阳市梓潼县天宝柑桔合作社文昌添宝蜜柚 <span class="visibility-hidden">占位</span></div>
+                            </div>
+                        </div>
+                        <div class="flex p-b10 p-t10"style="border-bottom:1px solid #048439">
+                                <div>
+                                    <img class="w-40" src="../img/tu_06.jpg" alt="">
+                                </div>
+                                <div class="m-l10">
+                                    <div>电话 / TELEPHONE</div>
+                                    <div>0888-88888888</div>
+                                </div>
+                            </div>
+                            <div class="flex p-b10 p-t10"style="border-bottom:1px solid #048439">
+                                    <div>
+                                        <img class="w-40" src="../img/tu_09.jpg" alt="">
+                                    </div>
+                                    <div class="m-l10">
+                                        <div>网址 / SITE</div>
+                                        <div>HTTP://WWW.WWW.COM</div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div class="w-pre60 p-l50">
+                    <ul class="footer-menu">
+                        <li>蔬菜</li>
+                        <li>水果</li>
+                        <li>茶叶</li>
+                        <li>粮油</li>
+                        <li>养殖</li>
+                    </ul>
+                    <ul class="footer-nav">
+                        <li>首页</li>
+                        <li>分类</li>
+                        <li>种植基地</li>
+                        <li>在线留言</li>
+                        <li>联系我们</li>
+                    </ul>
+                    <div class="m-t20 c-white">Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/vue.min.js"></script>
+    <script>
+    var vm = new Vue({
+        el:"#vmMain",
+        data:{
+            list:[
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
+            ]
+        },
+        methods:{
+            enter:function(n){
+                for(let i=0;i<this.list.length;i++){
+                    this.list[i].show = false;
+                }
+                this.list[n].show = true;
+            },
+            leave:function(n){
+                this.list[n].show = false;
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小吃网</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .nav { overflow: hidden; color:#745b56; padding-left: 20px;  padding-right: 20px;  }
+        .nav li {  float: left; padding: 10px 20px; color: #745b56; font-size: 17px;cursor: pointer; }
+        .nav li:first-child {  background: #df4626;color: #fff; }
+        .nav li:hover{background: #df4626;color: #fff;}
+        .side{padding: 0 20px 50px;}
+        .side li:hover{color: #de4526;cursor: pointer;}
+        .pager li{margin: auto 5px;}
+        .pager li a{border-radius: 0;background: #f4f4f4;color: #868686;border: 0;font-size: 12px}
+        .pager li:hover a{border-radius: 0;background: #de4526;color: #fff;}
+        .addCar{position:absolute;top:0;left:0;background:rgba(0, 0, 0, .3);width:100%;height:100%;display: flex;justify-content: center;align-items: center;}
+        .addCar > span:hover{background: #df4626;border-radius: 50%;width:60px;height:60px;line-height: 60px;text-align: center;}
+   </style>
+</head>
+
+<body>
+    <div id="vmMain">
+        <!-- 顶部banner logo和导航栏  -->
+        <div class="banner relative">
+                <div style="display: flex">
+                    <div class="t-c" style="width:30%;padding: 0 30px;color: #e2422c;margin-top: 30px;">
+                        LOGO
+                    </div>
+                    <div class="w-pre70" style="margin-top: 20px">
+                        <div class="nav w-full">
+                            <li>网站首页</li>
+                            <li>排行榜</li>
+                            <li>购物车</li>
+                            <li>我的订单</li>
+                            <li>联系我们</li>
+                        </div>
+                    </div>
+                </div>
+            <img class="w-full" src="../img/banner.jpg" alt="">
+        </div>
+        <div >
+            <div style="width:300px;float: left;">
+                <div class="relative" style="background:#de4526;padding: 20px 10px 15px 10px;color: #fff;width:170px;margin-left: 100px;">
+                    <div>四川小吃</div>
+                    <div>snack</div>
+                    <div style="position:absolute;top:-50px;z-index:99;background:#de4526;height:50px;color: #fff;width:170px;left:0px;">
+
+                    </div>
+                </div>
+                <div style="background:#f6f6f6;width:170px;margin-left: 100px;">
+                    <ul class="side">
+                            <li class="p10">成都</li>
+                            <li class="p10">绵阳</li>
+                            <li class="p10">南充</li>
+                            <li class="p10">南昌</li>
+                            <li class="p10">德阳</li>
+                            <li class="p10">宜宾</li>
+                    </ul>
+                    <div class="t-c">
+                        <img class="w-40" src="../img/iPhone.png" alt="">
+                        <div class="s-12 c-9 p-t10">全国免费咨询热线</div>
+                        <div style="color: #de4526;padding-bottom: 30px;">400-400-400</div>
+                        <img class="w-full" src="../img/d.jpg" alt="">
+                    </div>
+                   
+                </div>
+            </div>
+            <div style="overflow:hidden;margin-right: 100px;">
+                <div class="row" style="margin-left:20px;margin-top: 50px">
+                    <div v-for="i,index in list" @mouseenter="enter(index)" @mouseleave="leave(index)" class="col-xs-4" style="padding:10px">
+                        <div class="relative pointer">
+                                <img class="w-full" src="../img/gh.jpg" alt="">
+                                <div v-if="i.show" class="addCar">
+                                   <span style="color:#fff;">
+                                        <span class="iconfont icongouwuche" style="font-size:30px;"></span>
+                                    </span> 
+                                </div>
+                        </div>
+                       
+                        <div style="background:#f6f6f6;padding: 10px">
+                            <div class="flex between">
+                                <div>{{i.name}}</div>
+                                <div style="color:#de4526">{{i.price}}</div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xs-12" style="padding-bottom:50px">
+                        <nav aria-label="...">
+                            <ul class="pager">
+                                <li><a href="#">首页</a></li>
+                                <li><a href="#">上一页</a></li>
+                                <li><a href="#" style="background:#de4526;color:#fff">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">下一页</a></li>
+                                <li><a href="#">尾页</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+        </div>
+        <div style="background:#000;padding: 15px" class="t-c c-white">
+                Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有
+        </div>
+
+    </div>
+
+    <script src="../js/vue.min.js"></script>
+    <script>
+    var vm = new Vue({
+        el:"#vmMain",
+        data:{
+            list:[
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',price:'￥20.00',show:false},
+            ]
+        },
+        methods:{
+            enter:function(n){
+                for(let i=0;i<this.list.length;i++){
+                    this.list[i].show = false;
+                }
+                this.list[n].show = true;
+            },
+            leave:function(n){
+                this.list[n].show = false;
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>
