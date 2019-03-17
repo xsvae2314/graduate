@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>登录</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/iconfont.css">
+		<link rel="stylesheet" href="../css/common.css">
+		<style> 
+			.form-group { margin-top: 30px; } 
+			.form-group input { height: 50px; font-size: 16px; background: #f5f5f5; }
+			.img-position{position:absolute;display: flex;top: 50px;width: 100%;}
+			.img-wrap{width:30%;padding: 0 30px}
+			.input-icon{position: absolute;top: 12px;left:5px;}
+			.login-btn-wrap{margin-top: 80px;padding-bottom: 80px;}
+			.login-btn{color: #fff;background: #009946;border: 0;border-radius: 8px;padding: 12px 120px;font-size: 18px;}
+		</style>
+	</head>
+
+	<body>
+		<div id="vmMain">
+			<!-- 顶部banner logo和导航栏  -->
+			<div class="banner relative">
+				<img class="w-full" src="../img/bg2.jpg" alt="">
+				<div class="login-signup">
+					<a href="login.html" class="c-white">登录</a> |
+					<a href="signup.html" class="c-white">注册</a>
+				</div>
+				<div class="img-position">
+					<div class="img-wrap">
+						<img class="w-pre90" src="../img/logo.png" alt="">
+					</div>
+
+					<div class="w-pre70 m-t30">
+						<div class="nav w-pre84">
+							<li>首页</li>
+							<li>分类</li>
+							<li>种植基地</li>
+							<li>在线留言</li>
+							<li>联系我们</li>
+							<li class="relative">
+								<span class="iconfont icongouwuche "></span>
+								<div class="car-count">2</div>
+							</li>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- 中间部分 -->
+			<div class="login-wrap">
+				<div class="c-green t-c s-20" style="padding: 30px 0;">
+					农 产 品 之 家
+				</div>
+				<div class="w-pre70 s-20" style="margin-left: 15%;">
+					<div class="c-green t-c p-t10 p-b10 b-b-light-2green">
+						登录
+					</div>
+					<div class="p-t30">
+						<div class="form-group relative">
+							<div class="input-icon"><span class="iconfont iconmobile s-20"></span></div>
+							<input type="text" class="form-control p-l30" placeholder="请输入您的手机号">
+						</div>
+						<div class="form-group relative">
+							<div class="input-icon"><span class="iconfont iconpassword s-20"></span></div>
+							<input type="text" class="form-control p-l30" placeholder="请输入密码">
+						</div>
+						<div class="s-15 c-9 p-t10">忘记密码？</div>
+					</div>
+					<div class="t-c login-btn-wrap">
+						<button class="login-btn">登录</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- 底部 -->
+			<div>
+				<div class="relative">
+					<img class="w-full" src="../img/footer.jpg" alt="">
+					<div class="w-full t-c seemore-wrap"> 
+		                <span class="seemore">查看更多</span> 
+		            </div>
+				</div>
+				<div class="bg-green p-t30 p-b50 flex m-t-2">
+					<div class="w-pre40 flex between">
+						<div></div>
+						<div class="c-yellow-green">
+							<div class="flex p-b10 p-t10 b-b-light-green">
+								<div>
+									<img class="w-40" src="../img/tu_03.jpg" alt="">
+								</div>
+								<div class="m-l10">
+									<div>地址 / ADDRESS</div>
+									<div>绵阳市梓潼县天宝柑桔合作社文昌添宝蜜柚 <span class="visibility-hidden">占位</span></div>
+								</div>
+							</div>
+							<div class="flex p-b10 p-t10 b-b-light-green">
+								<div>
+									<img class="w-40" src="../img/tu_06.jpg" alt="">
+								</div>
+								<div class="m-l10">
+									<div>电话 / TELEPHONE</div>
+									<div>0888-88888888</div>
+								</div>
+							</div>
+							<div class="flex p-b10 p-t10 b-b-light-green">
+								<div>
+									<img class="w-40" src="../img/tu_09.jpg" alt="">
+								</div>
+								<div class="m-l10">
+									<div>网址 / SITE</div>
+									<div>HTTP://WWW.WWW.COM</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-pre60 p-l50">
+						<ul class="footer-menu">
+							<li>蔬菜</li>
+							<li>水果</li>
+							<li>茶叶</li>
+							<li>粮油</li>
+							<li>养殖</li>
+						</ul>
+						<ul class="footer-nav">
+							<li>首页</li>
+							<li>分类</li>
+							<li>种植基地</li>
+							<li>在线留言</li>
+							<li>联系我们</li>
+						</ul>
+						<div class="m-t20 c-white">Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="../js/vue.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			var vm = new Vue({
+				el: "#vmMain",
+				data: {
+					
+				},
+				methods: {
+					
+				}
+			})
+		</script>
+	</body>
+
+</html>

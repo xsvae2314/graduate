@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+       
+        .menu{  display:flex;justify-content:center; }
+        .menu li{padding: 10px 20px;color: #444;border-bottom: 1px solid #009946;cursor: pointer;}
+        .menu li:first-child{padding-left: 0;color: #009946;}
+        .menu li:last-child{padding-right: 0}
+        .menu li:hover{color: #009946;}
+       	.banner-position{position:absolute;display: flex;top: 50px;width: 100%;}
+       	.img-wrap{width:30%;padding: 0 30px;}
+		.count-options{width: 30px;height: 30px;text-align: center;line-height: 30px;}
+		.car-btn{width: 180px;height: 50px;text-align: center;;line-height: 50px;}
+   </style>
+</head>
+
+<body>
+    <div id="vmMain">
+        <!-- 顶部banner logo和导航栏  -->
+        <div class="banner relative">
+            <img class="w-full" src="../img/bg3.jpg" alt="">
+            <div class="banner-position">
+                <div class="img-wrap">
+                    <img class="w-pre90" src="../img/logo.png" alt="">
+                </div>
+                <div class="w-pre70 m-t30">
+                    <div class="nav w-pre84">
+                        <li>首页</li>
+                        <li>分类</li>
+                        <li>种植基地</li>
+                        <li>在线留言</li>
+                        <li>联系我们</li>
+                        <li class="relative">
+                            <span class="iconfont icongouwuche "></span>
+                            <div class="car-count">2</div>
+                        </li>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+        <!-- 中间部分 -->
+        <div class="w-pre70 p-b80" style="margin:20px auto;">
+        	<div class="bg-gray p10 s-15">
+        		 首页
+        		 <span class="c-9 p-l10 p-r10">/</span>
+        		 蔬菜
+        		 <span class="c-9 p-l10 p-r10">/</span>
+        		 菠菜
+        	</div>
+        	<div class="m-t20">
+        		<div class="flex">
+	        		<div class="w-pre30">
+	        			<div class="b-gray">
+	        				<img class="w-full" src="../img/vv.png"/>
+	        			</div>
+	        			<div class="flex m-t20">
+	        				<div>
+	        					<img class="b-gray w-full" src="../img/vv.png"/>
+	        				</div>
+	        				<div class="p-r10 p-l10">
+	        					<img class="b-gray w-full" src="../img/vv.png"/>
+	        				</div>
+	        				<div>
+	        					<img class="b-gray w-full" src="../img/vv.png"/>
+	        				</div>
+	        			</div>
+	        		</div>
+	        		<div class="w-pre70 p-l50">
+	        			<div class="b-bf0">
+	        				<div class="s-24 ">大棚种植蔬菜无农药自然生长</div>
+	        				<div class="c-9 s-14 m-t20 p-b20">（四川光华种植基地）</div>
+	        			</div>
+	        			<div class="flex p-t30 p-b30 b-bf0">
+	        				<div class="p-t5 p-r40">￥2.00</div>
+	    					<div class="flex justify-center p-l50">
+								<div class="b-gray count-options m-r10 pointer">
+									<span class="iconfont iconjian c-green"></span>
+								</div>
+	    						<div class="b-gray count-options m-l10 m-r10">5</div>
+	    						<div class="b-gray count-options m-l10 pointer">
+	    							<span class="iconfont iconjia2 c-green"></span>
+	    						</div>
+							</div>
+	        			</div>
+	        			<div class="flex p-t30">
+	        				<button class="b-none bg-yellow c-white m-r10 r5 car-btn">加入购物车</button>
+	        				<button class="b-none bg-red c-white m-l10 r5 car-btn">立即购买</button>
+	        			</div>
+	        		</div>
+        		</div>
+        		<div class="m-t40 p-t30">
+        			<div class="b-b-light-2green flex">
+        				<div @click="tabBar('introduce')" :class="tabbarShow=='introduce'?'c-white bg-green':'c-3'" class="p-t10 p-b10 p-l40 p-r40 pointer r-l-t5 r-r-t5" >图文介绍</div>
+        				<div @click="tabBar('plantation')" :class="tabbarShow=='plantation'?'c-white bg-green':'c-3'"  class="p-t10 p-b10 p-l40 p-r40 pointer r-l-t5 r-r-t5">种植记录</div>
+        			</div>
+        			<div v-if="tabbarShow=='introduce'" class="p-t30">
+        				<img class="vertical-align-middle w-full" src="../img/detail1.jpg"/>
+        				<img class="vertical-align-middle w-full" src="../img/detail2.jpg"/>
+        				<img class="vertical-align-middle w-full" src="../img/detail3.jpg"/>
+        				<img class="vertical-align-middle w-full" src="../img/detail4.jpg"/>
+        			</div>
+        			<div v-if="tabbarShow=='plantation'" class="p-t30">
+        				<div class="flex t-c align-items-stretch">
+        					<div class="w-full b-gray p-b50 p-t50">
+        						<img src="../img/1.jpg"/>
+        						<div class="p-t20 p-b20 p-l20 p-r20">种植地点</div>
+        						<div class="c-9 p-l20 p-r20">四川农产品种植基地</div>
+        					</div>
+        					<div class="w-full p-l20 p-r20">
+        						<div class="b-gray p-b50 p-t50">
+        							<img src="../img/2.jpg"/>
+	        						<div class="p-t20 p-b20  p-l20 p-r20">植物变化记录</div>
+	        						<div class="c-9 p-l20 p-r20 t-l">苗整体都是绿色，高10厘米左右，茎又长又细，茎上还长着2片子叶，再往上长着一片掌状</div>
+        						</div>
+        					</div>
+        					<div class="w-full b-gray p-b50 p-t50">
+        						<img src="../img/3.jpg"/>
+        						<div class="p-t20 p-b20  p-l20 p-r20">种植时间</div>
+        						<div class="c-9 p-l20 p-r20">2018年12月31号</div>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+	    </div>
+        <!-- 底部 -->
+        <div>
+            <div class="relative">
+                <img class="w-full"src="../img/footer.jpg" alt="">
+                <div class="w-full t-c seemore-wrap"> 
+                    <span class="seemore">查看更多</span> 
+                </div>
+            </div>
+            <div class="bg-green p-t30 p-b50 flex m-t-2">
+                <div class="w-pre40 flex between">  
+                    <div></div>
+                    <div class="c-yellow-green">
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_03.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>地址 / ADDRESS</div>
+                                <div>绵阳市梓潼县天宝柑桔合作社文昌添宝蜜柚 <span class="visibility-hidden">占位</span></div>
+                            </div>
+                        </div>
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_06.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>电话 / TELEPHONE</div>
+                                <div>0888-88888888</div>
+                            </div>
+                        </div>
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_09.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>网址 / SITE</div>
+                                <div>HTTP://WWW.WWW.COM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-pre60 p-l50">
+                    <ul class="footer-menu">
+                        <li>蔬菜</li>
+                        <li>水果</li>
+                        <li>茶叶</li>
+                        <li>粮油</li>
+                        <li>养殖</li>
+                    </ul>
+                    <ul class="footer-nav">
+                        <li>首页</li>
+                        <li>分类</li>
+                        <li>种植基地</li>
+                        <li>在线留言</li>
+                        <li>联系我们</li>
+                    </ul>
+                    <div class="m-t20 c-white">Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+    var vm = new Vue({
+        el:"#vmMain",
+        data:{
+            list:[
+            ],
+            tabbarShow:'introduce',
+        },
+        methods:{
+            enter:function(n){
+                for(let i=0;i<this.list.length;i++){
+                    this.list[i].show = false;
+                }
+                this.list[n].show = true;
+            },
+            leave:function(n){
+                this.list[n].show = false;
+            },
+            // 更改图文介绍和种植记录的展示
+            tabBar:function(type){
+            	this.tabbarShow = type;
+            },
+        }
+    })
+    </script>
+</body>
+
+</html>

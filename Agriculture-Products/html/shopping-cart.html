@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+       
+        .menu{  display:flex;justify-content:center; }
+        .menu li{padding: 10px 20px;color: #444;border-bottom: 1px solid #009946;cursor: pointer;}
+        .menu li:first-child{padding-left: 0;color: #009946;}
+        .menu li:last-child{padding-right: 0}
+        .menu li:hover{color: #009946;}
+       
+       	.banner-position{position:absolute;display: flex;top: 50px;width: 100%;}
+       	.img-wrap{width:30%;padding: 0 30px;}
+		.form-group { margin-top: 30px; } 
+		.form-group input { height: 50px; font-size: 16px; background: #f5f5f5;border-radius: 30px; }
+		.form-group textarea { font-size: 16px; background: #f5f5f5;border-radius: 15px; }
+		.submit{color: #fff;padding: 10px 100px;border-radius: 30px;font-size: 16px;background: #009946;border: 0;}
+   		.icon-wrap{width: 50px;height: 50px;text-align: center;line-height: 50px;border: 1px solid #009b4d;border-radius: 50%;}
+   		
+   		.table th{background:#009944;border: 0!important;color: #fff;text-align: center;}
+   		.table td{text-align: center;vertical-align: middle!important;}
+   		.count-options{width: 30px;height: 30px;text-align: center;line-height: 30px;}
+    </style>
+</head>
+
+<body>
+    <div id="vmMain">
+        <!-- 顶部banner logo和导航栏  -->
+        <div class="banner relative">
+            <img class="w-full" src="../img/bg3.jpg" alt="">
+            <div class="banner-position">
+                <div class="img-wrap">
+                    <img class="w-pre90" src="../img/logo.png" alt="">
+                </div>
+                <div class="w-pre70 m-t30">
+                    <div class="nav w-pre84">
+                        <li>首页</li>
+                        <li>分类</li>
+                        <li>种植基地</li>
+                        <li>在线留言</li>
+                        <li>联系我们</li>
+                        <li class="relative">
+                            <span class="iconfont icongouwuche "></span>
+                            <div class="car-count">2</div>
+                        </li>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+        <!-- 中间部分 -->
+        <div class="w-pre80 p-b80" style="margin:20px auto;">
+        	<div class="t-c">
+        		<div class="s-18">购物车</div>
+        		<div class="s-15">MY SHOPPING BAG</div>
+        	</div>
+        	<div class="p-t30">
+        		
+        		<table class="table table-bordered">
+    				<tr class="t-c">
+    					<th>删除</th>
+    					<th>产品</th>
+    					<th>数量</th>
+    					<th>产品名称</th>
+    					<th>总额</th>
+    				</tr>
+    				<tr v-for="i,index in produceList">
+    					<td><span class="iconfont icondelete s-24 c-9 pointer"></span></td>
+    					<td><img class="w-pre20" :src="i.img"/></td>
+    					<td>
+    						<div class="flex justify-center">
+    							<div class="b-gray count-options m-r10 pointer">
+    								<span class="iconfont iconjian c-green"></span>
+    							</div>
+	    						<div class="b-gray count-options m-l10 m-r10">{{i.count}}</div>
+	    						<div class="b-gray count-options m-l10 pointer">
+	    							<span class="iconfont iconjia2 c-green"></span>
+	    						</div>
+    						</div>
+    						
+    					</td>
+    					<td>{{i.name}}</td>
+    					<td>￥{{i.price}}</td>
+    				</tr>
+					<tr>
+    					<td colspan="4">总计</td>
+    					<td class="c-green">￥80.00</td>
+    				</tr>
+				</table>
+        	</div>
+        </div>
+        <!-- 底部 -->
+        <div>
+            <div class="relative">
+                <img class="w-full"src="../img/footer.jpg" alt="">
+                <div class="w-full t-c seemore-wrap"> 
+                    <span class="seemore">查看更多</span> 
+                </div>
+            </div>
+            <div class="bg-green p-t30 p-b50 flex m-t-2">
+                <div class="w-pre40 flex between">  
+                    <div></div>
+                    <div class="c-yellow-green">
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_03.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>地址 / ADDRESS</div>
+                                <div>绵阳市梓潼县天宝柑桔合作社文昌添宝蜜柚 <span class="visibility-hidden">占位</span></div>
+                            </div>
+                        </div>
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_06.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>电话 / TELEPHONE</div>
+                                <div>0888-88888888</div>
+                            </div>
+                        </div>
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_09.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>网址 / SITE</div>
+                                <div>HTTP://WWW.WWW.COM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-pre60 p-l50">
+                    <ul class="footer-menu">
+                        <li>蔬菜</li>
+                        <li>水果</li>
+                        <li>茶叶</li>
+                        <li>粮油</li>
+                        <li>养殖</li>
+                    </ul>
+                    <ul class="footer-nav">
+                        <li>首页</li>
+                        <li>分类</li>
+                        <li>种植基地</li>
+                        <li>在线留言</li>
+                        <li>联系我们</li>
+                    </ul>
+                    <div class="m-t20 c-white">Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+    var vm = new Vue({
+        el:"#vmMain",
+        data:{
+           produceList:[
+           	 	{img:'../img/vv.png',name:'油麦菜',count:5,price:'2.00',show:false},
+                {img:'../img/v.png',name:'油麦菜',count:1,price:'2.00',show:false},
+                {img:'../img/vv.png',name:'油麦菜',count:5,price:'2.00',show:false},
+                {img:'../img/v.png',name:'油麦菜',count:1,price:'2.00',show:false},
+           ]
+        },
+        methods:{
+            
+            
+        }
+    })
+    </script>
+</body>
+
+</html>
