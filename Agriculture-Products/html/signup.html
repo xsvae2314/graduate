@@ -36,17 +36,21 @@
 					</div>
 
 					<div class="w-pre70 m-t30">
-						<div class="nav w-pre84">
-							<li>首页</li>
-							<li>分类</li>
-							<li>种植基地</li>
-							<li>在线留言</li>
-							<li>联系我们</li>
-							<li class="relative">
-								<span class="iconfont icongouwuche "></span>
-								<div  class="car-count">2</div>
-							</li>
-						</div>
+						 <div class="nav">
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="index.html">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
+                        <li>
+                        	<a href="shopping-cart.html" class="relative">
+                        		<span class="iconfont icongouwuche "></span>
+                            	<div class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
+                        	</a>
+                        </li>
+                    </div>
+                   
 					</div>
 				</div>
 
@@ -63,29 +67,28 @@
 					<div class="p-t30">
 						<div class="form-group relative">
 							<div class="input-icon"><span class="iconfont iconren2 s-20 vertical-align-middle c-3 m-t2"></span> <span class="c-9 s-16 m-l5">|</span>  </div>
-							<input type="text" class="form-control p-l45" placeholder="请输入11位手机号码">
+							<input v-model="phone" type="text" class="form-control p-l45" placeholder="请输入11位手机号码">
 						</div>
 						<div class="form-group relative">
 							<div class="input-icon"><span class="iconfont iconrenzheng s-20 vertical-align-middle c-3 m-t2"></span> <span class="c-9 s-16 m-l5">|</span>  </div>
-							<input type="text" class="form-control p-l45" placeholder="请输入密码（6-20位数字、字母和特殊符号）">
+							<input v-model="password" type="text" class="form-control p-l45" placeholder="请输入密码（6-20位数字、字母和特殊符号）">
 						</div>
 						<div class="form-group relative">
 							<div class="input-icon"><span class="iconfont iconrenzheng s-20 vertical-align-middle c-3 m-t2"></span> <span class="c-9 s-16 m-l5">|</span>  </div>
-							<input type="text" class="form-control p-l45" placeholder="请再次输入您刚设置的密码">
+							<input v-model="passwordAgin" type="text" class="form-control p-l45" placeholder="请再次输入您刚设置的密码">
 						</div>
 						<div class="form-group relative flex between">
 							<div class="w-pre60">
 								<div class="input-icon"><span class="iconfont iconpassword s-20 vertical-align-middle c-3 m-t2"></span> <span class="c-9 s-16 m-l5">|</span>  </div>
-								<input type="text" class="form-control p-l45" placeholder="请输入您收到的验证码">
+								<input v-model="validateCaode" type="text" class="form-control p-l45" placeholder="请输入您收到的验证码">
 							</div>
-							<div class="t-c s-16 pointer validate-code">
+							<div @click="sendCode" class="t-c s-16 pointer validate-code">
 								点击发送验证码
 							</div>
 						</div>
-						<div class="s-15 c-9 p-t10">忘记密码？</div>
 					</div>
 					<div class="signup-btn-wrap">
-						<button class="signup-btn">注册</button>
+						<button @click="save" class="signup-btn">注册</button>
 					</div>
 				</div>
 			</div>
@@ -160,12 +163,20 @@
 			var vm = new Vue({
 				el: "#vmMain",
 				data: {
-					
+					  shoppingCartCount:'',
+					  
 				},
 				methods: {
-					
+					save:function(){
+						
+					},
+					// 发送验证码
+					sendCode:function(){
+						
+					}
 				}
 			})
+			vm.shoppingCartCount = getCartCount();
 		</script>
 	</body>
 

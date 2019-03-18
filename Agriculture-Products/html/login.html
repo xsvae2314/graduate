@@ -8,6 +8,7 @@
 		<title>登录</title>
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/iconfont.css">
+		 <link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
 		<link rel="stylesheet" href="../css/common.css">
 		<style> 
 			.form-group { margin-top: 30px; } 
@@ -35,17 +36,21 @@
 					</div>
 
 					<div class="w-pre70 m-t30">
-						<div class="nav w-pre84">
-							<li>首页</li>
-							<li>分类</li>
-							<li>种植基地</li>
-							<li>在线留言</li>
-							<li>联系我们</li>
-							<li class="relative">
-								<span class="iconfont icongouwuche "></span>
-								<div class="car-count">2</div>
-							</li>
-						</div>
+						 <div class="nav">
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="index.html">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
+                        <li>
+                        	<a href="shopping-cart.html" class="relative">
+                        		<span class="iconfont icongouwuche "></span>
+                            	<div class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
+                        	</a>
+                        </li>
+                    </div>
+                   
 					</div>
 				</div>
 
@@ -62,16 +67,16 @@
 					<div class="p-t30">
 						<div class="form-group relative">
 							<div class="input-icon"><span class="iconfont iconmobile s-20"></span></div>
-							<input type="text" class="form-control p-l30" placeholder="请输入您的手机号">
+							<input v-model="phone" type="text" class="form-control p-l30" placeholder="请输入您的手机号">
 						</div>
 						<div class="form-group relative">
 							<div class="input-icon"><span class="iconfont iconpassword s-20"></span></div>
-							<input type="text" class="form-control p-l30" placeholder="请输入密码">
+							<input v-model="password" type="password" class="form-control p-l30" placeholder="请输入密码">
 						</div>
 						<div class="s-15 c-9 p-t10">忘记密码？</div>
 					</div>
 					<div class="t-c login-btn-wrap">
-						<button class="login-btn">登录</button>
+						<button @click="save" class="login-btn">登录</button>
 					</div>
 				</div>
 			</div>
@@ -139,19 +144,39 @@
 			</div>
 
 		</div>
-
+		<script src="../js/jquery-2.2.4.min.js"></script>
+		<script src="../js/toastr.js"></script>
 		<script src="../js/vue.min.js"></script>
 		<script src="../js/common.js"></script>
 		<script>
 			var vm = new Vue({
 				el: "#vmMain",
 				data: {
-					
+					  shoppingCartCount:'',
+					  phone:'',
+					  password:'',
 				},
 				methods: {
-					
+					save(){
+						var that = this;
+						if(!this.phone){
+		        			toastr.warning('请输入手机号');
+		        			return;
+		        		}
+		        		if(!this.password){
+		        			toastr.warning('请输入密码');
+		        			return;
+		        		}
+		        		toastr.success('登录成功');
+		        		setTimeout(function(){
+		        			that.phone = '';
+		        			that.password = '';
+		        			window.location.href = 'index.html';
+		        		},1000)
+					}
 				}
 			})
+			vm.shoppingCartCount = getCartCount();
 		</script>
 	</body>
 

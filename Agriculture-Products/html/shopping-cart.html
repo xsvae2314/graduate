@@ -8,6 +8,7 @@
     <title>购物车</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
     <link rel="stylesheet" href="../css/common.css">
     <style>
        
@@ -41,17 +42,21 @@
                     <img class="w-pre90" src="../img/logo.png" alt="">
                 </div>
                 <div class="w-pre70 m-t30">
-                    <div class="nav w-pre84">
-                        <li>首页</li>
-                        <li>分类</li>
-                        <li>种植基地</li>
-                        <li>在线留言</li>
-                        <li>联系我们</li>
-                        <li class="relative">
-                            <span class="iconfont icongouwuche "></span>
-                            <div class="car-count">2</div>
+                     <div class="nav">
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="index.html">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
+                        <li>
+                        	<a href="shopping-cart.html" class="relative">
+                        		<span class="iconfont icongouwuche "></span>
+                            	<div class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
+                        	</a>
                         </li>
                     </div>
+                   
                    
                 </div>
             </div>
@@ -65,7 +70,7 @@
         	</div>
         	<div class="p-t30">
         		
-        		<table class="table table-bordered">
+        		<table v-if="totalAmount" class="table table-bordered">
     				<tr class="t-c">
     					<th>删除</th>
     					<th>产品</th>
@@ -74,15 +79,15 @@
     					<th>总额</th>
     				</tr>
     				<tr v-for="i,index in produceList">
-    					<td><span class="iconfont icondelete s-24 c-9 pointer"></span></td>
+    					<td><span @click="del(index)" class="iconfont icondelete s-24 c-9 pointer"></span></td>
     					<td><img class="w-pre20" :src="i.img"/></td>
     					<td>
     						<div class="flex justify-center">
-    							<div class="b-gray count-options m-r10 pointer">
+    							<div @click="counting('reduce',index,i)" class="b-gray count-options m-r10 pointer">
     								<span class="iconfont iconjian c-green"></span>
     							</div>
 	    						<div class="b-gray count-options m-l10 m-r10">{{i.count}}</div>
-	    						<div class="b-gray count-options m-l10 pointer">
+	    						<div @click="counting('add',index,i)" class="b-gray count-options m-l10 pointer">
 	    							<span class="iconfont iconjia2 c-green"></span>
 	    						</div>
     						</div>
@@ -91,11 +96,14 @@
     					<td>{{i.name}}</td>
     					<td>￥{{i.price}}</td>
     				</tr>
-					<tr>
+					<tr class="h-100">
     					<td colspan="4">总计</td>
-    					<td class="c-green">￥80.00</td>
+    					<td class="c-green">￥{{totalAmount}}</td>
     				</tr>
 				</table>
+				<div v-if="totalAmount" class="t-c m-t40 p-t30 p-b50">
+					<button class="bg-green c-white p-t10 p-l60 p-r60 p-b10 b-none r5">结算</button>
+				</div>
         	</div>
         </div>
         <!-- 底部 -->
@@ -162,24 +170,68 @@
 
     </div>
 
+	<script src="../js/jquery-2.2.4.min.js"></script>
     <script src="../js/vue.min.js"></script>
+     <script src="../js/toastr.js"></script>
     <script src="../js/common.js"></script>
     <script>
     var vm = new Vue({
         el:"#vmMain",
         data:{
-           produceList:[
-           	 	{img:'../img/vv.png',name:'油麦菜',count:5,price:'2.00',show:false},
-                {img:'../img/v.png',name:'油麦菜',count:1,price:'2.00',show:false},
-                {img:'../img/vv.png',name:'油麦菜',count:5,price:'2.00',show:false},
-                {img:'../img/v.png',name:'油麦菜',count:1,price:'2.00',show:false},
-           ]
+           	produceList:[],// 用于展示在页面
+           	shoppingCart :[],// 用于存储本地
+            shoppingCartCount:'',
+            totalAmount:0,
         },
         methods:{
-            
-            
+            load:function(){
+            	var shoppingCart = localStorage.getItem('shoppingCart');
+            	if(!shoppingCart){
+            		this.produceList = [];
+            		this.shoppingCart = [];
+            	}else{
+            		this.produceList = JSON.parse(shoppingCart);
+            		this.shoppingCart = JSON.parse(shoppingCart);
+            		this.totalAmount = 0;
+            		for(var i=0;i<this.produceList.length;i++){
+            			this.totalAmount += Number(this.produceList[i].price)*Number(this.produceList[i].count);
+            		}
+            		this.totalAmount = this.totalAmount.toFixed(2);
+            	}
+            },
+            // 删除商品
+            del:function(index){
+            	this.shoppingCart.splice(index,1);
+            	localStorage.setItem('shoppingCart',JSON.stringify(this.shoppingCart));
+            	this.load();
+            },
+            //商品数量 增减
+            counting:function(type,index,detail){
+            	if(type == 'reduce'){
+            		if(detail.count<=1){
+            			toastr.warning('不能更少啦');
+            			return;
+            		}
+            		this.shoppingCart[index].count --;
+            		localStorage.setItem('shoppingCart',JSON.stringify(this.shoppingCart));
+            		this.load();
+            		
+            	}
+            	if(type == 'add'){
+            		if(detail.count>=99){
+            			toastr.warning('太多了吧');
+            			return;
+            		}
+            		this.shoppingCart[index].count ++;
+            		localStorage.setItem('shoppingCart',JSON.stringify(this.shoppingCart));
+            		this.load();
+            	}
+            },
         }
     })
+    
+    vm.shoppingCartCount = getCartCount();
+    vm.load();
     </script>
 </body>
 

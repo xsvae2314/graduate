@@ -33,17 +33,21 @@
                     <img class="w-pre90" src="../img/logo.png" alt="">
                 </div>
                 <div class="w-pre70 m-t30">
-                    <div class="nav w-pre84">
-                        <li>首页</li>
-                        <li>分类</li>
-                        <li>种植基地</li>
-                        <li>在线留言</li>
-                        <li>联系我们</li>
-                        <li class="relative">
-                            <span class="iconfont icongouwuche "></span>
-                            <div class="car-count">2</div>
+                     <div class="nav">
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="index.html">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
+                        <li>
+                        	<a href="shopping-cart.html" class="relative">
+                        		<span class="iconfont icongouwuche "></span>
+                            	<div class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
+                        	</a>
                         </li>
                     </div>
+                   
                    
                 </div>
             </div>
@@ -221,7 +225,8 @@
                 {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
                 {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
                 {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-            ]
+            ],
+              shoppingCartCount:'',
         },
         methods:{
             enter:function(n){
@@ -235,6 +240,7 @@
             }
         }
     })
+    vm.shoppingCartCount = getCartCount();
     </script>
 </body>
 

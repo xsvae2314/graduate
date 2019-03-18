@@ -8,6 +8,7 @@
     <title>联系我们</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
     <link rel="stylesheet" href="../css/common.css">
     <style>
        
@@ -36,15 +37,18 @@
                     <img class="w-pre90" src="../img/logo.png" alt="">
                 </div>
                 <div class="w-pre70 m-t30">
-                    <div class="nav w-pre84">
-                        <li>首页</li>
-                        <li>分类</li>
-                        <li>种植基地</li>
-                        <li>在线留言</li>
-                        <li>联系我们</li>
-                        <li class="relative">
-                            <span class="iconfont icongouwuche "></span>
-                            <div class="car-count">2</div>
+                     <div class="nav">
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="index.html">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
+                        <li>
+                        	<a href="shopping-cart.html" class="relative">
+                        		<span class="iconfont icongouwuche "></span>
+                            	<div class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
+                        	</a>
                         </li>
                     </div>
                    
@@ -57,31 +61,30 @@
         	<div class="t-c c-3 s-18">
         		<div><span class="iconfont iconyouxiang- c-green s-30"></span></div>
         		<div>
-        			<span class="b-b5 p-b5">联系我们</span>
+        			<span class="b-b5 p-b5">在线留言</span>
     			</div>
         	</div>
         	<div class="flex">
         		<div class="form-group w-full p-r10">
-			    	<input type="text" class="form-control" placeholder="名字">
+			    	<input v-model="name" type="text" class="form-control" placeholder="名字">
 			  	</div>
 			  	<div class="form-group w-full p-l10">
-			    	<input type="text" class="form-control"placeholder="邮箱">
+			    	<input v-model="email" type="text" class="form-control"placeholder="邮箱">
 			  	</div>
         	</div>
           	<div class="flex">
 			  	<div class="form-group w-full p-r10">
-			    	<input type="text" class="form-control" placeholder="电话">
+			    	<input  v-model="phone"type="text" class="form-control" placeholder="电话">
 			  	</div>
 			  	<div class="form-group w-full p-l10">
-			    	<input type="text" class="form-control"placeholder="所在城市">
+			    	<input v-model="city" type="text" class="form-control"placeholder="所在城市">
 			  	</div>
         	</div>
             <div class="form-group">
-              	<textarea class="form-control" rows="6" placeholder="留言"></textarea>
+              	<textarea  v-model="remark" class="form-control" rows="6" placeholder="留言"></textarea>
             </div>
             <div class="t-c m-t40 p-t30 p-b80">
-            	
-            	<button class="submit">提交</button>
+            	<button @click="save" class="submit">提交</button>
             </div>
         </div>
         <!-- 底部 -->
@@ -147,40 +150,54 @@
         </div>
 
     </div>
-
+	<script src="../js/jquery-2.2.4.min.js"></script>
+	<script src="../js/toastr.js"></script>
     <script src="../js/vue.min.js"></script>
     <script src="../js/common.js"></script>
     <script>
     var vm = new Vue({
         el:"#vmMain",
         data:{
-            list:[
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/v.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-                {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
-            ]
+              shoppingCartCount:'',
+              name:'',
+              email:'',
+              phone:'',
+              city:'',
+              remark:''
         },
         methods:{
-            enter:function(n){
-                for(let i=0;i<this.list.length;i++){
-                    this.list[i].show = false;
-                }
-                this.list[n].show = true;
-            },
-            leave:function(n){
-                this.list[n].show = false;
-            }
+        	save:function(){
+        		if(!this.name){
+        			toastr.warning('请输入姓名');
+        			return;
+        		}
+        		if(!this.email){
+        			toastr.warning('请输入邮箱');
+        			return;
+        		}
+        		if(!this.phone){
+        			toastr.warning('请输入电话');
+        			return;
+        		}
+        		if(!this.city){
+        			toastr.warning('请输入城市');
+        			return;
+        		}
+        		if(!this.remark){
+        			toastr.warning('请输入留言');
+        			return;
+        		}
+        		
+        		this.name = '';
+        		this.email = '';
+        		this.phone = '';
+        		this.city = '';
+        		this.remark = '';
+        		toastr.success('提交成功，我们会尽快联系您');
+        	}
         }
     })
+    vm.shoppingCartCount = getCartCount();
     </script>
 </body>
 
