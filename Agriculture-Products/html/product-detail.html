@@ -8,6 +8,7 @@
     <title>详情</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/iconfont.css">
+     <link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
     <link rel="stylesheet" href="../css/common.css">
     <style>
        
@@ -88,17 +89,17 @@
 	        			<div class="flex p-t30 p-b30 b-bf0">
 	        				<div class="p-t5 p-r40">￥2.00</div>
 	    					<div class="flex justify-center p-l50">
-								<div class="b-gray count-options m-r10 pointer">
+								<div @click="counting('reduce')" class="b-gray count-options m-r10 pointer">
 									<span class="iconfont iconjian c-green"></span>
 								</div>
-	    						<div class="b-gray count-options m-l10 m-r10">5</div>
-	    						<div class="b-gray count-options m-l10 pointer">
+	    						<div class="b-gray count-options m-l10 m-r10">{{count}}</div>
+	    						<div @click="counting('add')" class="b-gray count-options m-l10 pointer">
 	    							<span class="iconfont iconjia2 c-green"></span>
 	    						</div>
 							</div>
 	        			</div>
 	        			<div class="flex p-t30">
-	        				<button class="b-none bg-yellow c-white m-r10 r5 car-btn">加入购物车</button>
+	        				<button @click="addCar" class="b-none bg-yellow c-white m-r10 r5 car-btn">加入购物车</button>
 	        				<button class="b-none bg-red c-white m-l10 r5 car-btn">立即购买</button>
 	        			</div>
 	        		</div>
@@ -201,7 +202,8 @@
         </div>
 
     </div>
-
+	<script src="../js/jquery-2.2.4.min.js"></script>
+	<script src="../js/toastr.js"></script>
     <script src="../js/vue.min.js"></script>
     <script src="../js/common.js"></script>
     <script>
@@ -212,16 +214,42 @@
             ],
             tabbarShow:'introduce',
               shoppingCartCount:'',
+              count:1,
         },
         methods:{
-            enter:function(n){
-                for(let i=0;i<this.list.length;i++){
-                    this.list[i].show = false;
-                }
-                this.list[n].show = true;
+            counting:function(type){
+            	if(type=='reduce'){
+            		if(this.count<=1){
+            			toastr.warning('不能更少啦');
+            			return;
+            		}
+            		this.count --;
+            	}
+            	if(type=='add'){
+	            	if(this.count>=99){
+	        			toastr.warning('太多了吧');
+	        			return;
+	        		}
+	            	this.count ++;
+            	}
             },
-            leave:function(n){
-                this.list[n].show = false;
+            addCar:function(){
+            	var shoppingCart = localStorage.getItem('shoppingCart');
+        		if(shoppingCart){
+        			shoppingCart = JSON.parse(shoppingCart);
+        			shoppingCart.push({
+        				img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:this.count
+        			});
+        			localStorage.setItem('shoppingCart',JSON.stringify(shoppingCart));
+        		}else{
+        			shoppingCart = [];
+        			shoppingCart.push({
+        				img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:this.count
+        			});
+        			localStorage.setItem('shoppingCart',JSON.stringify(shoppingCart));
+        		}
+        		this.shoppingCartCount =  getCartCount();
+        		toastr.success('加入购物车成功');
             },
             // 更改图文介绍和种植记录的展示
             tabBar:function(type){
