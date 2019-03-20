@@ -33,9 +33,18 @@
                     <img class="w-pre90" src="../img/logo.png" alt="">
                 </div>
                 <div class="w-pre70 m-t30">
-                     <div class="nav">
+                     <div class="nav clearfloat">
                         <li><a href="index.html">首页</a> </li>
-                        <li><a href="index.html">分类</a></li>
+                        <li @mouseenter="showmenu" @mouseleave="hidemenu" class="relative">
+                        	<a>分类</a>
+                        	<div v-if="isshow" class="t-c c-white child-menu-wrap">
+                        		<div @click="operatekind('1')" class="child-menu">蔬菜</div>
+                        		<div @click="operatekind('2')" class="child-menu">水果</div>
+                        		<div @click="operatekind('3')" class="child-menu">茶叶</div>
+                        		<div @click="operatekind('4')" class="child-menu">粮油</div>
+                        		<div @click="operatekind('5')" class="child-menu">养殖</div>
+                        	</div>
+                        </li>
                         <li><a href="plantation-base.html">种植基地</a></li>
                         <li><a href="picking-park.html">采摘园区</a></li>
                         <li><a href="contact-us.html">在线留言</a></li>
@@ -43,7 +52,7 @@
                         <li>
                         	<a href="shopping-cart.html" class="relative">
                         		<span class="iconfont icongouwuche "></span>
-                            	<div class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
+                            	<div v-if="shoppingCartCount" class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
                         	</a>
                         </li>
                     </div>
@@ -227,6 +236,7 @@
                 {img:'../img/vv.jpg',name:'油麦菜',address:'四川比得上基地',price:'￥2.00',show:false},
             ],
               shoppingCartCount:'',
+                isshow:false
         },
         methods:{
             enter:function(n){
@@ -237,6 +247,15 @@
             },
             leave:function(n){
                 this.list[n].show = false;
+            },
+            showmenu:function(){
+            	this.isshow = true;
+            },
+            hidemenu:function(){
+            	this.isshow = false;
+            },
+            operatekind:function(type){
+            	window.location.href = 'index.html?type='+type
             }
         }
     })

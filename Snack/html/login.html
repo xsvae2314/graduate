@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+    .background-img{position: absolute; top: 64px; bottom: 0px; left: 0px;right: 0;background: url(../img/dl_02.jpg) ;background-repeat:no-repeat;background-size: 100% 100%;}
+    </style>
+</head>
+
+<body>
+    <div id="vmMain">
+        <!-- 顶部banner logo和导航栏  -->
+        <div class="banner relative">
+            <div class="flex">
+                <div class="t-c logo"> <img class="w-100" src="../img/logo.png" alt="" /> </div>
+                <div class="w-pre70 flex m-t20">
+                    <div class="nav">
+                        <li> <a href="index.html">网站首页</a> </li>
+                        <li> <a href="ranking.html">排行榜</a> </li>
+                        <li><a href="cart.html">购物车</a> </li>
+                        <li><a href="order.html">我的订单</a> </li>
+                        <li><a href="contact.html">联系我们</a> </li>
+                    </div>
+                    <div class="m-t15 relative">
+                    	<a href="login.html" class="s-14 c-9">登录</a>
+                    	<a href="signup.html" class="s-14 c-9">注册</a>
+                    	<div class="search">
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 中间  -->
+        <div class="o-hidden background-img">
+        	<div class="bg-white p-l30 p-r30 r5 f-r" style="margin-top: 40px;margin-right: 15%;width: 400px;">
+	        	<div class="t-c s-20 c-3 p-t30">
+	        		四川小吃平台
+	        	</div>
+	        	<div class="m-t20">
+	        		<span class="c-red b-b-2red p-b5">登录中心</span>
+	        	</div>
+	        	<div class="input-group m-t20">
+					  <span class="input-group-addon bg-red c-white b-none">
+					  	<span class="iconfont iconren s-20 vertical-align-middle"></span>
+					  </span>
+					  <input type="text" class="form-control b-none bg-gray h-38" placeholder="请输入您的账号">
+				</div>
+				<div class="input-group m-t20">
+					  <span class="input-group-addon bg-red c-white b-none">
+					  	<span class="iconfont iconpassword s-20 vertical-align-middle"></span>
+					  </span>
+					  <input type="password" class="form-control b-none bg-gray h-38" placeholder="请输入您的密码">
+				</div>
+				<div class="m-t20 flex between">
+					<div>
+						<button class="b-none bg-red c-white p-l60 p-r60 p-t10 p-b10 s-15">立即登录</button>
+					</div>
+					<div>
+						<img class="w-40" src="../img/qq.png" alt="" />
+					</div>
+					<div>
+						<img class="w-40" src="../img/vx.png" alt="" />
+					</div>
+				</div>
+				<div class="c-9 s-14 m-t20 p-b50">
+				忘记密码？
+				</div>
+        	</div>
+        </div>
+	<!--  底部 -->
+	    <div class="t-c c-white bg-black p15 w-full" style="position: fixed;bottom: 0;"> Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有 </div>
+	</div>
+
+    <script src="../js/vue.min.js"></script>
+    <script>
+    var vm = new Vue({
+        el:"#vmMain",
+        data:{
+        
+        },
+        methods:{
+        	
+        }
+    })
+    </script>
+</body>
+
+</html>
