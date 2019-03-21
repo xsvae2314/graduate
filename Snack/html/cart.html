@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style >
+    	.icon-input{position: absolute;bottom: 2px;left: 0;}
+    	.validate-code{position: absolute;right: 0; bottom: 5px;padding: 5px 20px;color: #fff;background: #df4626;border-radius: 10px;font-size: 12px;}
+   		.table td{vertical-align: middle!important;}
+   		.status{width: 70px;height: 25px;line-height: 25px;display: inline-block;}
+   		
+    </style>
+</head>
+
+<body>
+    <div id="vmMain">
+        <!-- 顶部banner logo和导航栏  -->
+        <div class="banner relative bg-white">
+            <div class="flex p-t50">
+                <div class="t-c logo"> <img class="w-100" src="../img/logo.png" alt="" /> </div>
+                <div class="w-pre70 flex m-t20">
+                    <div class="nav">
+                        <li> <a href="index.html">网站首页</a> </li>
+                        <li> <a href="ranking.html">排行榜</a> </li>
+                        <li><a href="cart.html" class="bg-red c-white">购物车</a> </li>
+                        <li><a href="order.html">我的订单</a> </li>
+                        <li><a href="contact.html">联系我们</a> </li>
+                    </div>
+                    <div class="m-t15 relative">
+                    	<a href="login.html" class="s-14 c-9">登录</a>
+                    	<a href="signup.html" class="s-14 c-9">注册</a>
+                    	<div class="search">
+                    	<div class="relative">
+                    		<input type="text" class="form-control" placeholder="搜索"/>
+                    		<span class="iconfont iconsuosou s-20"></span>
+                    	</div>
+                    		
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 中间  -->
+        <div class="bg-pink p-b50">
+        	<img class="w-full" src="../img/tup.jpg"/>
+        	<div class="w-pre80 m-lpre10 bg-white p-r20 p-l20 p-b50">
+        		<div class="c-red s-8 t-c p-t30">购物车</div>
+        		<div class="c-red s-8 t-c m-t10 p-b30">Shopping Cart</div>
+        	
+	        	<table class="table table-bordered">
+	        		<tr class="t-c">
+	        			<th class="t-c">产品</th>
+	        			<th class="t-c">产品名称</th>
+	        			<th class="t-c">数量</th>
+	        			<th class="t-c">价格</th>
+	        			<th class="t-c">折扣</th>
+	        			<th class="t-c">总计</th>
+	        		</tr>
+	        		<tr v-for="i,index in list" class="t-c">
+    					<td><img class="w-50" :src="i.img"/></td>
+    					<td>{{i.name}}</td>
+    					<td class="b-0 flex justify-center">
+    						<div class="input-group">
+							  	<input v-model="i.count" type="text" class="form-control" style="width: 56px;margin-right: -1px;" aria-label="Amount (to the nearest dollar)">
+						  		<span @click="counting('reduce',index,i)" class="input-group-addon pointer w-40" ><span class="iconfont iconjian"></span></span>
+							  	<span @click="counting('add',index,i)" class="input-group-addon pointer w-40" style="border-left: 0;"><span  class="iconfont iconjia2"></span></span>
+							  	<span @click="del(index)" class="input-group-addon bg-red pointer w-40" style="margin-left: -1px;"><span  class="iconfont iconcuo c-white"></span></span>
+							</div>
+    					</td>
+    					<td>{{i.price}}</td>
+    					<td>￥{{i.discount}}</td>
+    					<td>￥{{i.total}}</td>
+	        		</tr>
+	        		<tr>
+	                  	<td colspan="5" class="t-r">价格：	</td>
+	                  	<td> ￥228.00</td>
+	                </tr>
+				 	<tr>
+	                  	<td colspan="5" class="t-r">折扣：</td>
+	                  	<td> ￥50.00</td>
+	                </tr>
+	                <tr>
+	                  	<td colspan="5" class="t-r">总价格：</td>
+	                  	<td> ￥31.00</td>
+	                </tr>
+	        	</table>
+	        	<div class="t-r">
+	        		<button class="p-t5 p-b5 p-l20 p-r20 bg-red c-white s-14 r5 b-none">提交订单</button>
+	        	</div>
+			</div>
+		</div>
+	<!--  底部 -->
+	    <div class="t-c c-white bg-black p15 w-full"> Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有 </div>
+	</div>
+
+    <script src="../js/vue.min.js"></script>
+    <script>
+    var vm = new Vue({
+        el:"#vmMain",
+        data:{
+        list:[
+        	{img:'../img/dd.jpg',name:'龙抄手',count:1,price:'30.00',discount:'2.00',total:'28.00'},
+        ]
+        },
+        methods:{
+//      	del:function(n){
+//      		this.list.splice(n,1)
+//      	},
+        	load:function(){
+            	var shoppingCart = localStorage.getItem('shoppingCart');
+            	if(!shoppingCart){
+            		this.produceList = [];
+            		this.shoppingCart = [];
+            	}else{
+            		this.produceList = JSON.parse(shoppingCart);
+            		this.shoppingCart = JSON.parse(shoppingCart);
+            		this.totalAmount = 0;
+            		for(var i=0;i<this.produceList.length;i++){
+            			this.totalAmount += Number(this.produceList[i].price)*Number(this.produceList[i].count);
+            		}
+            		this.totalAmount = this.totalAmount.toFixed(2);
+            	}
+            },
+            // 删除商品
+            del:function(index){
+            	this.shoppingCart.splice(index,1);
+            	localStorage.setItem('shoppingCart',JSON.stringify(this.shoppingCart));
+            	this.load();
+            },
+            //商品数量 增减
+            counting:function(type,index,detail){
+            	if(type == 'reduce'){
+            		if(detail.count<=1){
+            			toastr.warning('不能更少啦');
+            			return;
+            		}
+            		this.shoppingCart[index].count --;
+            		localStorage.setItem('shoppingCart',JSON.stringify(this.shoppingCart));
+            		this.load();
+            		
+            	}
+            	if(type == 'add'){
+            		if(detail.count>=99){
+            			toastr.warning('太多了吧');
+            			return;
+            		}
+            		this.shoppingCart[index].count ++;
+            		localStorage.setItem('shoppingCart',JSON.stringify(this.shoppingCart));
+            		this.load();
+            	}
+            },
+        }
+    })
+    </script>
+</body>
+
+</html>

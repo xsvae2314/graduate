@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>商品详情</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/iconfont.css">
+		<link rel="stylesheet" href="../css/common.css">
+		<style>
+			.count-options{width: 30px;height: 30px;text-align: center;line-height: 30px;}
+			.car-btn{width: 180px;height: 50px;text-align: center;;line-height: 50px;}
+			#allmap1 {width: 500px;height: 160px;overflow: hidden;margin:0;}
+			#allmap2 {width: 500px;height: 160px;overflow: hidden;margin:0;}
+			#allmap3 {width: 500px;height: 160px;overflow: hidden;margin:0;}
+			#allmap4 {width: 100%;height: 160px;overflow: hidden;margin:0;}
+		</style>
+	</head>
+
+	<body>
+		<div id="vmMain">
+			<!-- 顶部banner logo和导航栏  -->
+			<div class="banner relative">
+				<div class="flex p-t50">
+					<div class="t-c logo"> <img class="w-100" src="../img/logo.png" alt="" /> </div>
+					<div class="w-pre70 flex m-t20">
+						<div class="nav">
+							<li>
+								<a href="index.html" class="bg-red c-white">网站首页</a>
+							</li>
+							<li>
+								<a href="ranking.html">排行榜</a>
+							</li>
+							<li>
+								<a href="cart.html">购物车</a>
+							</li>
+							<li>
+								<a href="order.html">我的订单</a>
+							</li>
+							<li>
+								<a href="contact.html">联系我们</a>
+							</li>
+						</div>
+						<div class="m-t15 relative">
+							<a href="login.html" class="s-14 c-9">登录</a>
+							<a href="signup.html" class="s-14 c-9">注册</a>
+							<div class="search">
+								<div class="relative">
+									<input type="text" class="form-control" placeholder="搜索" />
+									<span class="iconfont iconsuosou s-20"></span>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 中间  -->
+			<div class="bg-pink">
+				<img class="w-full" src="../img/tup.jpg" alt="">
+				<div class="bg-pink">
+					<div class="w-pre80 m-lpre10 bg-white">
+
+						<div class="p10 p-b80">
+							<div class="bg-gray p10 s-15">
+								首页
+								<span class="c-9 p-l10 p-r10">/</span> 成都
+								<span class="c-9 p-l10 p-r10">/</span> 龙抄手
+							</div>
+							<div class="m-t20">
+								<div class="o-hidden">
+									<div class="w-pre40 f-l">
+										<div class="b-gray">
+											<img class="w-full" src="../img/xq.jpg" />
+										</div>
+										<div class="flex m-t20">
+											<div>
+												<img class="b-gray w-full" src="../img/xq.jpg" />
+											</div>
+											<div class="p-r10 p-l10">
+												<img class="b-gray w-full" src="../img/xq.jpg" />
+											</div>
+											<div>
+												<img class="b-gray w-full" src="../img/xq.jpg" />
+											</div>
+										</div>
+									</div>
+									<div class="w-pre60 f-l p-l50">
+										<div class="s-20 m-t10">卤鸭脖215g经典熟食卤味零食麻辣小吃</div>
+										<div class="c-9 s-14 p-b10 c-red">微甜爽辣 回味永久休闲包装携带方便肉质鲜香</div>
+										<div class="s-14 c-red bg-pink p-l10 p-t5 p-b5">价格 <span class="s-18">￥30.00</span></div>
+										<div class="flex p-t20 p-b20">
+											<div class="w-full s-14">
+												运费 <span class="m-l20">2.00元</span>
+											</div>
+											<div class="w-full">
+												重量 <span class="m-l20">0.215kg</span>
+											</div>
+										</div>
+										<div class="flex p-t20 p-b20">
+											<div class="p-t5 p-r40">数量</div>
+											<div class="flex justify-center p-l50">
+												<div @click="counting('reduce')" class="b-gray count-options m-r10 pointer">
+													<span class="iconfont iconjian c-red"></span>
+												</div>
+												<div class="b-gray count-options m-l10 m-r10">{{count}}</div>
+												<div @click="counting('add')" class="b-gray count-options m-l10 pointer">
+													<span class="iconfont iconjia2 c-red"></span>
+												</div>
+											</div>
+										</div>
+										<div v-if="tabbarShow=='plantation'" class="flex p-t30">
+											<button @click="addCar" class="b-none bg-yellow c-white m-r10 r5 car-btn">加入购物车</button>
+											<button class="b-none bg-red c-white m-l10 r5 car-btn">立即购买</button>
+										</div>
+										<div v-if="tabbarShow=='introduce'" class="flex p-t30">
+											<button @click="tabBar('introduce')" class="b-none bg-gray c-white m-l10 r5 car-btn">暂时无货</button>
+											<button @click="tabBar('plantation')" class="b-none bg-red c-white m-l10 r5 car-btn">有货</button>
+										</div>
+									</div>
+								</div>
+								<div class="m-t40 p-t30">
+									<div v-show="tabbarShow=='introduce'" class="p-t30">
+										<div class="p-t5 p-b5 p-l10 bg-gray s-14">推荐店铺</div>
+										<div class="p-t10">
+											<div v-for="i,index in list" class="m-t20 b-gray flex between p-t5 p-b5 p-l10 bg-pink o-hidden">
+												<div class="flex">
+													<div>
+														<img class="w-full" src="../img/xq3.png"/>
+													</div>
+													<div class="m-l20 m-t20">
+														<div>四川艳阳道10号</div>
+														<div class="c-6 s-12 m-t20">公交<span class="c-red">320</span>路<span class="c-red">浴杨道站</span>点小车前行100米</div>
+													</div>
+												</div>
+												<div >
+													<div :id="'allmap'+(index+1)"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div v-show="tabbarShow=='plantation'" class="p-t30">
+										<div class="p-t5 p-b5 p-l10 bg-gray s-14">推荐店铺</div>
+										<div class="m-t10">
+											<div id="allmap4"> </div>
+										</div>
+										<div class="p-t5 p-b5 p-l10 bg-gray s-14 m-t20">图文介绍</div>
+										<div class="m-t10">
+											<img class="w-full" src="../img/xq4.jpg"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<!--  底部 -->
+			<div class="t-c c-white bg-black p15"> Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有 </div>
+		</div>
+
+		<script src="../js/vue.min.js"></script>
+			<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=g8IMNVVzVXyWPVm4bwm29FtDGptwGqEq"></script>
+		<script>
+			var vm = new Vue({
+				el: "#vmMain",
+				data: {
+					list: [
+						{},{},{}
+					],
+					tabbarShow: 'introduce',
+					shoppingCartCount: '',
+					count: 1,
+					isshow: false
+				},
+				methods: {
+					counting: function(type) {
+						if(type == 'reduce') {
+							if(this.count <= 1) {
+								toastr.warning('不能更少啦');
+								return;
+							}
+							this.count--;
+						}
+						if(type == 'add') {
+							if(this.count >= 99) {
+								toastr.warning('太多了吧');
+								return;
+							}
+							this.count++;
+						}
+					},
+					addCar: function() {
+						var shoppingCart = localStorage.getItem('shoppingCart');
+						if(shoppingCart) {
+							shoppingCart = JSON.parse(shoppingCart);
+							shoppingCart.push({
+								img: '../img/vv.png',
+								name: '油麦菜',
+								address: '四川比得上基地',
+								price: '2.00',
+								count: this.count
+							});
+							localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+						} else {
+							shoppingCart = [];
+							shoppingCart.push({
+								img: '../img/vv.png',
+								name: '油麦菜',
+								address: '四川比得上基地',
+								price: '2.00',
+								count: this.count
+							});
+							localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+						}
+						this.shoppingCartCount = getCartCount();
+						toastr.success('加入购物车成功');
+					},
+					// 更改图文介绍和种植记录的展示
+					tabBar: function(type) {
+						this.tabbarShow = type;
+					},
+					showmenu: function() {
+						this.isshow = true;
+					},
+					hidemenu: function() {
+						this.isshow = false;
+					},
+					operatekind: function(type) {
+						window.location.href = 'index.html?type=' + type
+					}
+				}
+			})
+			
+			
+			var map1 = new BMap.Map("allmap1");
+			var point1 = new BMap.Point(116.331398,39.897445);
+			map1.centerAndZoom(point1,12);
+			var geolocation1 = new BMap.Geolocation();
+			geolocation1.getCurrentPosition(function(r){
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+					var mk = new BMap.Marker(r.point);
+					map1.addOverlay(mk);
+					map1.panTo(r.point);
+				}       
+			},{enableHighAccuracy: true})
+			// ====================================================================================
+			var map2 = new BMap.Map("allmap2");
+			var point2 = new BMap.Point(116.331398,39.897445);
+			map2.centerAndZoom(point2,12);
+			var geolocation2 = new BMap.Geolocation();
+			geolocation2.getCurrentPosition(function(r){
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+					var mk = new BMap.Marker(r.point);
+					map2.addOverlay(mk);
+					map2.panTo(r.point);
+				}       
+			},{enableHighAccuracy: true})
+				// ====================================================================================
+			var map3 = new BMap.Map("allmap3");
+			var point3 = new BMap.Point(116.331398,39.897445);
+			map3.centerAndZoom(point3,12);
+			var geolocation3 = new BMap.Geolocation();
+			geolocation3.getCurrentPosition(function(r){
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+					var mk = new BMap.Marker(r.point);
+					map3.addOverlay(mk);
+					map3.panTo(r.point);
+				}       
+			},{enableHighAccuracy: true})
+				// ====================================================================================
+			var map4 = new BMap.Map("allmap4");
+			var point4 = new BMap.Point(116.331398,39.897445);
+			map4.centerAndZoom(point4,12);
+			var geolocation4 = new BMap.Geolocation();
+			geolocation4.getCurrentPosition(function(r){
+				if(this.getStatus() == BMAP_STATUS_SUCCESS){
+					var mk = new BMap.Marker(r.point);
+					map4.addOverlay(mk);
+					map4.panTo(r.point);
+				}       
+			},{enableHighAccuracy: true})
+		</script>
+	</body>
+
+</html>

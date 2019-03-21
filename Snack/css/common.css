@@ -12,6 +12,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .align-center{align-items: center;}
 .t-c{text-align: center;}
 .t-l{text-align: left;}
+.t-r{text-align: right;}
 .vertical-align-middle {vertical-align: middle;}
 .visibility-hidden{visibility: hidden;}
 .pointer{cursor: pointer;}
@@ -68,6 +69,10 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .c-lig-red{color: #de4526;}
 .c-green{color: #0a9c55!important;}
 .c-yellow-green{color: #d6fd04}
+.c-orange{color: #ff8001;}
+.c-blue{color: #0a94ff;}
+.c-lig-green{color: #26bd0e;}
+
 
 .p15{padding: 15px;}
 .p10{padding: 10px;}
@@ -97,6 +102,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .p-b10{padding-bottom: 10px;}
 .p-b8{padding-bottom: 8px;}
 .p-b5{padding-bottom: 5px;}
+.p-2-5{padding: 2px 5px;}
 
 
 
@@ -123,10 +129,12 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .bg-pink{background: #fcf5ed;}
 .bg-black{background: #000;}
 .bg-white{background: #fff;}
+.bg-blue{background: #0290fc;}
 
 
 
 .b-none{border: none;}
+.b-0{border: none!important;}
 .b-gray{border:1px solid #bdbdbd}
 .b-b5{border-bottom:1px solid #555}
 .b-bf0{border-bottom: 1px solid #f0f0f0;}
@@ -134,7 +142,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .b-b-light-2green{border-bottom: 2px solid #009841;}
 .b-b-red{border-bottom: 1px solid #df4626;}
 .b-b-2red{border-bottom: 2px solid #df4626;}
-
+.b-red{border:1px solid #bd4c3a;}
 
 .r5{border-radius: 5px;}
 .r10{border-radius: 10px;}
