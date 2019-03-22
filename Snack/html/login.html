@@ -8,6 +8,7 @@
     <title>登录</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/toastr.css"/>
     <link rel="stylesheet" href="../css/common.css">
     <style>
     .background-img{position: absolute; top: 64px; bottom: 0px; left: 0px;right: 0;background: url(../img/dl_02.jpg) ;background-repeat:no-repeat;background-size: 100% 100%;}
@@ -50,17 +51,17 @@
 					  <span class="input-group-addon bg-red c-white b-none">
 					  	<span class="iconfont iconren s-20 vertical-align-middle"></span>
 					  </span>
-					  <input type="text" class="form-control b-none bg-gray h-38" placeholder="请输入您的账号">
+					  <input v-model="name" type="text" class="form-control b-none bg-gray h-38" placeholder="请输入您的账号">
 				</div>
 				<div class="input-group m-t20">
 					  <span class="input-group-addon bg-red c-white b-none">
 					  	<span class="iconfont iconpassword s-20 vertical-align-middle"></span>
 					  </span>
-					  <input type="password" class="form-control b-none bg-gray h-38" placeholder="请输入您的密码">
+					  <input v-model="password" type="password" class="form-control b-none bg-gray h-38" placeholder="请输入您的密码">
 				</div>
 				<div class="m-t20 flex between">
 					<div>
-						<button class="b-none bg-red c-white p-l60 p-r60 p-t10 p-b10 s-15">立即登录</button>
+						<button @click="submit" class="b-none bg-red c-white p-l60 p-r60 p-t10 p-b10 s-15">立即登录</button>
 					</div>
 					<div>
 						<img class="w-40" src="../img/qq.png" alt="" />
@@ -77,16 +78,29 @@
 	<!--  底部 -->
 	    <div class="t-c c-white bg-black p15 w-full" style="position: fixed;bottom: 0;"> Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有 </div>
 	</div>
-
+	
+	<script src="../js/jquery-2.2.4.min.js"></script>
     <script src="../js/vue.min.js"></script>
+    <script src="../js/toastr.js"></script>
     <script>
     var vm = new Vue({
         el:"#vmMain",
         data:{
-        
+	        name:'',
+	        password:'',
         },
         methods:{
-        	
+        	submit:function(){
+        		if(!this.password){
+        			toastr.warning('请输入您的账号');
+        			return;
+        		}
+        		if(!this.name){
+        			toastr.warning('请输入您的密码');
+        			return;
+        		}
+        		window.location.href = "index.html";
+        	}
         }
     })
     </script>

@@ -8,6 +8,7 @@
     <title>联系我们</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/toastr.css"/>
     <link rel="stylesheet" href="../css/common.css">
     <style >
     	input:focus{border:none!important;outline: none ;}
@@ -79,19 +80,19 @@
         			 <div class="p-t10 c-red t-c"> 欢迎您畅所欲言</div>
         			 <div class="row m-t30">
         			 	<div class="col-xs-6 p-r10">
-        			 		<input class="form-control bg-pink b-red" placeholder="名字"/>
+        			 		<input v-model="name" class="form-control bg-pink b-red" placeholder="名字"/>
         			 	</div>
         			 	<div class="col-xs-6 p-l10">
-        			 		<input class="form-control bg-pink b-red" placeholder="邮箱"/>
+        			 		<input v-model="email" class="form-control bg-pink b-red" placeholder="邮箱"/>
         			 	</div>
         			 </div>
         			 <div class="row m-t20">
         			 	<div class="col-xs-12">
-        			 		<textarea rows="7" class="form-control bg-pink b-red " placeholder="留言..."></textarea>
+        			 		<textarea v-model="remark" rows="7" class="form-control bg-pink b-red " placeholder="留言..."></textarea>
         			 	</div>
         			 </div>
         			 <div class="m-t20 p-b50">
-        			 	<button class="bg-pink nooutline b-red c-red w-full t-c p-t5 p-b5">提交</button>
+        			 	<button @click="save" class="bg-pink nooutline b-red c-red w-full t-c p-t5 p-b5">提交</button>
         			 </div>
         		</div>
         	</div>
@@ -101,15 +102,37 @@
 	    <div class="t-c c-white bg-black p15 w-full"> Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有 </div>
 	</div>
 
+    <script src="../js/jquery-2.2.4.min.js"></script>
     <script src="../js/vue.min.js"></script>
+    <script src="../js/toastr.js"></script>
     <script>
     var vm = new Vue({
         el:"#vmMain",
         data:{
-        
+        	name:'',
+        	email:'',
+        	remark:''
+        	
         },
         methods:{
-        	
+        	save:function(){
+        		if(!this.name){
+        			toastr.warning('请输入您的姓名');
+        			return;
+        		}
+        		if(!this.email){
+        			toastr.warning('请输入您的邮箱');
+        			return;
+        		}
+        		if(!this.remark){
+        			toastr.warning('请输入您的留言');
+        			return;
+        		}
+        		this.name = '';
+        		this.email = '';
+        		this.remark = '';
+        		toastr.success('提交成功，我们会尽快联系您');
+        	}
         }
     })
     </script>

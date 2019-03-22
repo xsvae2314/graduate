@@ -8,6 +8,7 @@
     <title>注册</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/toastr.css"/>
     <link rel="stylesheet" href="../css/common.css">
     <style >
     	html,body{height: 100%;width: 100%;background: #fcf5ed;}
@@ -50,29 +51,29 @@
         			<span class="icon-input">
         				<img class="w-25" src="../img/zc_03.jpg" alt="" />
         			</span>
-        			<input type="text" class="b-none p-l30 w-full h-38" placeholder="填写手机号"/>
+        			<input v-model="phone" type="text" class="b-none p-l30 w-full h-38" placeholder="填写手机号"/>
         		</div>
         		<div class="relative b-bf0 m-t10">
         			<span class="icon-input">
         				<img class="w-25" src="../img/zc_06.jpg" alt="" />
         			</span>
-        			<span class="validate-code">验证码</span>
-        			<input type="text" class="b-none p-l30 w-full h-38" maxlength="6" placeholder="手机验证码"/>
+        			<span   @click="sendCode"class="validate-code">验证码</span>
+        			<input v-model="validateCaode" type="text" class="b-none p-l30 w-full h-38" maxlength="6" placeholder="手机验证码"/>
         		</div>
         		<div class="relative b-bf0 m-t10">
         			<span class="icon-input">
         				<img class="w-25" src="../img/zc_08.jpg" alt="" />
         			</span>
-        			<input type="text" class="b-none p-l30 w-full h-38" placeholder="6-20位登录密码"/>
+        			<input v-model="password" type="text" class="b-none p-l30 w-full h-38" placeholder="6-20位登录密码"/>
         		</div>
         		<div class="relative b-bf0 m-t10">
         			<span class="icon-input">
         				<img class="w-25" src="../img/zc_08.jpg" alt="" />
         			</span>
-        			<input type="text" class="b-none p-l30 w-full h-38" placeholder="再次确认密码"/>
+        			<input v-model="passwordAgin" type="text" class="b-none p-l30 w-full h-38" placeholder="再次确认密码"/>
         		</div>
         		<div class="m-t30">
-        			<button class="w-full bg-red c-white s-15 t-c b-none nooutline p-t8 p-b8 r10">立即注册</button>
+        			<button @click="save" class="w-full bg-red c-white s-15 t-c b-none nooutline p-t8 p-b8 r10">立即注册</button>
         		</div>
         		<div class="t-c m-t30 p-b20 s-12">
         		 注册即代表您同意<span class="c-red">《四川小吃平台会员注册协议》</span> 
@@ -84,17 +85,83 @@
 	    <div class="t-c c-white bg-black p15 w-full" style="position: fixed;bottom: 0;"> Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有 </div>
 	</div>
 
+    <script src="../js/jquery-2.2.4.min.js"></script>
     <script src="../js/vue.min.js"></script>
+    <script src="../js/toastr.js"></script>
     <script>
-    var vm = new Vue({
-        el:"#vmMain",
-        data:{
-        
-        },
-        methods:{
-        	
-        }
-    })
+ var vm = new Vue({
+				el: "#vmMain",
+				data: {
+					  shoppingCartCount:'',
+					  phone:'',
+					  password:'',
+					  passwordAgin:'',
+					  validateCaode:'',
+					    isshow:false
+				},
+				methods: {
+					save:function(){
+						
+						if(!this.phone){
+							toastr.warning('请输入手机号');
+							return;
+						}
+						if(!this.password){
+							toastr.warning('请输入密码');
+							return;
+						}
+						if(!this.passwordAgin){
+							toastr.warning('请再次输入密码');
+							return;
+						}
+						if(!this.validateCaode){
+							toastr.warning('请输入验证码');
+							return;
+						}
+						toastr.success('注册成功');
+						setTimeout(function(){
+							location.href = 'index.html';
+						},1000)
+					},
+					// 发送验证码
+					sendCode:function(eve){
+						 var disabled = eve.target.getAttribute('disabled');
+	                    if(disabled && disabled == 'disabled') return;
+						if(!this.phone){
+							toastr.warning('请输入手机号');
+							return;
+						}
+						wait=60;
+	                    time(eve.target);
+					},
+					showmenu:function(){
+		            	this.isshow = true;
+		            },
+		            hidemenu:function(){
+		            	this.isshow = false;
+		            },
+					operatekind:function(type){
+		            	window.location.href = 'index.html?type='+type
+		            }
+				},
+			})
+			
+			var wait = 60;
+	        function time(ele) {
+	            if(wait == 0) {
+	                ele.innerHTML = "获取验证码";
+	                ele.removeAttribute('disabled');
+	                wait = 60;
+	            } else {
+	                ele.style.color = '#000';
+	                ele.innerHTML = wait + "s";
+	                ele.setAttribute('disabled', 'disabled');
+	                wait--;
+	                setTimeout(function() {
+	                    time(ele)
+	                }, 1000);
+	            }
+	        };
     </script>
 </body>
 
