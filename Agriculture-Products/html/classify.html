@@ -295,7 +295,9 @@
         	},
         	// 跳转到详情
         	toDetail:function(detail,n){
-    			window.open("product-detail.html?type="+n,"_blank"); 
+        		if(n==0){
+        			window.open("product-detail.html?type="+n,"_blank"); 
+        		}
         	},
             enter:function(n){
                 for(let i=0;i<this.list.length;i++){
