@@ -87,7 +87,7 @@
                         	</div>
                            
                             <div v-if="i.show" class="addCar relative">
-                               <div @click="toDetail(i)" style="width: 100%;height: 100%;position: absolute;z-index: 99;"></div>
+                               <div @click="toDetail(i,index)" style="width: 100%;height: 100%;position: absolute;z-index: 99;"></div>
                                <span @click="addCar(i)" class="c-white cart-hover" style="position: absolute;top: 50%;left: 50%;margin-left: -30px;margin-top: -30px;z-index: 999;">
                                     <span class="iconfont icongouwuche s-30"></span>
                                 </span> 
@@ -147,18 +147,19 @@
                 </div>
                 <div class="w-pre60 p-l50">
                     <ul class="footer-menu">
-                        <li>蔬菜</li>
-                        <li>水果</li>
-                        <li>茶叶</li>
-                        <li>粮油</li>
-                        <li>养殖</li>
+                        <li> <a href="classify.html?type=1">蔬菜</a></li>
+                        <li><a href="classify.html?type=2">水果</a></li>
+                        <li><a href="classify.html?type=3">茶叶</a></li>
+                        <li><a href="classify.html?type=4">粮油</a></li>
+                        <li><a href="classify.html?type=5">养殖</a></li>
                     </ul>
                     <ul class="footer-nav">
-                        <li>首页</li>
-                        <li>分类</li>
-                        <li>种植基地</li>
-                        <li>在线留言</li>
-                        <li>联系我们</li>
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="classify.html?type=1">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
                     </ul>
                     <div class="m-t20 c-white">Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有</div>
                 </div>
@@ -195,86 +196,66 @@
         			//蔬菜
         			case '1':
         				this.list = [
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+        				 	{img:'../img/vv.png',name:'白菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+        				 	{img:'../img/veg/xhs.jpg',name:'西红柿',address:'四川比得上基地',price:'8.00',count:1,show:false},
+			                {img:'../img/veg/hyc.jpg',name:'白菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/veg/kg.jpg',name:'苦瓜',address:'四川比得上基地',price:'3.00',count:1,show:false},
+			                {img:'../img/veg/lj.jpg',name:'辣椒',address:'四川比得上基地',price:'3.00',count:1,show:false},
+			                {img:'../img/veg/qc.jpg',name:'香菜',address:'四川比得上基地',price:'5.00',count:1,show:false},
+			                {img:'../img/veg/qz.jpg',name:'茄子',address:'四川比得上基地',price:'6.00',count:1,show:false},
+			                {img:'../img/veg/td.jpg',name:'土豆',address:'四川比得上基地',price:'3.00',count:1,show:false},
         				]
         				break;
         				//水果
     				case '2':
         				this.list = [
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/fruit/jz.jpg',name:'桔子',address:'四川比得上基地',price:'4.00',count:1,show:false},
+			                {img:'../img/fruit/mg.jpg',name:'木瓜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/fruit/muang.jpg',name:'芒果',address:'四川比得上基地',price:'5.00',count:1,show:false},
+			                {img:'../img/fruit/nm.jpg',name:'柠檬',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/fruit/smt.jpg',name:'水蜜桃',address:'四川比得上基地',price:'4.00',count:1,show:false},
+			                {img:'../img/fruit/tz.jpg',name:'桃子',address:'四川比得上基地',price:'9.00',count:1,show:false},
+			                {img:'../img/fruit/xj.jpg',name:'香蕉',address:'四川比得上基地',price:'7.00',count:1,show:false},
+			                {img:'../img//fruit/yz.jpg',name:'柚子',address:'四川比得上基地',price:'3.00',count:1,show:false},
         				]
         				break;
         				// 茶叶
     				case '3':
         				this.list = [
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/tea/blc.jpg',name:'碧螺春',address:'四川比得上基地',price:'4.00',count:1,show:false},
+			                {img:'../img/tea/hc.jpg',name:'红茶',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/tea/lc.jpg',name:'绿茶',address:'四川比得上基地',price:'6.00',count:1,show:false},
+			                {img:'../img/tea/lj.jpg',name:'龙井',address:'四川比得上基地',price:'6.00',count:1,show:false},
+			                {img:'../img/tea/mlh.jpg',name:'茉莉花茶',address:'四川比得上基地',price:'7.00',count:1,show:false},
+			                {img:'../img/tea/pe.jpg',name:'毛尖',address:'四川比得上基地',price:'1.00',count:1,show:false},
+			                {img:'../img/tea/wl.jpg',name:'乌龙茶',address:'四川比得上基地',price:'8.00',count:1,show:false},
+			                {img:'../img/tea/xs.jpg',name:'铁观音',address:'四川比得上基地',price:'9.00',count:1,show:false},
         				]
         				break;
         				//粮油
     				case '4':
         				this.list = [
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/v.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/dm.jpg',name:'大米',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/hd.jpg',name:'黄豆',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/hm.jpg',name:'黑米',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/ld.jpg',name:'绿豆',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/qm.jpg',name:'花生',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/rr.jpg',name:'荞麦',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/y.jpg',name:'油',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/oil/ym.jpg',name:'玉米',address:'四川比得上基地',price:'2.00',count:1,show:false},
         				]
         				break;
         				//养殖
     				case '5':
         				this.list = [
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
-			                {img:'../img/vv.png',name:'油麦菜',address:'四川比得上基地',price:'2.00',count:1,show:false},
+			                {img:'../img/breed/jj.jpg',name:'鸡',address:'四川比得上基地',price:'8.00',count:1,show:false},
+			                {img:'../img/breed/nn.jpg',name:'牛',address:'四川比得上基地',price:'4.00',count:1,show:false},
+			                {img:'../img/breed/shan.jpg',name:'山羊',address:'四川比得上基地',price:'3.00',count:1,show:false},
+			                {img:'../img/breed/tz.jpg',name:'兔子',address:'四川比得上基地',price:'9.00',count:1,show:false},
+			                {img:'../img/breed/xm.jpg',name:'虾',address:'四川比得上基地',price:'7.00',count:1,show:false},
+			                {img:'../img/breed/yang.jpg',name:'绵羊',address:'四川比得上基地',price:'3.00',count:1,show:false},
+			                {img:'../img/breed/yyyy.jpg',name:'鱼',address:'四川比得上基地',price:'5.00',count:1,show:false},
+			                {img:'../img/breed/yz.jpg',name:'鸭子',address:'四川比得上基地',price:'7.00',count:1,show:false},
         				]
         				break;
     				case '6':
@@ -313,8 +294,8 @@
         		toastr.success('加入购物车成功');
         	},
         	// 跳转到详情
-        	toDetail:function(){
-        		window.open("product-detail.html","_blank");         
+        	toDetail:function(detail,n){
+    			window.open("product-detail.html?type="+n,"_blank"); 
         	},
             enter:function(n){
                 for(let i=0;i<this.list.length;i++){

@@ -145,11 +145,13 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .child-menu{padding-top: 5px;padding-top: 5px;cursor: pointer;}
 .child-menu:hover{color: #000;}
 .footer-menu {display: flex;margin-top: 30px;}
-.footer-menu li {padding: 10px 20px;background: #1ca458; color: #fff; }
-.footer-menu li:first-child { border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding-left: 30px; }
-.footer-menu li:last-child { border-top-right-radius: 5px; border-bottom-right-radius: 5px; padding-right: 30px; }
+.footer-menu li a{padding: 10px 20px;background: #1ca458; color: #fff; }
+.footer-menu li:first-child a{ border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding-left: 30px; }
+.footer-menu li:last-child a{ border-top-right-radius: 5px; border-bottom-right-radius: 5px; padding-right: 30px; }
 .footer-nav { display: flex; margin-top: 30px; }
-.footer-nav li { padding-right: 30px; color: #fff; }
+.footer-nav li a{ padding-right: 30px; color: #fff; }
+.footer-nav li a:hover{text-decoration:none;}
+.footer-menu li a:hover{text-decoration: none;}
 
 .seemore-wrap{position:absolute; bottom: 50px;}
 .seemore-wrap .seemore{padding:10px 20px;background:#5bd65a;color:#fff;border-radius: 30px}

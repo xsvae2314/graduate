@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/iconfont.css">
 		<link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" href="../css/toastr.css"/>
 		<style>
 			.count-options{width: 30px;height: 30px;text-align: center;line-height: 30px;}
 			.car-btn{width: 180px;height: 50px;text-align: center;;line-height: 50px;}
@@ -116,8 +117,10 @@
 											<button class="b-none bg-red c-white m-l10 r5 car-btn">立即购买</button>
 										</div>
 										<div v-if="tabbarShow=='introduce'" class="flex p-t30">
-											<button @click="tabBar('introduce')" class="b-none bg-gray c-white m-l10 r5 car-btn">暂时无货</button>
-											<button @click="tabBar('plantation')" class="b-none bg-red c-white m-l10 r5 car-btn">有货</button>
+											<button class="b-none bg-gray c-white m-l10 r5 car-btn nooutline">暂时无货</button>
+											
+											<!--<button @click="tabBar('introduce')" class="b-none bg-gray c-white m-l10 r5 car-btn">暂时无货</button>-->
+											<!--<button @click="tabBar('plantation')" class="b-none bg-red c-white m-l10 r5 car-btn">有货</button>-->
 										</div>
 									</div>
 								</div>
@@ -162,9 +165,11 @@
 			<!--  底部 -->
 			<div class="t-c c-white bg-black p15"> Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有 </div>
 		</div>
-
+		<script src="../js/jquery-2.2.4.min.js" ></script>
 		<script src="../js/vue.min.js"></script>
-			<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=g8IMNVVzVXyWPVm4bwm29FtDGptwGqEq"></script>
+		<script src="../js/toastr.js" ></script>
+		<script src="../js/common.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=g8IMNVVzVXyWPVm4bwm29FtDGptwGqEq"></script>
 		<script>
 			var vm = new Vue({
 				el: "#vmMain",
@@ -178,6 +183,15 @@
 					isshow: false
 				},
 				methods: {
+					load:function(){
+						var type = getQueryString('type');
+						if(type == 0){
+							this.tabbarShow = 'introduce';
+						}
+						if(type == 1){
+							this.tabbarShow = 'plantation';
+						}
+					},
 					counting: function(type) {
 						if(type == 'reduce') {
 							if(this.count <= 1) {
@@ -235,7 +249,7 @@
 					}
 				}
 			})
-			
+			vm.load();
 			
 			var map1 = new BMap.Map("allmap1");
 			var point1 = new BMap.Point(116.331398,39.897445);

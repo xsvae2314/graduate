@@ -28,6 +28,10 @@
     <div id="vmMain">
         <!-- 顶部banner logo和导航栏  -->
         <div class="banner relative">
+        	<div class="login-signup" style="z-index: 999;">
+				<a href="login.html" class="c-white">登录</a> |
+				<a href="signup.html" class="c-white">注册</a>
+			</div>
             <img class="w-full" src="../img/bg3.jpg" alt="">
             <div class="banner-position">
                 <div class="img-wrap">
@@ -76,9 +80,10 @@
         		<div class="flex">
 	        		<div class="w-pre30">
 	        			<div class="b-gray">
-	        				<img class="w-full" src="../img/vv.png"/>
+	        				<!--<img v-if="showDetail==1" class="w-full" src="../img/vv.png"/>-->
+	        				<img class="w-full" src="../img/veg/xhs.jpg"/>
 	        			</div>
-	        			<div class="flex m-t20">
+	        			<!--<div v-if="showDetail==1" class="flex m-t20">
 	        				<div>
 	        					<img class="b-gray w-full" src="../img/vv.png"/>
 	        				</div>
@@ -87,6 +92,17 @@
 	        				</div>
 	        				<div>
 	        					<img class="b-gray w-full" src="../img/vv.png"/>
+	        				</div>
+	        			</div>-->
+	        			<div class="flex m-t20">
+	        				<div>
+	        					<img class="b-gray w-full" src="../img/veg/xhs.jpg"/>
+	        				</div>
+	        				<div class="p-r10 p-l10">
+	        					<img class="b-gray w-full" src="../img/veg/xhs.jpg"/>
+	        				</div>
+	        				<div>
+	        					<img class="b-gray w-full" src="../img/veg/xhs.jpg"/>
 	        				</div>
 	        			</div>
 	        		</div>
@@ -119,10 +135,18 @@
         				<div @click="tabBar('plantation')" :class="tabbarShow=='plantation'?'c-white bg-green':'c-3'"  class="p-t10 p-b10 p-l40 p-r40 pointer r-l-t5 r-r-t5">种植记录</div>
         			</div>
         			<div v-if="tabbarShow=='introduce'" class="p-t30">
-        				<img class="vertical-align-middle w-full" src="../img/detail1.jpg"/>
-        				<img class="vertical-align-middle w-full" src="../img/detail2.jpg"/>
-        				<img class="vertical-align-middle w-full" src="../img/detail3.jpg"/>
-        				<img class="vertical-align-middle w-full" src="../img/detail4.jpg"/>
+        				<!--<div v-if="showDetail==1">
+	        				<img class="vertical-align-middle w-full" src="../img/detail1.jpg"/>
+	        				<img class="vertical-align-middle w-full" src="../img/detail2.jpg"/>
+	        				<img class="vertical-align-middle w-full" src="../img/detail3.jpg"/>
+	        				<img class="vertical-align-middle w-full" src="../img/detail4.jpg"/>
+        				</div>-->
+        				<!--<div v-if="showDetail==2">-->
+	        				<img class="vertical-align-middle w-full" src="../img/detail/detail1.jpg"/>
+	        				<img class="vertical-align-middle w-full" src="../img/detail/detail2.jpg"/>
+	        				<img class="vertical-align-middle w-full" src="../img/detail/detail3.jpg"/>
+	        				<img class="vertical-align-middle w-full" src="../img/detail/detail4.jpg"/>
+        				<!--</div>-->
         			</div>
         			<div v-if="tabbarShow=='plantation'" class="p-t30">
         				<div class="flex t-c align-items-stretch">
@@ -149,7 +173,7 @@
         	</div>
 	    </div>
         <!-- 底部 -->
-        <div>
+         <div>
             <div class="relative">
                 <img class="w-full"src="../img/footer.jpg" alt="">
                 <div class="w-full t-c seemore-wrap"> 
@@ -191,18 +215,19 @@
                 </div>
                 <div class="w-pre60 p-l50">
                     <ul class="footer-menu">
-                        <li>蔬菜</li>
-                        <li>水果</li>
-                        <li>茶叶</li>
-                        <li>粮油</li>
-                        <li>养殖</li>
+                        <li> <a href="classify.html?type=1">蔬菜</a></li>
+                        <li><a href="classify.html?type=2">水果</a></li>
+                        <li><a href="classify.html?type=3">茶叶</a></li>
+                        <li><a href="classify.html?type=4">粮油</a></li>
+                        <li><a href="classify.html?type=5">养殖</a></li>
                     </ul>
                     <ul class="footer-nav">
-                        <li>首页</li>
-                        <li>分类</li>
-                        <li>种植基地</li>
-                        <li>在线留言</li>
-                        <li>联系我们</li>
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="classify.html?type=1">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
                     </ul>
                     <div class="m-t20 c-white">Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有</div>
                 </div>
@@ -222,11 +247,19 @@
             list:[
             ],
             tabbarShow:'introduce',
-              shoppingCartCount:'',
-              count:1,
-                isshow:false
+          	shoppingCartCount:'',
+          	count:1,
+            isshow:false,
+            showDetail:1,
         },
         methods:{
+        	load:function(){
+        		if(getQueryString('type')%2 == 0){
+        			this.showDetail = 1;
+        		}else{
+        			this.showDetail = 2;
+        		}
+        	},
             counting:function(type){
             	if(type=='reduce'){
             		if(this.count<=1){
@@ -277,6 +310,7 @@
         }
     })
     vm.shoppingCartCount = getCartCount();
+    vm.load();
     </script>
 </body>
 
