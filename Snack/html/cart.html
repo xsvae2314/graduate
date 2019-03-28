@@ -15,7 +15,7 @@
     	.validate-code{position: absolute;right: 0; bottom: 5px;padding: 5px 20px;color: #fff;background: #df4626;border-radius: 10px;font-size: 12px;}
    		.table td{vertical-align: middle!important;}
    		.status{width: 70px;height: 25px;line-height: 25px;display: inline-block;}
-   		
+   		.input-group-addon{padding-left: 8px;padding-right: 8px;}
     </style>
 </head>
 
@@ -27,7 +27,7 @@
                 <div class="t-c logo"> <img class="w-100" src="../img/logo.png" alt="" /> </div>
                 <div class="w-pre70 flex m-t20">
                     <div class="nav">
-                        <li> <a href="index.html">网站首页</a> </li>
+                        <li> <a href="index.html">小吃推荐</a> </li>
                         <li> <a href="ranking.html">排行榜</a> </li>
                         <li><a href="cart.html" class="bg-red c-white">购物车</a> </li>
                         <li><a href="order.html">我的订单</a> </li>
@@ -64,14 +64,14 @@
 	        			<th class="t-c">总计</th>
 	        		</tr>
 	        		<tr v-for="i,index in produceList" class="t-c">
-    					<td><img class="w-50" :src="i.img"/></td>
+    					<td><img class="w-100" :src="i.img"/></td>
     					<td>{{i.name}}</td>
     					<td class="flex justify-center" style="border:0;border-top: 1px solid #ddd;">
-    						<div class="input-group">
-							  	<input v-model="i.count" type="text" class="form-control t-c" style="width: 56px;margin-right: -1px;" aria-label="Amount (to the nearest dollar)">
-						  		<span @click="counting('reduce',index,i)" class="input-group-addon pointer w-40" ><span class="iconfont iconjian"></span></span>
-							  	<span @click="counting('add',index,i)" class="input-group-addon pointer w-40" style="border-left: 0;"><span  class="iconfont iconjia2"></span></span>
-							  	<span @click="del(index)" class="input-group-addon bg-red pointer w-40" style="margin-left: -1px;"><span  class="iconfont iconcuo c-white"></span></span>
+    						<div class="input-group m-t10 p-t10">
+							  	<input v-model="i.count" type="text" class="form-control t-c w-40" style="margin-right: -1px;" aria-label="Amount (to the nearest dollar)">
+						  		<span @click="counting('reduce',index,i)" class="input-group-addon pointer w-30"><span class="iconfont iconjian s-14"></span></span>
+							  	<span @click="counting('add',index,i)" class="input-group-addon pointer w-30" style="border-left: 0;"><span  class="iconfont iconjia2 s-14"></span></span>
+							  	<span @click="del(index)" class="input-group-addon bg-red pointer w-30" style="margin-left: -1px;"><span  class="iconfont iconcuo c-white s-14"></span></span>
 							</div>
     					</td>
     					<td>{{i.price}}</td>

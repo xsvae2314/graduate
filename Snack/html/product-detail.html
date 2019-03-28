@@ -29,7 +29,7 @@
 					<div class="w-pre70 flex m-t20">
 						<div class="nav">
 							<li>
-								<a href="index.html" class="bg-red c-white">网站首页</a>
+								<a href="index.html" class="bg-red c-white">小吃推荐</a>
 							</li>
 							<li>
 								<a href="ranking.html">排行榜</a>
@@ -114,13 +114,10 @@
 										</div>
 										<div v-if="tabbarShow=='plantation'" class="flex p-t30">
 											<button @click="addCar" class="b-none bg-yellow c-white m-r10 r5 car-btn">加入购物车</button>
-											<button class="b-none bg-red c-white m-l10 r5 car-btn">立即购买</button>
+											<button @click="toPay" class="b-none bg-red c-white m-l10 r5 car-btn">立即购买</button>
 										</div>
 										<div v-if="tabbarShow=='introduce'" class="flex p-t30">
 											<button class="b-none bg-gray c-white m-l10 r5 car-btn nooutline">暂时无货</button>
-											
-											<!--<button @click="tabBar('introduce')" class="b-none bg-gray c-white m-l10 r5 car-btn">暂时无货</button>-->
-											<!--<button @click="tabBar('plantation')" class="b-none bg-red c-white m-l10 r5 car-btn">有货</button>-->
 										</div>
 									</div>
 								</div>
@@ -213,26 +210,31 @@
 						if(shoppingCart) {
 							shoppingCart = JSON.parse(shoppingCart);
 							shoppingCart.push({
-								img: '../img/vv.png',
-								name: '油麦菜',
+								img: '../img/xq.jpg',
+								name: '卤鸭脖',
 								address: '四川比得上基地',
-								price: '2.00',
-								count: this.count
+								price: '30.00',
+								count: this.count,
+								discount:'2.00'
 							});
 							localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
 						} else {
 							shoppingCart = [];
 							shoppingCart.push({
-								img: '../img/vv.png',
-								name: '油麦菜',
+								img: '../img/xq.jpg',
+								name: '卤鸭脖',
 								address: '四川比得上基地',
-								price: '2.00',
-								count: this.count
+								price: '30.00',
+								count: this.count,
+								discount:'2.00'
 							});
 							localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
 						}
 						this.shoppingCartCount = getCartCount();
 						toastr.success('加入购物车成功');
+					},
+					toPay:function(){
+						window.open('pay.html','_blank');
 					},
 					// 更改图文介绍和种植记录的展示
 					tabBar: function(type) {
