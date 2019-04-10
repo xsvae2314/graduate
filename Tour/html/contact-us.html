@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>联系我们</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+       
+        .menu{  display:flex;justify-content:center; }
+        .menu li{padding: 10px 20px;color: #444;border-bottom: 1px solid #009946;cursor: pointer;}
+        .menu li:first-child{padding-left: 0;color: #009946;}
+        .menu li:last-child{padding-right: 0}
+        .menu li:hover{color: #009946;}
+       
+       	.banner-position{position:absolute;display: flex;top: 50px;width: 100%;}
+       	.img-wrap{width:30%;padding: 0 30px;}
+		.form-group { margin-top: 30px; } 
+		.form-group input { height: 50px; font-size: 16px; background: #f5f5f5;border-radius: 30px; }
+		.form-group textarea { font-size: 16px; background: #f5f5f5;border-radius: 15px; }
+		.submit{color: #fff;padding: 10px 100px;border-radius: 30px;font-size: 16px;background: #009946;border: 0;}
+   </style>
+</head>
+
+<body>
+    <div id="vmMain">
+        <!-- 顶部banner logo和导航栏  -->
+        <div class="banner relative">
+        	<div class="login-signup" style="z-index: 999;">
+				<a href="login.html" class="c-white">登录</a> |
+				<a href="signup.html" class="c-white">注册</a>
+			</div>
+            <img class="w-full" src="../img/bg3.jpg" alt="">
+            <div class="banner-position">
+                <div class="img-wrap">
+                    <img class="w-pre90" src="../img/logo.png" alt="">
+                </div>
+                <div class="w-pre70 m-t30">
+                     <div class="nav clearfloat">
+                        <li><a href="index.html">首页</a> </li>
+                        <li @mouseenter="showmenu" @mouseleave="hidemenu" class="relative">
+                        	<a>分类</a>
+                        	<div v-if="isshow" class="t-c c-white child-menu-wrap">
+                        		<div @click="operatekind('1')" class="child-menu">蔬菜</div>
+                        		<div @click="operatekind('2')" class="child-menu">水果</div>
+                        		<div @click="operatekind('3')" class="child-menu">茶叶</div>
+                        		<div @click="operatekind('4')" class="child-menu">粮油</div>
+                        		<div @click="operatekind('5')" class="child-menu">养殖</div>
+                        	</div>
+                        </li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
+                        <li>
+                        	<a href="shopping-cart.html" class="relative">
+                        		<span class="iconfont icongouwuche "></span>
+                            	<div v-if="shoppingCartCount" class="nav-car-count nav-car-count-media">{{shoppingCartCount}}</div>
+                        	</a>
+                        </li>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+        <!-- 中间部分 -->
+        <div class="w-pre80 p-b80" style="margin:20px auto;">
+        	<div class="t-c c-3 s-18">
+        		<div><span class="iconfont iconyouxiang- c-green s-30"></span></div>
+        		<div>
+        			<span class="b-b5 p-b5">在线留言</span>
+    			</div>
+        	</div>
+        	<div class="flex">
+        		<div class="form-group w-full p-r10">
+			    	<input v-model="name" type="text" class="form-control" placeholder="名字">
+			  	</div>
+			  	<div class="form-group w-full p-l10">
+			    	<input v-model="email" type="text" class="form-control"placeholder="邮箱">
+			  	</div>
+        	</div>
+          	<div class="flex">
+			  	<div class="form-group w-full p-r10">
+			    	<input  v-model="phone"type="text" class="form-control" placeholder="电话">
+			  	</div>
+			  	<div class="form-group w-full p-l10">
+			    	<input v-model="city" type="text" class="form-control"placeholder="所在城市">
+			  	</div>
+        	</div>
+            <div class="form-group">
+              	<textarea  v-model="remark" class="form-control" rows="6" placeholder="留言"></textarea>
+            </div>
+            <div class="t-c m-t40 p-t30 p-b80">
+            	<button @click="save" class="submit">提交</button>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div>
+            <div class="relative">
+                <img class="w-full"src="../img/footer.jpg" alt="">
+                <div class="w-full t-c seemore-wrap"> 
+                    <span class="seemore">查看更多</span> 
+                </div>
+            </div>
+            <div class="bg-green p-t30 p-b50 flex m-t-2">
+                <div class="w-pre40 flex between">  
+                    <div></div>
+                    <div class="c-yellow-green">
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_03.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>地址 / ADDRESS</div>
+                                <div>绵阳市梓潼县天宝柑桔合作社文昌添宝蜜柚 <span class="visibility-hidden">占位</span></div>
+                            </div>
+                        </div>
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_06.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>电话 / TELEPHONE</div>
+                                <div>0888-88888888</div>
+                            </div>
+                        </div>
+                        <div class="flex p-b10 p-t10 b-b-light-green">
+                            <div>
+                                <img class="w-40" src="../img/tu_09.jpg" alt="">
+                            </div>
+                            <div class="m-l10">
+                                <div>网址 / SITE</div>
+                                <div>HTTP://WWW.WWW.COM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-pre60 p-l50">
+                    <ul class="footer-menu">
+                        <li> <a href="classify.html?type=1">蔬菜</a></li>
+                        <li><a href="classify.html?type=2">水果</a></li>
+                        <li><a href="classify.html?type=3">茶叶</a></li>
+                        <li><a href="classify.html?type=4">粮油</a></li>
+                        <li><a href="classify.html?type=5">养殖</a></li>
+                    </ul>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">首页</a> </li>
+                        <li><a href="classify.html?type=1">分类</a></li>
+                        <li><a href="plantation-base.html">种植基地</a></li>
+                        <li><a href="picking-park.html">采摘园区</a></li>
+                        <li><a href="contact-us.html">在线留言</a></li>
+                        <li><a href="about-us.html">联系我们</a></li>
+                    </ul>
+                    <div class="m-t20 c-white">Copyright &copy; 2002-2020 某某有机产品有限公司 版权所有</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+	<script src="../js/jquery-2.2.4.min.js"></script>
+	<script src="../js/toastr.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+    var vm = new Vue({
+        el:"#vmMain",
+        data:{
+              shoppingCartCount:'',
+              name:'',
+              email:'',
+              phone:'',
+              city:'',
+              remark:'',
+                isshow:false
+        },
+        methods:{
+        	save:function(){
+        		if(!this.name){
+        			toastr.warning('请输入姓名');
+        			return;
+        		}
+        		if(!this.email){
+        			toastr.warning('请输入邮箱');
+        			return;
+        		}
+        		if(!this.phone){
+        			toastr.warning('请输入电话');
+        			return;
+        		}
+        		if(!this.city){
+        			toastr.warning('请输入城市');
+        			return;
+        		}
+        		if(!this.remark){
+        			toastr.warning('请输入留言');
+        			return;
+        		}
+        		
+        		this.name = '';
+        		this.email = '';
+        		this.phone = '';
+        		this.city = '';
+        		this.remark = '';
+        		toastr.success('提交成功，我们会尽快联系您');
+        	},
+        	showmenu:function(){
+            	this.isshow = true;
+            },
+            hidemenu:function(){
+            	this.isshow = false;
+            },
+        	operatekind:function(type){
+            	window.location.href = 'classify.html?type='+type
+            }
+        }
+    })
+    vm.shoppingCartCount = getCartCount();
+    </script>
+</body>
+
+</html>

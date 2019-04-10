@@ -84,7 +84,7 @@
 	                <div class="row m-l20 m-t50">
 	                    <div v-for="i,index in list" @mouseenter="enter(index)" @mouseleave="leave(index)" class="col-xs-4 p10">
 	                        <div class="relative pointer">
-	                            <img class="w-full" src="../img/gh.jpg" alt="">
+	                            <img class="w-full" :src="i.img" alt="">
 	                              <div v-if="i.show" class="addCar relative">
                                <div @click="toDetail(i,index)" style="width: 100%;height: 100%;position: absolute;z-index: 99;"></div>
                                <span @click="addCar(i)" class="c-white cart-hover" style="position: absolute;top: 50%;left: 50%;margin-left: -30px;margin-top: -30px;z-index: 999;">
@@ -139,93 +139,73 @@
         		switch (type){
         			case 0: // 全国
         				this.list = [
-			                {img:'../img/dd.jpg',name:'12',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/10.jpg',name:'麻辣烫',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/22.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/33.jpg',name:'涮火锅',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/24.jpg',name:'嫩豆腐',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/15.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/26.jpg',name:'酸辣粉',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			              
 			            ]
         				break;
         			case 1: // 成都
         				this.list = [
-			                {img:'../img/dd.jpg',name:'23',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/1.jpg',name:'鸡翅',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/2.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/3.jpg',name:'酸菜鱼',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/4.jpg',name:'小龙虾',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/5.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/6.jpg',name:'藕片',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
 			            ]
         				break;
         				case 2: // 绵阳
         				this.list = [
-			                {img:'../img/dd.jpg',name:'34',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                 {img:'../img/city/7.jpg',name:'摊摊面',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/8.jpg',name:'米线',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/9.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/10.jpg',name:'凉皮',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/11.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/12.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
 			            ]
         				break;
         				case 3: // 南充
         				this.list = [
-			                {img:'../img/dd.jpg',name:'45',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			               {img:'../img/city/13.jpg',name:'烤鱼',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/14.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/15.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/16.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/17.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/18.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
 			            ]
         				break;
         				case 4: // 南昌
         				this.list = [
-			                {img:'../img/dd.jpg',name:'56',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/19.jpg',name:'鸭脖',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/20.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/21.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/23.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/23.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/24.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
 			            ]
         				break;
         				case 5: // 德阳
         				this.list = [
-			                {img:'../img/dd.jpg',name:'67',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                 {img:'../img/city/25.jpg',name:'酥饼',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/26.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/27.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/28.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/29.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/30.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
 			            ]
         				break;
         				case 6: // 宜宾
         				this.list = [
-			                {img:'../img/dd.jpg',name:'78',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/dd.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
-			                {img:'../img/gh.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/31.jpg',name:'猪蹄',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/32.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/33.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/34.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/35.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
+			                {img:'../img/city/36.jpg',name:'龙抄手',address:'四川比得上基地',count:1,price:'20.00',discount:'2.00',show:false},
 			            ]
         				break;
         			default:
