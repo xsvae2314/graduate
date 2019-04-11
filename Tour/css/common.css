@@ -69,6 +69,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .c-5{color: #555;}
 .c-6{color: #666;}
 .c-9{color: #999;}
+.c-yellow{color: #f78536!important;}
 .c-red{color: #df4626;}
 .c-lig-red{color: #de4526;}
 .c-green{color: #0a9c55!important;}
@@ -130,7 +131,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 
 .bg-green{background: #009946;}
 .bg-gray{background: #f5f5f5;}
-.bg-yellow{background: #edbc00;}
+.bg-yellow{background: #f78536;}
 .bg-red{background: #df4626!important;}
 .bg-pink{background: #fcf5ed;}
 .bg-black{background: #000;}
@@ -156,34 +157,12 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .r-r-t5{border-top-right-radius: 5px;}
 
 
-
-
-
-.nav { overflow: hidden; color:#745b56; padding-left: 20px;  padding-right: 20px;  }
-.nav li {  float: left; }
-.nav li a{padding: 10px 20px; color: #745b56; font-size: 17px;}
-.nav li a:hover{background: #df4626;color: #fff;}
-.logo{width:30%;padding: 0 30px;color: #e2422c;margin-top: 8px;}
-.search{position: absolute;right: 0;bottom: 60px;}
-.search input{width: 250px;padding-left: 10px;height: 30px;line-height: 30px;padding-right: 35px;}
-.search .iconfont{position: absolute;right: 10px;top: 3px;}
-
-
-/*.footer-menu {display: flex;margin-top: 30px;}
-.footer-menu li {padding: 10px 20px;background: #1ca458; color: #fff; }
-.footer-menu li:first-child { border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding-left: 30px; }
-.footer-menu li:last-child { border-top-right-radius: 5px; border-bottom-right-radius: 5px; padding-right: 30px; }
-.footer-nav { display: flex; margin-top: 30px; }
-.footer-nav li { padding-right: 30px; color: #fff; }
-
-.seemore-wrap{position:absolute; bottom: 50px;}
-.seemore-wrap .seemore{padding:10px 20px;background:#5bd65a;color:#fff;border-radius: 30px}
-.login-signup{position:absolute;text-align: right;top: 20px;width: 80%;color: #fff;}
-.login-wrap{width: 80%;margin: -25% 10% 100px 10%;background: #fafafa;position: relative;z-index: 99;border-radius: 10px;}*/
-
-
-
-
+.line-banner{
+	position: absolute;left: 0;top: 6px;width: 4px;height: 14px;background: #f78536;
+}
+.tour-city:hover{color: #f78536;}
+.search-input{height: 28px;line-height: 28px;border: 1px solid #767676;border-radius: 30px;outline: none;width: 280px;}
+.search-icon{position: absolute;left: 15px;top: 5px;}
 
 
 

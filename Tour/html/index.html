@@ -13,10 +13,14 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/style1.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	<style type="text/css">
+		h3{padding-left: 30px;}
+	</style>
 </head>
 
 <body>
-	
+	<!-- ===========================================头部 开始=========================================== -->
 	<div class="x_top_header_wrapper float_left">
 		<div class="container">
 			<div class="x_top_header_left_side_wrapper float_left">
@@ -24,28 +28,37 @@
 			</div>
 		</div>
 	</div>
-	<div class="hs_navigation_header_wrapper">
+	<div class="hs_navigation_header_wrapper p-t30 p-b20">
 		<div class="container">
 			<div class="row">
-				<div class=" col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+				<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 					<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-						<a href="index.html">
-							<img src="images/logo.png" class="img-responsive" alt="logo" title="Logo" />
-						</a>
+						<div class="s-24 c-yellow"> LOGO嘉州之旅 </div>
+						<div class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 					<nav class="hs_main_menu d-none d-sm-none d-xs-none d-md-block">
 						<ul>
-							<li> <a class="menu-button single_menu" href="about.html">首页</a>
-							<li> <a class="menu-button single_menu" href="about.html">景点</a>
-							<li> <a class="menu-button single_menu" href="about.html">美食</a> </li>
-							<li> <a class="menu-button single_menu" href="team.html">住宿</a> </li>
-							<li> <a class="menu-button single_menu" href="services.html">交通 </a> </li>
-							<li> <a class="menu-button single_menu" href="about.html">旅游攻略</a>
-							<li> <a class="menu-button single_menu" href="about.html">指南</a>
+							<li> <a class="menu-button c-yellow" href="about.html">首页</a>
+							<li> <a class="menu-button" href="about.html">景点</a>
+							<li> <a class="menu-button" href="about.html">美食</a> </li>
+							<li> <a class="menu-button" href="team.html">住宿</a> </li>
+							<li> <a class="menu-button" href="services.html">交通 </a> </li>
+							<li> <a class="menu-button" href="about.html">旅游攻略</a>
+							<li> <a class="menu-button" href="about.html">指南</a>
 						</ul>
 					</nav>
+					<div class="p-l20 flex between p-r20">
+						<div class="relative">
+							<input type="text" class="p-l40 s-14 search-input" placeholder="请输入您要搜索的信息"/>
+							<span class="iconfont iconsuosou s-15 search-icon"></span>
+						</div>
+						<div class="s-15 c-yellow">
+							<span class="p-r10"> <a href="login.html" class="c-yellow">登录</a></span> | 
+							<span class="p-l10"><a href="signup.html" class="c-yellow">注册</a></span> 
+						</div>
+					</div>
 				</div>
 				<div class=" col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 					 <iframe name="weather_inc" 
@@ -57,32 +70,57 @@
 			</div>
 		</div>
 	</div>
-	<div class="slider-area float_left">
+	<!-- ===========================================头部结束===========================================  -->
+	<!-- ===========================================banner 开始 ===========================================-->
+	<div class="slider-area">
 		<div id="carousel-example-generic" class="carousel slide" data-interval="false" data-ride="carousel">
 			<div class="carousel-inner" role="listbox">
 				
 				<div class="carousel-item active" style="background-image: url(../img/index/banner.png);background-size: cover;height: 500px;">
-					<div class="carousel-captions caption-1">
-						<div class="container">
-							<div class="row">
-								<div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
-									<div class="content">
-										
-									</div>
-								</div>
-								<div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12 d-none d-sm-none d-md-none  d-lg-block d-xl-block">
-									<div class="content_tabs">
-										<div class="row">
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-												<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
-													<div class="x_slider_form_heading_wrapper float_left">
-														<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
-													</div>
-													<div class="m-t20">
-														<div style="border-left: #f78536 "> 周边游</div>
-														<div>
-															九寨沟
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
+							</div>
+							<div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12 d-none d-sm-none d-md-none  d-lg-block d-xl-block p-t50">
+								<div class="content_tabs">
+									<div class="row">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+											<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
+												<div class="x_slider_form_heading_wrapper float_left">
+													<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
+												</div>
+												<div class="m-t20">
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>周边游</b>
 														</div>
+														<div class="col-4 c-9 pointer tour-city"> 九寨沟 </div>
+														<div class="col-4 c-9 pointer tour-city"> 峨眉山 </div>
+														<div class="col-4 c-9 pointer tour-city"> 乐山大佛 </div>
+														<div class="col-4 c-9 pointer tour-city"> 青城山 </div>
+														<div class="col-4 c-9 pointer tour-city"> 海螺沟 </div>
+														<div class="col-4 c-9 pointer tour-city"> 西岭雪山 </div>
+													</div>
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>国内游</b>
+														</div>
+														<div class="col-3 c-9 pointer tour-city"> 北京 </div>
+														<div class="col-3 c-9 pointer tour-city"> 上海 </div>
+														<div class="col-3 c-9 pointer tour-city"> 厦门 </div>
+														<div class="col-3 c-9 pointer tour-city"> 昆明 </div>
+													</div>
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>出境游</b>
+														</div>
+														<div class="col-3 c-9 pointer tour-city"> 香港 </div>
+														<div class="col-3 c-9 pointer tour-city"> 台湾 </div>
+														<div class="col-3 c-9 pointer tour-city"> 泰国 </div>
+														<div class="col-3 c-9 pointer tour-city"> 日本 </div>
 													</div>
 												</div>
 											</div>
@@ -93,25 +131,51 @@
 						</div>
 					</div>
 				</div>
-				<div class="carousel-item" style="background-image: url(../img/index/b_03.png);background-size: cover;">
-					<div class="carousel-captions caption-1">
-						<div class="container">
-							<div class="row">
-								<div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
-									<div class="content">
-										
-									</div>
-								</div>
-								<div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12 d-none d-sm-none d-md-none  d-lg-block d-xl-block">
-									<div class="content_tabs">
-										<div class="row">
-											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-												<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
-													<div class="x_slider_form_heading_wrapper float_left">
-														<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
+				<div class="carousel-item" style="background-image: url(../img/index/banner.png);background-size: cover;height: 500px;">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
+							</div>
+							<div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12 d-none d-sm-none d-md-none  d-lg-block d-xl-block p-t50">
+								<div class="content_tabs">
+									<div class="row">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+											<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
+												<div class="x_slider_form_heading_wrapper float_left">
+													<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
+												</div>
+												<div class="m-t20">
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>周边游</b>
+														</div>
+														<div class="col-4 c-9 pointer tour-city"> 九寨沟 </div>
+														<div class="col-4 c-9 pointer tour-city"> 峨眉山 </div>
+														<div class="col-4 c-9 pointer tour-city"> 乐山大佛 </div>
+														<div class="col-4 c-9 pointer tour-city"> 青城山 </div>
+														<div class="col-4 c-9 pointer tour-city"> 海螺沟 </div>
+														<div class="col-4 c-9 pointer tour-city"> 西岭雪山 </div>
 													</div>
-													<div >
-														fasdfas
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>国内游</b>
+														</div>
+														<div class="col-3 c-9 pointer tour-city"> 北京 </div>
+														<div class="col-3 c-9 pointer tour-city"> 上海 </div>
+														<div class="col-3 c-9 pointer tour-city"> 厦门 </div>
+														<div class="col-3 c-9 pointer tour-city"> 昆明 </div>
+													</div>
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>出境游</b>
+														</div>
+														<div class="col-3 c-9 pointer tour-city"> 香港 </div>
+														<div class="col-3 c-9 pointer tour-city"> 台湾 </div>
+														<div class="col-3 c-9 pointer tour-city"> 泰国 </div>
+														<div class="col-3 c-9 pointer tour-city"> 日本 </div>
 													</div>
 												</div>
 											</div>
@@ -122,6 +186,62 @@
 						</div>
 					</div>
 				</div>
+				<div class="carousel-item" style="background-image: url(../img/index/banner.png);background-size: cover;height: 500px;">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
+							</div>
+							<div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12 d-none d-sm-none d-md-none  d-lg-block d-xl-block p-t50">
+								<div class="content_tabs">
+									<div class="row">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+											<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
+												<div class="x_slider_form_heading_wrapper float_left">
+													<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
+												</div>
+												<div class="m-t20">
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>周边游</b>
+														</div>
+														<div class="col-4 c-9 pointer tour-city"> 九寨沟 </div>
+														<div class="col-4 c-9 pointer tour-city"> 峨眉山 </div>
+														<div class="col-4 c-9 pointer tour-city"> 乐山大佛 </div>
+														<div class="col-4 c-9 pointer tour-city"> 青城山 </div>
+														<div class="col-4 c-9 pointer tour-city"> 海螺沟 </div>
+														<div class="col-4 c-9 pointer tour-city"> 西岭雪山 </div>
+													</div>
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>国内游</b>
+														</div>
+														<div class="col-3 c-9 pointer tour-city"> 北京 </div>
+														<div class="col-3 c-9 pointer tour-city"> 上海 </div>
+														<div class="col-3 c-9 pointer tour-city"> 厦门 </div>
+														<div class="col-3 c-9 pointer tour-city"> 昆明 </div>
+													</div>
+													<div class="p10 row"> 
+														<div class="col-12 relative c-3">
+															<div class="line-banner"></div>
+															<b>出境游</b>
+														</div>
+														<div class="col-3 c-9 pointer tour-city"> 香港 </div>
+														<div class="col-3 c-9 pointer tour-city"> 台湾 </div>
+														<div class="col-3 c-9 pointer tour-city"> 泰国 </div>
+														<div class="col-3 c-9 pointer tour-city"> 日本 </div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 				<div class="carousel-nevigation">
 					<a class="prev" href="#carousel-example-generic" role="button" data-slide="prev">	<i class="fa fa-angle-left"></i>
 					</a>
@@ -131,9 +251,25 @@
 			</div>
 		</div>
 	</div>
+	<!-- ===========================================banner结束=========================================== -->
 	
-	<div style="background: red;"> zhongjianneitong </div>
 	
+	<div class="p-l20 p-r20 p-t10"> 
+		<div class="p-t20 row">
+			<div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+				<span class="c-yellow s-16 p-r30" style="border-bottom: 3px solid #f78536;"><b>特惠</b> </span>
+				<div class="bg-yellow" style="height: 1px;margin-top: 2px;"></div>
+			</div>
+			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+				
+			</div>
+		</div>
+		<div class="p-t20">
+			fasdfa
+		</div>
+	</div>
+	
+	<!--===========================================底部开始=========================================== -->
 	<div class="footer">
 		<div class="container">
 			<div class="col-md-6 footer-left">
@@ -163,7 +299,6 @@
 			<div class="clearfix"> </div>	
 		</div>
 	</div>
-	
 	<div class="copyright">
 		<div class="container">
 			<div class="copyright-left">
@@ -171,6 +306,8 @@
 			</div>
 		</div>
 	</div>
+	<!--===========================================底部结束===========================================-->
+	
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 </body>
