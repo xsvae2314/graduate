@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>注册</title>
+	<title>住宿</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta name="description" content="Xpedia" />
 	<meta name="keywords" content="Xpedia" />
@@ -14,9 +14,10 @@
 	<link rel="stylesheet" type="text/css" href="../css/style1.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
-	<link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
 	<style type="text/css">
 		h3{padding-left: 30px;}
+		#table{margin-bottom: 0;border: 0;}
+		#table tr th,#table tr td{border-left: 0!important;border-right: 0;text-align: center;}
 	</style>
 </head>
 
@@ -38,7 +39,7 @@
 								<li> <a class="menu-button" href="index.html">首页</a>
 								<li> <a class="menu-button" href="spots.html">景点</a>
 								<li> <a class="menu-button" href="food.html">美食</a> </li>
-								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
+								<li> <a class="menu-button c-yellow" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
 								<li> <a class="menu-button" href="travel.html">旅游攻略</a>
 								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
@@ -105,60 +106,121 @@
 							marginwidth="0" marginheight="0" scrolling="no">
 						</iframe>-->
 					</div>
+					
 				</div>
 			</div>
 		</div>
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 注册</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 住宿</div>
 			</div>
-			<div class=" " style="background: url(../img/signup.jpg);background-size: cover;">
-				 <div style="display: flex;justify-content: flex-end;margin-right: 15%; padding-top: 40px;padding-bottom: 70px;">
-				 	<div >
-					 	<div class="t-c">
-					 	 	<span class="c-yellow s-16 p-b20" style="border-bottom: 2px solid #f78536;">注册</span>
-					 	</div>
-					 	<div class="m-t50 bg-white r5 p-t30 p-b50 p-l30 p-r30">
-					 		<div class="flex align-center p-l60 p-r60">
-					 			<div class="bg-db w-100" style="height: 1px;"></div>
-					 			<div class="c-yellow s-20 p-l10 p-r10"> 嘉州之旅</div>
-					 			<div class="bg-db w-100" style="height: 1px;"></div>
-					 		</div>
-					 		<div class="flex">
-					 			<div class="m-t20 w-full p-r10">
-						 			<input v-model="name" type="text" placeholder="账号" class="form-control"/>
-						 		</div>
-						 		<div class="m-t20 w-full p-l10">
-						 			<input v-model="email" type="text" placeholder="邮箱" class="form-control"/>
-						 		</div>
-					 		</div>
-					 		<div class="flex">
-					 			<div class="m-t20 w-full p-r10">
-						 			<input v-model="passw" type="password" placeholder="密码" class="form-control"/>
-						 		</div>
-						 		<div class="m-t20 w-full p-l10">
-						 			<input v-model="passwAgin" type="password" placeholder="再次输入密码" class="form-control"/>
-						 		</div>
-					 		</div>
-					 		<div class="flex">
-					 			<div class="m-t20 w-full p-r10">
-						 			<input v-model="phone" type="text" placeholder="手机号" class="form-control"/>
-						 		</div>
-						 		<div class="m-t20 w-full p-l10">
-						 			 
-						 		</div>
-					 		</div>
-					 		<div class="m-t20 s-14">
-				 				<input type="checkbox" class="form-check bg-white" style="display: inline;"/>
-				 				<span class="m-l5">我同意</span>  <span class="c-blue pointer">注册条款</span>
-					 		</div>
-					 		<div class="m-t20 p-b30">
-					 			<div @click="save" class="pointer bg-yellow c-white p-t10 p-b10 t-c s-14 r5">注册</div>
-					 		</div>
-					 	</div>
-				 	</div>
-				 </div>
+			<div class="w-pre80 m-lpre10 p-b30 m-t30">
+				<div class="flex p10 b-gray">
+					<div class="w-full">
+						<img class="w-full" src="../img/hotel-detail1.jpg" alt="" />
+					</div>
+					<div class="w-full">
+						<img class="w-full" class="m-l10" src="../img/hotel-detail2.jpg" alt="" />
+					</div>
+					<div class="m-l10 w-full">
+						<div class="flex between s-13 b-bgray p-t10">
+							<div class="flex">
+								<div>
+									<img class="w-50" src="../img/hotel-detail5.jpg"/>
+								</div>
+								<div class="m-l10">
+									<span class="iconfont iconicon_xiaolian-xian c-yellow"></span> <span class="c-green">好极了</span>
+									<br />
+									来自 <span class="s-16">75</span> 条入住点评
+								</div>
+							</div>
+							<div class="t-c p-l30">
+								<div class="c-yellow">
+									<span class="s-14">￥</span><b class="s-18">106</b><span class="s-14">起</span>
+								</div>
+								<div >
+									<span class="bg-yellow p-2-15 c-white s-12">预定</span>
+								</div>
+								<div class="c-blue s-12">
+									手机查看
+								</div>
+							</div>
+						</div>
+						<div class="m-t20">
+							<div class="s-12 c-9">贝卡 2019-04-03</div>
+							<div class="m-t10 s-12">
+								和快捷酒店区别不大，但价格更高，所以性价一般。另外这家店服务态度虽然不错，但是效率还需要提高啊。
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="m-t30">
+					<div style="border-bottom: 2px solid #f78536;">
+						<span class="bg-yellow p-5-15 c-white s-12">房型预定</span> 
+					</div>
+					<div class="m-t20 b-gray">
+						<div class="flex p-l20 p-t20 align-center">
+							<div><img class="w-full" src="../img/hotel-detail3.jpg"/></div>
+							<div>
+								<div class="s-16 c-blue p-l10">双床房</div>
+								<div class="m-t10 s-14">
+									<span class="p-2-10">房间28㎡</span> |
+									<span class="p-2-10">双床1.2m㎡</span> |
+									<span class="p-2-10">可住：2人</span> |
+									<span class="p-2-10">楼层22-23层</span> |
+									<span class="p-2-10">宽带：免费WIFI</span> 
+								</div>
+							</div>
+						</div>
+					
+						<table class="table table-bordered s-14 m-t20 t-c" id="table">
+		    				<tr class="bg-f3">
+		    					<th>供应商</th>
+		    					<th>产品名称</th>
+		    					<th>早餐</th>
+		    					<th>取消规则</th>
+		    					<th>日均价</th>
+		    					<th></th>
+		    				</tr>
+			 				<tr>
+		    					<td>
+		    						<img class="w-20" src="../img/hotel-detail4.jpg" alt="" />
+		    						<span class="m-l10">艺龙</span>
+		    					</td>
+		    					<td>清明节错峰游</td>
+		    					<td>无早</td>
+		    					<td>不可取消</td>
+		    					<td class="c-yellow"><span class="s-13">￥</span><span class="s-16">106</span></td>
+		    					<td><span style="background: #fff5eb;color: #f78536;border: 1px solid #f78536;border-radius: 2px;padding: 2px 5px;" class="s-12">预付</span> <span class="m-l10">定完</span></td>
+		    				</tr>
+		    				<tr>
+		    					<td>
+		    						<img class="w-20" src="../img/hotel-detail4.jpg" alt="" />
+		    						<span class="m-l10">艺龙</span>
+		    					</td>
+		    					<td>标准价</td>
+		    					<td>无早</td>
+		    					<td>免费取消</td>
+		    					<td class="c-yellow"><span class="s-13">￥</span><span class="s-16">132</span></td>
+		    					<td> <span class="bg-yellow p-5-15 s-12 c-white m-l10">预订</span></td>
+		    				</tr>
+		    				<tr>
+		    					<td>
+		    						<img class="w-20" src="../img/hotel-detail4.jpg" alt="" />
+		    						<span class="m-l10">艺龙</span>
+		    					</td>
+		    					<td>标准价</td>
+		    					<td>无早</td>
+		    					<td>限时取消</td>
+		    					<td class="c-yellow"><span class="s-13">￥</span><span class="s-16">132</span></td>
+		    					<td> <span class="bg-yellow p-5-15 s-12 c-white m-l10">预订</span></td>
+		    				</tr>
+						</table>
+					</div>
+					
+				</div>
 			</div>
 		</div>
 		<!--===========================================底部=========================================== -->
@@ -202,7 +264,6 @@
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/vue.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/toastr.js"></script>
 	<script type="text/javascript">
 		var timerNewOrder = null;
 		var vm = new Vue({
@@ -211,11 +272,6 @@
 				list1:[
 					{},{},{},{},{},{},
 				],
-				name:'',
-				email:'',
-				passw:'',
-				passwAgin:'',
-				phone:'',
 				show:false,
 			},
 			methods:{
@@ -236,29 +292,152 @@
 					guide:function(boo){
 						this.show = boo;
 					},
-					save:function(){
-						if(!this.name){
-							toastr.warning('请输入账号');
-							return;
+					paging:function(val){
+						// list2
+						switch (val){
+							case 1:
+								this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 2:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 3:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 4:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 5:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 'pre':
+									if(this.pageNo == 1){
+										return;
+									}
+									this.pageNo--;
+									this.paging(this.pageNo)
+								break;
+							case 'next':
+								if(this.pageNo == 5){
+										return;
+									}
+								this.pageNo++;
+								this.paging(this.pageNo)
+								break;
+							default:
+								this.list2 = [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								break;
 						}
-						if(!this.email){
-							toastr.warning('请输入邮箱');
-							return;
-						}
+					},
+					pagingComment:function(val){
 						
-						if(!this.passw){
-							toastr.warning('请输入密码');
-							return;
+						
+						if(val == 'pre'){
+							if(this.pageCommentNo <=0){
+								return;
+							}
+							this.pageCommentNo -- ;
+							
 						}
-						if(!this.passwAgin){
-							toastr.warning('请再次输入密码');
-							return;
+						if(val == 'next'){
+							this.pageCommentNo ++ ;
+							
 						}
-						if(!this.phone){
-							toastr.warning('请输入手机号');
-							return;
+						if(this.pageCommentNo%2 == 1){
+							this.list3 = [
+								{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},
+							]
+						}else{
+							this.list3 = [
+								{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},
+							]
 						}
-						window.location.href = 'index.html';
 					}
 				}
 		})

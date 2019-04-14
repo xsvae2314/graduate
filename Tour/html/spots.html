@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>注册</title>
+	<title>景点</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	<meta name="description" content="Xpedia" />
 	<meta name="keywords" content="Xpedia" />
@@ -14,7 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/style1.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
-	<link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
 	<style type="text/css">
 		h3{padding-left: 30px;}
 	</style>
@@ -36,7 +35,7 @@
 						<nav class="hs_main_menu d-none d-sm-none d-xs-none d-md-block">
 							<ul>
 								<li> <a class="menu-button" href="index.html">首页</a>
-								<li> <a class="menu-button" href="spots.html">景点</a>
+								<li> <a class="menu-button c-yellow" href="spots.html">景点</a>
 								<li> <a class="menu-button" href="food.html">美食</a> </li>
 								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
@@ -105,60 +104,33 @@
 							marginwidth="0" marginheight="0" scrolling="no">
 						</iframe>-->
 					</div>
+					
 				</div>
 			</div>
 		</div>
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 注册</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 景点</div>
 			</div>
-			<div class=" " style="background: url(../img/signup.jpg);background-size: cover;">
-				 <div style="display: flex;justify-content: flex-end;margin-right: 15%; padding-top: 40px;padding-bottom: 70px;">
-				 	<div >
-					 	<div class="t-c">
-					 	 	<span class="c-yellow s-16 p-b20" style="border-bottom: 2px solid #f78536;">注册</span>
-					 	</div>
-					 	<div class="m-t50 bg-white r5 p-t30 p-b50 p-l30 p-r30">
-					 		<div class="flex align-center p-l60 p-r60">
-					 			<div class="bg-db w-100" style="height: 1px;"></div>
-					 			<div class="c-yellow s-20 p-l10 p-r10"> 嘉州之旅</div>
-					 			<div class="bg-db w-100" style="height: 1px;"></div>
-					 		</div>
-					 		<div class="flex">
-					 			<div class="m-t20 w-full p-r10">
-						 			<input v-model="name" type="text" placeholder="账号" class="form-control"/>
-						 		</div>
-						 		<div class="m-t20 w-full p-l10">
-						 			<input v-model="email" type="text" placeholder="邮箱" class="form-control"/>
-						 		</div>
-					 		</div>
-					 		<div class="flex">
-					 			<div class="m-t20 w-full p-r10">
-						 			<input v-model="passw" type="password" placeholder="密码" class="form-control"/>
-						 		</div>
-						 		<div class="m-t20 w-full p-l10">
-						 			<input v-model="passwAgin" type="password" placeholder="再次输入密码" class="form-control"/>
-						 		</div>
-					 		</div>
-					 		<div class="flex">
-					 			<div class="m-t20 w-full p-r10">
-						 			<input v-model="phone" type="text" placeholder="手机号" class="form-control"/>
-						 		</div>
-						 		<div class="m-t20 w-full p-l10">
-						 			 
-						 		</div>
-					 		</div>
-					 		<div class="m-t20 s-14">
-				 				<input type="checkbox" class="form-check bg-white" style="display: inline;"/>
-				 				<span class="m-l5">我同意</span>  <span class="c-blue pointer">注册条款</span>
-					 		</div>
-					 		<div class="m-t20 p-b30">
-					 			<div @click="save" class="pointer bg-yellow c-white p-t10 p-b10 t-c s-14 r5">注册</div>
-					 		</div>
-					 	</div>
-				 	</div>
-				 </div>
+			<div class="w-pre80 m-lpre10 p-b30">
+				<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
+					<div v-for="i in list1" @click="toDetail" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<div class="b-gray thlist pointer">
+							<div class="relative">
+								<img class="w-full" src="../img/index/x.png"/>
+								<div class="lsspots">
+									乐山景点乐山景点乐山景点
+								</div>
+							</div>
+							<div class="flex between p-t20 p-b20 p-l10 p-r10">
+								<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
+								<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		</div>
 		<!--===========================================底部=========================================== -->
@@ -202,7 +174,6 @@
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/vue.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/toastr.js"></script>
 	<script type="text/javascript">
 		var timerNewOrder = null;
 		var vm = new Vue({
@@ -211,12 +182,8 @@
 				list1:[
 					{},{},{},{},{},{},
 				],
-				name:'',
-				email:'',
-				passw:'',
-				passwAgin:'',
-				phone:'',
 				show:false,
+				
 			},
 			methods:{
 					load:function(){
@@ -236,29 +203,155 @@
 					guide:function(boo){
 						this.show = boo;
 					},
-					save:function(){
-						if(!this.name){
-							toastr.warning('请输入账号');
-							return;
+					toDetail:function(){
+						window.open('spots-detail.html','_blank')
+					},
+					paging:function(val){
+						// list2
+						switch (val){
+							case 1:
+								this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 2:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 3:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 4:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 5:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 'pre':
+									if(this.pageNo == 1){
+										return;
+									}
+									this.pageNo--;
+									this.paging(this.pageNo)
+								break;
+							case 'next':
+								if(this.pageNo == 5){
+										return;
+									}
+								this.pageNo++;
+								this.paging(this.pageNo)
+								break;
+							default:
+								this.list2 = [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								break;
 						}
-						if(!this.email){
-							toastr.warning('请输入邮箱');
-							return;
-						}
+					},
+					pagingComment:function(val){
 						
-						if(!this.passw){
-							toastr.warning('请输入密码');
-							return;
+						
+						if(val == 'pre'){
+							if(this.pageCommentNo <=0){
+								return;
+							}
+							this.pageCommentNo -- ;
+							
 						}
-						if(!this.passwAgin){
-							toastr.warning('请再次输入密码');
-							return;
+						if(val == 'next'){
+							this.pageCommentNo ++ ;
+							
 						}
-						if(!this.phone){
-							toastr.warning('请输入手机号');
-							return;
+						if(this.pageCommentNo%2 == 1){
+							this.list3 = [
+								{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},
+							]
+						}else{
+							this.list3 = [
+								{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},
+							]
 						}
-						window.location.href = 'index.html';
 					}
 				}
 		})

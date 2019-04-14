@@ -520,7 +520,7 @@ ul.social-slide li i.mac{
 }
 /*-- footer --*/
 .footer{
-	padding:3em 0;
+	padding:1.5em 0;
 	background:#292929;
 }
 .footer-left h3{
@@ -572,14 +572,14 @@ border: none;
 }
 .footer-middle h3{
   color: #FFFFFF;
-  font-size: 4em;
+  font-size: 3.5em;
   margin: 0;
   font-family: 'Dorsa-Regular';
   letter-spacing: 2px;
 }
 .f-logo a {
   color: #FFF;
-  font-size: 6em;
+  font-size: 4em;
   font-family: 'Dorsa-Regular';
   text-decoration: none;
   letter-spacing: 2px;
