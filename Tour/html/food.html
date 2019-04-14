@@ -118,17 +118,17 @@
 					<div @click="toDetail" v-for="i in list1" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
 						<div class="b-gray thlist pointer">
 							<div class="relative">
-								<img class="w-full" src="../img/09.jpg"/>
+								<img class="w-full" :src="i.img"/>
 								<div class="lsspots">
-									乐山美食乐山美食乐山美食
+									{{i.text}}
 								</div>
 							</div>
 							<div class="flex between p-t10 p-l10 p-r10">
-								<div class="s-14 c-0">峨眉老腊肉</div>
-								<div class=""> <span class="iconfont iconhuo c-yellow"></span> 4246</div>
+								<div class="s-14 c-0">{{i.name}}</div>
+								<div class=""> <span class="iconfont iconhuo c-yellow"></span> {{i.people}}</div>
 							</div>
 							<div class="p-b10 s-14 p-l10 p-r10">
-								乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+								{{i.remark}}
 							</div>
 						</div>
 					</div>
@@ -183,7 +183,12 @@
 			el:'#vmMain',
 			data:{
 				list1:[
-					{},{},{},{},{},{},
+					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'50',text:'乐山美食乐山美食乐山美食' ,remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
+					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'30',text:'乐山美食乐山美食乐山美食' ,remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
+					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'50' ,text:'乐山美食乐山美食乐山美食',remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
+					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'50' ,text:'乐山美食乐山美食乐山美食',remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
+					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'50' ,text:'乐山美食乐山美食乐山美食',remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
+					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'50' ,text:'乐山美食乐山美食乐山美食',remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
 				],
 				show:false,
 			},

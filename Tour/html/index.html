@@ -299,14 +299,14 @@
 						<div v-for="i in list1" @click="toDetail" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
 							<div class="b-gray thlist pointer">
 								<div class="relative">
-									<img class="w-full" src="../img/index/x.png"/>
+									<img class="w-full" :src="i.img"/>
 									<div class="lsspots">
-										乐山景点乐山景点乐山景点
+										{{i.text}}
 									</div>
 								</div>
 								<div class="flex between p-t20 p-b20 p-l10 p-r10">
-									<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-									<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+									<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">{{i.price}}</span>起</div>
+									<div class="bg-green c-white p-2-15 s-12 r5"> 省￥{{i.discount}}</div>
 								</div>
 							</div>
 						</div>
@@ -357,7 +357,7 @@
 								<img :src="i.img"/>
 							</div>
 							<div class="m-l10 s-15 c-6">
-								旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻
+								{{i.text}}
 							</div>
 						</div>
 						<div class=" flex justify-center m-t30 s-12">
@@ -380,12 +380,12 @@
 						<div v-for="i in list3"v class="flex p-t15 p-b10 b-bf0 align-center">
 							<div><img class="w-50" :src="i.img"/></div>
 							<div class="m-l10">
-								 <div class="s-12 c-0">Web page editors their default modal text.</div>
+								 <div class="s-12 c-0">{{i.title}}</div>
 								 <div class="m-t10 flex between c-9 s-12">
-								 	<div>07 july,2019</div>
+								 	<div>{{i.date}}</div>
 								 	<div>
-								 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">33</span> 
-								 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">16</span> 
+								 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">{{i.yan}}</span> 
+								 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">{{i.remark}}</span> 
 								 	</div>
 								 </div>
 							</div>
@@ -449,29 +449,24 @@
 			el:'#vmMain',
 			data:{
 				list1:[
-					{},{},{},{},{},{},
+					{ img:'../img/index/x.png',price:'140',discount:'50',text:'乐山景点乐山景点乐山景点' },
+					{ img:'../img/index/x.png',price:'144',discount:'30',text:'乐山景点乐山景点乐山景点' },
+					{ img:'../img/index/x.png',price:'140',discount:'50' ,text:'乐山景点乐山景点乐山景点'},
+					{ img:'../img/index/x.png',price:'140',discount:'50' ,text:'乐山景点乐山景点乐山景点'},
+					{ img:'../img/index/x.png',price:'140',discount:'50' ,text:'乐山景点乐山景点乐山景点'},
+					{ img:'../img/index/x.png',price:'140',discount:'50' ,text:'乐山景点乐山景点乐山景点'},
 				],
 				list2:[
-					{
-						img:'../img/index/b_03.png'
-					},{
-						img:'../img/index/b_03.png'
-					},{
-						img:'../img/index/b_03.png'
-					},{
-						img:'../img/index/b_03.png'
-					}
+					{ img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻' },
+					{ img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻' },
+					{ img:'../img/index/b_03.png' ,text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'},
+					{ img:'../img/index/b_03.png' ,text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'}
 				],
 				list3:[
-					{
-						img:'../img/index/13.jpg'
-					},{
-						img:'../img/index/15.jpg'
-					},{
-						img:'../img/index/14.jpg'
-					},{
-						img:'../img/index/13.jpg'
-					},
+					{ img:'../img/index/13.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
+					{ img:'../img/index/15.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
+					{ img:'../img/index/14.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
+					{ img:'../img/index/13.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
 				],
 				pageNo:1,
 				pageCommentNo:1,
@@ -505,13 +500,13 @@
 								this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									}
 								]
 								
@@ -520,13 +515,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									}
 								]
 								
@@ -535,13 +530,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									}
 								]
 								
@@ -550,13 +545,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/11.jpg'
+										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									}
 								]
 								
@@ -565,13 +560,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/12.jpg'
+										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									}
 								]
 								
@@ -593,13 +588,13 @@
 							default:
 								this.list2 = [
 									{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									},{
-										img:'../img/index/b_03.png'
+										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
 									}
 								]
 								break;
@@ -620,25 +615,25 @@
 						if(this.pageCommentNo%2 == 1){
 							this.list3 = [
 								{
-									img:'../img/index/13.jpg'
+									img:'../img/index/13.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},{
-									img:'../img/index/14.jpg'
+									img:'../img/index/14.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},{
-									img:'../img/index/15.jpg'
+									img:'../img/index/15.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},{
-									img:'../img/index/13.jpg'
+									img:'../img/index/13.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},
 							]
 						}else{
 							this.list3 = [
 								{
-									img:'../img/index/15.jpg'
+									img:'../img/index/15.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},{
-									img:'../img/index/13.jpg'
+									img:'../img/index/13.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},{
-									img:'../img/index/14.jpg'
+									img:'../img/index/14.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},{
-									img:'../img/index/15.jpg'
+									img:'../img/index/15.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
 								},
 							]
 						}

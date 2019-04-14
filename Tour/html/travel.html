@@ -133,18 +133,17 @@
 					<div class="c-yellow p-b5" style="border-bottom: 1px solid #f78536;">旅游攻略</div>
 					<div @click="toDetail" v-for="i in list1" class="m-t20 p-b20 b-bgray flex pointer">
 						<div>
-							<img class="w-full" src="../img/08.jpg"/>
+							<img class="w-full" :src="i.img"/>
 						</div>
 						<div class="w-full p10">
 							<div class="c-0">
-								进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 
-								进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 
+								{{i.text}}
 							</div>
 							<div class="m-t20 flex between c-9 s-14">
-								<div>发表于：2019-1-1</div>
+								<div>发表于：{{i.date}}</div>
 								<div>
-							 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">33</span> 
-							 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">16</span> 
+							 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">{{i.yan}}</span> 
+							 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">{{i.remark}}</span> 
 							 	</div>
 							</div>
 						</div>
@@ -199,7 +198,9 @@
 			el:'#vmMain',
 			data:{
 				list1:[
-					{},{},{},
+					{ img:'../img/08.jpg',yan:'33',remark:'16',date:'2019-1-1',text:'进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 ' },
+					{ img:'../img/08.jpg',yan:'33',remark:'16',date:'2019-1-2',text:'进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 ' },
+					{ img:'../img/08.jpg',yan:'33',remark:'16' ,date:'2019-1-1',text:'进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 '},
 				],
 				show:false,
 			},
