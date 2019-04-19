@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Tour</name>
+	<name>Advertising-Alliance</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,16 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1555688467914</id>
-			<name></name>
-			<type>26</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-node_modules</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1555688467940</id>
+			<id>1555684122634</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
