@@ -21,15 +21,15 @@
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -40,8 +40,9 @@
 								<li> <a class="menu-button c-yellow" href="food.html">美食</a> </li>
 								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
-								<li> <a class="menu-button" href="travel.html">旅游攻略</a>
-								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
 									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
 										<div class="flex s-14">
 											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
@@ -50,7 +51,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -112,23 +113,24 @@
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 美食</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="food.html">美食</a></div>
 			</div>
 			<div class="w-pre80 m-lpre10 p-b30">
 				<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
 					<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9 p-l10 p-r10 m-t30 o-hidden">
 						<div class="b-gray p10 p-b50">
 							<div>
-								<img class="w-full" src="../img/food-detail1.jpg"/>
+								<img class="w-full" src="../img/foods/正宗豆腐脑.jpg"/>
 							</div>
 							<div class="flex between p-t20 p-b10 b-bgray p-l10 p-r10">
-								<div class="c-6 s-18">肉包谷粑</div>
+								<div class="c-6 s-18">正宗豆腐脑</div>
 								<div class="s-13 c-6">
-									<span class="iconfont iconxin c-yellow"></span> 3550人喜欢
+									<span class="iconfont iconxin c-yellow"></span> 26545人喜欢
 								</div>
 							</div>
 							<div class="p-l10 p-r10 p-t10 s-14 c-6 p-b50" >
-								峨眉有名的小吃。将细包谷粉用温水调和好，再把拌上香料的猪肉颗粒和在调好的包谷粉中，捏成团，放在拗子（平锅）上烙熟，然后放入炉内周围烘烤。这时香气四溢，诱人食欲。烘热后，拿在手里，黄酥酥，热腾腾，香喷喷，咬一口”嗤“的一声，香酥味美,必然喜形于色,旁人见之也会垂涎不已。
+								乐山豆腐脑是四川乐山特色风味小吃之一，豆花上有深红的辣椒配着翠绿香菜或芹菜，色香味俱全。<br />
+乐山豆腐脑制作方法和传统意义上的开封豆腐脑有本质的区别，乐山豆腐脑不是以豆花为主，而是以绝对美味的汤汁勾芡而成的汤头为主。用味精，鸡精，大头菜颗粒，老抽，(密料)炒黄豆或炒花生米作底，勺上大半碗的用骨头汤勾芡的淀粉浓汁，在用平勺削几片雪白的豆花放在浓汁之上，让其漂浮，上面再放上芹菜和熟油辣椒，一碗美味可口的乐山豆腐脑就呈现在眼前了。
 							</div>
 						</div>
 					</div>
@@ -160,19 +162,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -180,7 +182,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>

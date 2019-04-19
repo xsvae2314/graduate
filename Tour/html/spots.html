@@ -20,15 +20,15 @@
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -39,8 +39,9 @@
 								<li> <a class="menu-button" href="food.html">美食</a> </li>
 								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
-								<li> <a class="menu-button" href="travel.html">旅游攻略</a>
-								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
 									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
 										<div class="flex s-14">
 											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
@@ -49,7 +50,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -111,22 +112,51 @@
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 景点</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="spots.html">景点</a></div>
 			</div>
 			<div class="w-pre80 m-lpre10 p-b30">
 				<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
 					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-							<a href="spots-detail.html" target="_blank">
+							<a href="spots-detail峨眉山.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/spot/峨眉山.png"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											峨眉山是中国"四大佛教名山"之一，《峨眉郡志》云:"云鬘凝翠，鬒黛遥妆，真如螓首蛾眉，细而长，美而艳也，故名峨眉山。"
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">150</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥70</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 p-l10 p-r10 m-t20">
+							<div class="b-bf0 p-b20">峨眉山是中国"四大佛教名山"之一，《峨眉郡志》云:"云鬘凝翠，鬒黛遥妆，真如螓首蛾眉，细而长，美而艳也，故名峨眉山。"
+									峨眉山是中国"四大佛教名山"之一，《峨眉郡志》云:"云鬘凝翠，鬒黛遥妆，真如螓首蛾眉，细而长，美而艳也，故名峨眉山。"</div>
+							<div class="p-t20">
+								<b>景点等级：</b> <span class="c-yellow"><b>AAAAA</b></span>
+							</div>
+							<div class="p-t10">
+								<b>景点等级：</b> 7:00-18:00(旺季：2019.1.16-2019.12.14)
+							</div>
+							<div class="p-t10">
+								<b>景点等级：</b> 四川峨眉山
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail乐山大佛.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/spot/乐山大佛.png"/>
+										<div class="lsspots">
+											乐山大佛景区位于乐山市郊，岷江、大渡河、青衣江三江交汇处，与乐山城隔江相望，地处凌云山中部，享有西南山水之冠的美誉，为历代文人墨客所咏赞。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">90</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥40</div>
 									</div>
 								</div>
 							</a>
@@ -135,14 +165,14 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/spot/嘉阳小火车.png"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											嘉阳小火车，是运行在四川南部的小县城--犍为县城西20公里处的一条只有19.84千米的窄轨铁路上的"老爷火车"。有"工业革命的活化石"，"工业革命的绝版景观"，比大熊猫还要珍贵的国宝之美誉。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">100</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥20</div>
 									</div>
 								</div>
 							</a>
@@ -151,14 +181,14 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/spot/沐川龙门大峡谷.png"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											沐川龙门大峡谷，位于"绿色明珠""生态名县"--四川省沐川县城2公里处。距西南重镇成都、重庆200公里，距乐山市80公里。这里，竹林婆娑，层山葳蕤，四季常青，云遮雾绕，峡谷内有我国目前最刺激最生态的竹海峡谷漂流。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">60</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥10</div>
 									</div>
 								</div>
 							</a>
@@ -167,14 +197,14 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/spot/金顶.jpg"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											金顶是一个地理概念，也是一个建筑概念。地理概念一般是指名山的山顶，而建筑概念是指房屋的镏金屋顶，这种镏金屋顶多用于宫殿和寺院的主要殿堂，被称为金顶。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">100</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥20</div>
 									</div>
 								</div>
 							</a>
@@ -183,14 +213,60 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/spot/峨眉山灵秀温泉.jpg"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											峨眉山灵秀温泉位于峨眉山麓报国寺左下侧灵秀湖畔，右接峨眉山温泉饭店，左边是灵秀苑、欢乐彝家、灵秀印象酒店、好吃街等。灵秀温泉占地400亩，总投资1.6亿，是我国最大的露天氡温泉。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">138</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥30</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/spot/红珠山森林温泉.jpg"/>
+										<div class="lsspots">
+											红珠山森林温泉源于峨眉山山区两河口地下3000米处深处循环增温的承压氡温泉。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">128</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥20</div>
+									</div>
+								</div>
+							</a>
+						</div><div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/spot/大佛禅院.jpg"/>
+										<div class="lsspots">
+											大佛禅院，作为朝拜峨眉山的第一门户，是前往峨眉祈福、朝拜的第一站，也是必去之地。大佛禅院原名大佛寺，位于峨眉山市区东郊，交通方便，气势恢弘，建筑结构缜密，拥有多重大殿和诸多禅房。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">100</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥15</div>
+									</div>
+								</div>
+							</a>
+						</div><div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/spot/黑竹沟.jpg"/>
+										<div class="lsspots">
+											黑竹沟位于乐山市峨边彝族自治县境内，美姑线山18公里处的密林深处，面积约180平方公里，生态原始、物种珍稀、景观独特神奇。当地乡名:斯豁，即死亡之谷。曾被国内外舆论广泛称为"中国百慕大"的瑰宝。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">50</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥10</div>
 									</div>
 								</div>
 							</a>
@@ -199,20 +275,58 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/spot/东方佛都.jpg"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											东方佛都景区现所辖凌云九峰之四峰。凌云九峰，唐代“峰各有寺”，抗元战火将四峰寺庙毁去。而今的东方佛都循古迹恢复旧貌，保留唐代原有山林风貌，依山取势、高低错落、林隐千佛、洞中百窟。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">50</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥10</div>
+									</div>
+								</div>
+							</a>
+						</div><div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/spot/万年寺.jpg"/>
+										<div class="lsspots">
+											万年寺，四川峨嵋山历史最悠久的古刹之一，相传为汉代采药老人蒲公礼佛处;东晋隆安五年(401)创建时名普贤寺。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">80</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥20</div>
+									</div>
+								</div>
+							</a>
+						</div><div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/spot/灵宝塔.jpg"/>
+										<div class="lsspots">
+											灵宝塔位于乐山市市中区凌云山九峰之一的灵宝山巅，始建于唐，明嘉靖三十三年(1554年)培修。塔身墩厚挺拔、巍峨灵秀，与递延黛九峰和三江水相映衬，为乐山标志性古建筑之一。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">5</span>起</div>
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥0</div>
 									</div>
 								</div>
 							</a>
 						</div>
-					
 				</div>
+				<div class=" flex justify-center m-t30 s-12">
+							<div @click="paging(1)" :class="pageNo=='1'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">1</div>
+							<div @click="paging(2)" :class="pageNo=='2'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">2</div>
+							<div @click="paging(3)" :class="pageNo=='3'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">3</div>
+							<div @click="paging(4)" :class="pageNo=='4'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">4</div>
+							<div @click="paging(5)" :class="pageNo=='5'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">5</div>
+							<div @click="paging('pre')" class="c-yellow b-gray r5 pointer p-2-15 m-l5 m-r5">上一页</div>
+							<div @click="paging('next')" class="c-yellow b-gray r5 pointer p-2-15 m-l5 m-r5">下一页</div>
+						</div>
 			</div>
 		</div>
 		<!--===========================================底部=========================================== -->
@@ -228,19 +342,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -248,7 +362,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>
@@ -270,7 +384,7 @@
 					{ img:'../img/index/x.png',price:'140',discount:'50' ,text:'乐山景点乐山景点乐山景点'},
 				],
 				show:false,
-				
+				pageNo:1,
 			},
 			methods:{
 					load:function(){
@@ -298,77 +412,77 @@
 						switch (val){
 							case 1:
 								this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
-								
+//								this.list2 =  [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
+//								
 								break;
 								case 2:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									}
-								]
-								
+//								this.list2 =  [
+//									{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									}
+//								]
+//								
 								break;
 								case 3:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
+//								this.list2 =  [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
 								
 								break;
 								case 4:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									}
-								]
+//								this.list2 =  [
+//									{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									}
+//								]
 								
 								break;
 								case 5:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
+//								this.list2 =  [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
 								
 								break;
 								case 'pre':
@@ -386,17 +500,17 @@
 								this.paging(this.pageNo)
 								break;
 							default:
-								this.list2 = [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
+//								this.list2 = [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
 								break;
 						}
 					},

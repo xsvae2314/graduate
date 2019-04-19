@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>选择关键字地图展示对应地址</title>
+<link rel="stylesheet" type="text/css" href="css/sty.css">
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fbXf9j0aPH4EwxPBaixZ8Ll2rGwMbFe8"></script>
+<!-- fbXf9j0aPH4EwxPBaixZ8Ll2rGwMbFe8  要替换为自己的APIkey  获取方式请到 百度地图开放平台 -->
+</head>
+<body>
+
+<form name="companyForm" class="companysel">
+  <span>选择地址：</span>
+  <select name="companyPick" OnChange="companyReveal()">
+    <option value="0"> 乐山市 </option>
+    <option value="1"> 乐山大佛 </option>
+    <option value="2"> 峨眉山风景区 </option>
+    <option value="3"> 高铁乐山站 </option>
+  </select>
+  <span>地址：</span>
+  <input name="companyField" type="text" id="suggestId"  value="乐山市" style="overflow:auto" disabled>
+</form>
+
+<div id="l-map" style="width: 100%; height: 400px"></div> 
+
+</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	function G(id) {
+		return document.getElementById(id);
+	}
+	var map = new BMap.Map("l-map");
+	//map.centerAndZoom("厦门",12);    // 初始化地图,设置城市和地图级别。
+	map.enableScrollWheelZoom();   	//启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom();    	//启用地图惯性拖拽，默认禁用
+	var local = new BMap.LocalSearch(map, {
+		renderOptions:{map: map}
+	});
+	var msearch = document.getElementById("suggestId").value;
+	local.search(msearch);  //百度地图关键字检索 默认加载一次
+	var company = new Array(); 
+	company[0] = "乐山市";			//这里写入每个选项对应的说明文字
+	company[1] = "乐山大佛";
+	company[2] = "峨眉山风景区";	 
+	company[3] = "高铁乐山站";
+
+	function companyReveal() {	
+	  var companyindex = document.companyForm.companyPick.selectedIndex;//取得当前下拉菜单选定项目的序号
+	  helpmsg = company[companyindex];//根据序号取得当前选项的说明
+	  document.companyForm.companyField.value = helpmsg//将说明写进文框
+	  var msearch = document.getElementById("suggestId").value;
+	  local.search(msearch);  //百度地图关键字检索 触发加载
+	}	
+</script>

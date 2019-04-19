@@ -20,15 +20,15 @@
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -39,8 +39,9 @@
 								<li> <a class="menu-button" href="food.html">美食</a> </li>
 								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
-								<li> <a class="menu-button c-yellow" href="travel.html">旅游攻略</a>
-								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
+								<li> <a class="menu-button c-yellow" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
 									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
 										<div class="flex s-14">
 											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
@@ -49,7 +50,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -111,78 +112,143 @@
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 旅游攻略</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="travel.html">旅游攻略</a></div>
 			</div>
 			<div class="w-pre80 m-lpre10 p-b30 m-t20">
 				<div class="b-gray p10 flex">
 					<div>
-						<img class="w-full" src="../img/07.jpg"/>
+						<img class="w-full" src="../img/travel/乐山印象.jpg"/>
 					</div>
 					<div class="p-l10 w-full p-t20">
 						<h4 class="b-bgray p-b10 p-l5">乐山简介</h4>
 						<div class="m-t10 p-l5">
-							乐山位于中国四川峨眉山市境内，景区面积154平方公里峨眉山位于中国峨眉
-							山位于中四川峨眉山市境内，景区面积154平方公里峨眉山位于中国四川峨眉山
-							市境内，景区面积154平方公里峨眉山位于中国市境内，景区面积154平方公里
-							峨眉山位于中国市境内，景区面积154平方公里峨眉山位于中国市境内，景区面
-							积154平方公里峨眉山位于中国
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乐山，古称嘉州，是四川省下辖的一个地级市，介于东经102°15′-104°15′、北纬28°28′-29°56′之间，乐山位于四川盆地西南部，坐落在岷江、青衣江、大渡河三江交汇处，北与眉山接壤，东与自贡、宜宾毗邻，南与凉山相接，西与雅安连界，中心城区距成都双流国际机场仅100公里。成都平原南部中心城市。
+
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乐山是四川粮食、副食品、清洁能源、新材料和建材生产基地，国家质检总局批准的国家硅材料及副产物产品质量监督检验中心。
+
+历史上属古蜀国，有"海棠香国"的美誉。乐山市是国家历史文化名城、国家首批对外开放城市、全国绿化模范城市、中国优秀旅游城市、国家园林城市、全国卫生城市、2008北京奥运会火炬传递城市之一。
+
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2000年6月，乐山正式成为联合国城市管理中心在中国唯一的合作城市。2015年11月18日，四川省人民政府正式确立乐山为全省旅游综合改革试点市。2015年12月20日，乐山市被国家旅游局批准为首批国家级旅游业改革创新先行区。
 						</div>
 					</div>
 				</div>
 				<div class="m-t30 p-b30">
 					<div class="c-yellow p-b5" style="border-bottom: 1px solid #f78536;">旅游攻略</div>
-						<a href="travel-detail.html" target="_blank">
+						<a href="travel-detail峨眉山.html" target="_blank">
 							<div class="m-t20 p-b20 b-bgray flex pointer">
 								<div>
-									<img class="w-full" src="../img/08.jpg"/>
+									<img class="w-full" src="../img/travel/峨眉山.jpg"/>
 								</div>
 								<div class="w-full p10">
-									<div class="c-0">
-										进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 
+									<div class="c-0"><br />
+										<b>峨眉山，一篇攻略搞定自由行+安全注意事项</b> <br /><br />这里，绝对没有堵车；这里，绝对没有限行；这里，绝对没有雾霾；空气中的负氧离子含量，在全国遥遥领先。注意，不小心会“醉氧”欧！
 									</div>
 									<div class="m-t20 flex between c-9 s-14">
-										<div>发表于：2019-1-1</div>
+										<div>发表于：2018-1-1</div>
+										
 										<div>
-									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">33</span> 
-									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">16</span> 
+									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">156</span> 
+									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">226</span> 
 									 	</div>
 									</div>
 								</div>
 							</div>
 						</a>
-						<a href="travel-detail.html" target="_blank">
+							<a href="travel-detail.html" target="_blank">
 							<div class="m-t20 p-b20 b-bgray flex pointer">
 								<div>
-									<img class="w-full" src="../img/08.jpg"/>
+									<img class="w-full" src="../img/travel/峨眉山.jpg"/>
 								</div>
 								<div class="w-full p10">
-									<div class="c-0">
-										进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 
+									<div class="c-0"><br />
+										<b>峨眉山，一篇攻略搞定自由行+安全注意事项</b> <br /><br />这里，绝对没有堵车；这里，绝对没有限行；这里，绝对没有雾霾；空气中的负氧离子含量，在全国遥遥领先。注意，不小心会“醉氧”欧！
 									</div>
 									<div class="m-t20 flex between c-9 s-14">
-										<div>发表于：2019-1-1</div>
+										<div>发表于：2018-1-1</div>
+										
 										<div>
-									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">33</span> 
-									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">16</span> 
+									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">156</span> 
+									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">226</span> 
 									 	</div>
 									</div>
 								</div>
 							</div>
 						</a>
-						<a href="travel-detail.html" target="_blank">
+							<a href="travel-detail.html" target="_blank">
 							<div class="m-t20 p-b20 b-bgray flex pointer">
 								<div>
-									<img class="w-full" src="../img/08.jpg"/>
+									<img class="w-full" src="../img/travel/峨眉山.jpg"/>
 								</div>
 								<div class="w-full p10">
-									<div class="c-0">
-										进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 进去的人都有去无回，已封山 400 多年 堪称“陆地百慕大”进去的人都有去无回，已封山 400 回，已封山 400 
+									<div class="c-0"><br />
+										<b>峨眉山，一篇攻略搞定自由行+安全注意事项</b> <br /><br />这里，绝对没有堵车；这里，绝对没有限行；这里，绝对没有雾霾；空气中的负氧离子含量，在全国遥遥领先。注意，不小心会“醉氧”欧！
 									</div>
 									<div class="m-t20 flex between c-9 s-14">
-										<div>发表于：2019-1-1</div>
+										<div>发表于：2018-1-1</div>
+										
 										<div>
-									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">33</span> 
-									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">16</span> 
+									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">156</span> 
+									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">226</span> 
+									 	</div>
+									</div>
+								</div>
+							</div>
+						</a>
+								<a href="travel-detail.html" target="_blank">
+							<div class="m-t20 p-b20 b-bgray flex pointer">
+								<div>
+									<img class="w-full" src="../img/travel/峨眉山.jpg"/>
+								</div>
+								<div class="w-full p10">
+									<div class="c-0"><br />
+										<b>峨眉山，一篇攻略搞定自由行+安全注意事项</b> <br /><br />这里，绝对没有堵车；这里，绝对没有限行；这里，绝对没有雾霾；空气中的负氧离子含量，在全国遥遥领先。注意，不小心会“醉氧”欧！
+									</div>
+									<div class="m-t20 flex between c-9 s-14">
+										<div>发表于：2018-1-1</div>
+										
+										<div>
+									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">156</span> 
+									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">226</span> 
+									 	</div>
+									</div>
+								</div>
+							</div>
+						</a>
+								<a href="travel-detail.html" target="_blank">
+							<div class="m-t20 p-b20 b-bgray flex pointer">
+								<div>
+									<img class="w-full" src="../img/travel/峨眉山.jpg"/>
+								</div>
+								<div class="w-full p10">
+									<div class="c-0"><br />
+										<b>峨眉山，一篇攻略搞定自由行+安全注意事项</b> <br /><br />这里，绝对没有堵车；这里，绝对没有限行；这里，绝对没有雾霾；空气中的负氧离子含量，在全国遥遥领先。注意，不小心会“醉氧”欧！
+									</div>
+									<div class="m-t20 flex between c-9 s-14">
+										<div>发表于：2018-1-1</div>
+										
+										<div>
+									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">156</span> 
+									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">226</span> 
+									 	</div>
+									</div>
+								</div>
+							</div>
+						</a>
+								<a href="travel-detail.html" target="_blank">
+							<div class="m-t20 p-b20 b-bgray flex pointer">
+								<div>
+									<img class="w-full" src="../img/travel/峨眉山.jpg"/>
+								</div>
+								<div class="w-full p10">
+									<div class="c-0"><br />
+										<b>峨眉山，一篇攻略搞定自由行+安全注意事项</b> <br /><br />这里，绝对没有堵车；这里，绝对没有限行；这里，绝对没有雾霾；空气中的负氧离子含量，在全国遥遥领先。注意，不小心会“醉氧”欧！
+									</div>
+									<div class="m-t20 flex between c-9 s-14">
+										<div>发表于：2018-1-1</div>
+										
+										<div>
+									 		<span class="iconfont iconyanjing s-16 c-d0"></span><span class="m-l5 m-r10">156</span> 
+									 		<span class="iconfont icontubiaozhizuo- s-12 c-d0"></span><span class="m-l5">226</span> 
 									 	</div>
 									</div>
 								</div>
@@ -204,19 +270,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -224,7 +290,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>

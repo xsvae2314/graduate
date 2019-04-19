@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>旅游攻略</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta name="description" content="Xpedia" />
+	<meta name="keywords" content="Xpedia" />
+	<meta name="author" content="" />
+	<meta name="MobileOptimized" content="320" />
+	<link rel="stylesheet" type="text/css" href="../css/xpedia.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/toastr.css"/>
+	<style type="text/css">
+		h3{padding-left: 30px;}
+	</style>
+</head>
+
+<body>
+	<div id="vmMain" v-cloak>
+		<!-- ===========================================导航=========================================== -->
+		<div class="hs_navigation_header_wrapper p-t20 p-b20">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+						<nav class="hs_main_menu d-none d-sm-none d-xs-none d-md-block">
+							<ul>
+								<li> <a class="menu-button" href="index.html">首页</a>
+								<li> <a class="menu-button" href="spots.html">景点</a>
+								<li> <a class="menu-button" href="food.html">美食</a> </li>
+								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
+								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
+								<li> <a class="menu-button c-yellow" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
+									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
+										<div class="flex s-14">
+											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
+											<div class="p-l10 c-6">
+												<div>
+													<span class="p-2-10 guide pointer">乐山指南 </span> | 
+													<span class="p-2-10 guide pointer">乐山特产 </span> | 
+													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
+												</div>
+												<div class="t-l">
+													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
+													<span class="p-2-10 guide pointer">乐山旅行社 </span> 
+												</div>
+											</div>
+										</div>
+										<div class="flex s-14 m-t10">
+											<div class="c-yellow" style="white-space: nowrap;">旅游服务</div>
+											<div class="p-l10 c-6">
+												<div>
+													<span class="p-2-10 guide pointer">乐山订房 </span> | 
+													<span class="p-2-10 guide pointer">乐山导游 </span> | 
+													<span class="p-2-10 guide pointer">乐山订票 </span> | 
+													<span class="p-2-10 guide pointer">乐山会议 </span> 
+												</div>
+												<div class="t-l">
+													<span class="p-2-10 guide pointer">乐山租车 </span> | 
+													<span class="p-2-10 guide pointer">乐山签证 </span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<div class="p-l20 flex between p-r20">
+							<div class="relative">
+								<input type="text" class="p-l40 s-14 search-input" placeholder="请输入您要搜索的信息"/>
+								<span class="iconfont iconsuosou s-15 search-icon"></span>
+							</div>
+							<div class="s-15 c-yellow">
+								<span class="p-r10"> <a href="login.html" class="c-yellow">登录</a></span> | 
+								<span class="p-l10"><a href="signup.html" class="c-yellow">注册</a></span> 
+							</div>
+						</div>
+					</div>
+					<div class=" col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 t-c s-12 c-0">
+						<div><span class="c-blue">乐山天气 </span>晴 <span class="c-yellow">22℃</span> ~ <span class="c-blue">10℃</span></div>
+						<div class="flex">
+							<div>
+								<img src="../img/sun.png"/>
+							</div>
+							<div class="m-l10 t-c">
+								<div>西南风 3级</div>
+								<div>2019年04月14日 <span class="c-lig-green">星期日</span> </div>
+								<div>农历己亥猪年 三月初十 </div>
+							</div>
+						</div>
+						 <!--<iframe name="weather_inc" 
+							src="http://i.tianqi.com/index.php?c=code&id=7"  width="220" height="90" frameborder="0" 
+							marginwidth="0" marginheight="0" scrolling="no">
+						</iframe>-->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- ===========================================中间内容部分===========================================  -->
+		<div class="bg-white">
+			<div class="bg-yellow">
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="travel.html">旅游攻略</a>/ <a href="travel-detail峨眉山.html">峨眉山旅游攻略</a></div>
+			</div>
+			<div class="w-pre80 m-lpre10 p-b30 m-t20">
+				<div class="b-gray p10">
+					<div>
+						<img class="w-full" src="../img/travel-detail1.jpg"/>
+					</div>
+					
+				</div>
+				<div class="m-t20">
+					<div class="w-full p-t20">
+						<h4 class="b-bgray p-b10">峨眉山，一篇攻略搞定自由行+安全注意事项</h4>
+						<div class="m-t10">
+							乐山旅游  2018-01-01   作者：阿乐<br />
+　　这里，绝对没有堵车；
+　　这里，绝对没有限行；
+　　这里，绝对没有雾霾；
+　　空气中的负氧离子含量，在全国遥遥领先。注意，不小心会“醉氧”欧！<br />
+　　照片都是用华为荣耀8随手一拍的武夷山自由行（单身狗）--简单攻略各位轻拍。<br />
+　　峨眉山一直是我很向往去的地方，毕竟现在的状态，国外和太远的地方已经很难涉足了，能在省内转转。年前就计划去，假期一出来，算了下时间，刚好能玩一趟，就定下火车票
+武夷山自由行（单身狗）--简单攻略<br />
+　　在欣欣旅游网上和同事推荐的一家旅行社店主商量票务事宜，店家说非旺季只要提前三天订票就可以了，我也是到了31号才开始定下景区的票，  欣欣上很多卖峨眉山风景区门票（竹筏，印象大红袍）的，价格都差不多，毕竟门票价格都是透明的。<br />
+       峨眉山终年常绿，山顶与山脚的平均温差为14℃，素有“一山有四季、十里不同天”的说法，加之低云、多雾、雨量充沛，它既是琼花瑶草的王国，又是珍禽异兽的乐园。<br />
+　　峨眉山拥有植物5000多种，相当于欧洲植物总数之和。其中桫椤和珙桐为国家一级保护植物，另外有103种植物以“峨眉”为词头命名。<br />
+　　峨眉山拥有2300多种野生动物，国家首批列级保护的动物有29种，如峨眉藏酋猴、枯叶蝶、峨眉髭蟾、黑鹳、弹琴蛙、小熊猫、峨眉山白鹇、蓝喉太阳鸟、红腹角雉等。<br />
+　　峨眉山玩几天，2018峨眉山2日游旅游攻略<br />
+　　二日游：（玩透乐山大佛、峨眉山景区 推荐！！！）<br />
+　　第一天：成都-乐山大佛-宿峨眉山。<br />
+　　提前一天入住舒适旅馆，出去玩一定要休息住宿很重要！早上可以睡到自然醒，吃过早饭再出发才是真正的享受旅行。先是到达乐山苏稽古镇，随后品尝当地美食，午饭过后便来到世界最大的石刻弥勒佛的乐山大佛、乌木遗址等景点。晚间可参加峨眉变脸的火锅晚会。<br />
+　　第二天：峨眉山-雷洞坪-接引殿-金顶-万年寺-清音阁-一线天-峨眉山生态猴区-成都。<br />
+　　早餐后来成观光车抵达雷坪洞，一路步行来到引殿，如果累了可乘索道到达峨眉山风景区，全天游览峨眉山。在峨眉山可以感受到“一山四季，十里不同”的自然景象，如果季节合适，更能看到云海、佛光、金顶的美景。返回成都。<br />
+　　峨眉山有猴子吗，峨眉山猴子在哪个景点？<br />
+　　位于洪椿坪下、清音阁上的“一线天”附近，是目前中国国内最大的自然野生猴区。在山下游客中心或者雷洞坪坐景区车在万年寺下车，步行可到达。从雷洞坪步行至接引殿的途中也有一片猴区，不过猴子比较少，不是每次都能看到。<br />
+　　峨眉山猴子注意事项<br />
+　　峨眉山的猴子对游客没有丝毫畏惧，要小心猴子，食物必须放在包里，不能暴露在外面或者拿在手上，否则猴子会过来抢！切记更加不能逗猴子！<br />
+　　峨眉山西线，九十九道拐，洗象池，经常有猴群出没，有时其他地方也有。不过，还要看天气情况，也许还要看猴子们的心情。<br />
+　　看猴一定要注意几点：<br />
+　　1. 不要带塑料袋或手提着包<br />
+　　2. 书包一定要背在胸前<br />
+　　3. 山下有卖竹竿的，有猴子靠近你要佯装挥舞，但是不许打猴子，不然会被警察逮走<br />
+　　4. 一定不要看猴子可爱就用手喂猴子吃东西，被咬伤后果自负。不要离猴子太近<br />
+　　5. 不要在猴子面前打开书包掏东西或者翻兜，猴子抢走你的东西就是一瞬间的事情<br />
+　　还有不要背鲜艳的包，女孩子不要一个人。<br />
+　　峨眉山金顶住宿价格是多少？峨眉山金顶酒店怎么样？<br />
+　　峨眉山山顶<br />
+　　峨眉山金顶，众所周知峨眉山有四大奇观：日出、云海、佛光、圣灯，如果你是一个摄影爱好者，或者你来峨眉山就是为了看峨眉山的四大奇观，那么毫无疑问，住山顶是不错的选择。峨眉山金顶仅有三家酒店，其中金顶大酒店是三星级，其他两家都是不挂星的；如果你选择的酒店在山顶，缆车最后一班是17：30时，请在报国寺乘坐14：00前的观光车到达索道处；若错过缆车时间需步行2小时到达酒店。<br />
+　　峨眉山金顶大酒店：位于世界文化与自然遗产峨眉山之巅金顶，浮于云海之上，隐于仙雾之中，是三星级酒店。酒店毗邻天下第一金佛四面十方普贤，终日佛光普照，可汲仙山之灵气，集日月之铜精华。楼高4层，共有客房总数80间（套）。网上价格大概在500-800之间。地址：峨眉山金顶大索道上行150米处。<br />
+　　峨眉山金顶山庄：位于世界文化自然遗产峨眉山之巅－金顶，是峨眉山旅游定点饭店，浮于云海之上，隐于仙雾之中，是金顶仅有的三家宾馆之一。步行到金佛只需3分钟，所处观景位置绝佳，天气晴好时您可以近观原始森林，远观贡嘎雪山，还有金顶四绝。网上价格大概在300-800之间。地址：峨眉山金顶<br />
+　　峨眉山金顶乡怀里酒店：位于金顶小索道出口。周围盛景簇拥，精华迭现，远可观贡嘎雪山，近可观原始森林。步行5分钟即可朝拜四面十方普贤金佛。酒店不挂星，但是其实整个环境和设施还是很不错的，网络价格在500-1000之间。地址：峨眉山金顶小索道出口的地方。<br />
+　　峨眉山的金顶只有这三家酒店，当然如果没有定到山顶的酒店，或者是觉得价钱偏高的，还有一个选择就是住在雷洞坪，雷洞坪距离山顶只有2个小时的路程，如果想看日出云海的 ，可以选择早起花2个小时爬上金顶，也可以乘坐最早的一班索道（05:30）上金顶。雷洞坪有很多家农家客栈，价格在100元左右每晚。<br />
+　　如何前往峨眉山<br />
+　　1.城际列车：成都火车南站/东站均有高铁到峨眉山，峨眉山站距离景区很近，可乘公交车达峨眉山景区。（注：峨眉站是火车站，距离景区较远。）成都至峨眉山二等座票价65元/人，车程1个半小时，推荐坐高铁去峨眉山。<br />
+　　2.汽车：成都新南门有直达峨眉山报国寺的汽车，票价约41元，车程2小时。<br />
+　　3.飞机：离峨眉山最近的机场在成都双流机场，可在双流机场直接乘高铁到峨眉山。<br />
+　　4.自驾：从成都出发，成都—成乐高速—峨眉山景区。全程约160公里，路况很好，车程约1.5小时。<br />
+　　5.当地跟团1-2日游：这是前往峨眉山最简单、省事的方式，主要安排峨眉山、乐山大佛两个主要景点。<br />
+						</div>
+					</div>
+				</div>
+				<div class="b-gray m-t50 p10">
+					<div class="b-bgray s-15 p-b5">
+						最新评论 <span class="c-yellow">（151条）</span>
+					</div>
+					<div class="flex m-t30">
+						<div><img class="w-full" src="../img/travel-detail2.jpg"/></div>
+						<div class="p-l20">
+							<textarea v-model="remark" placeholder="请输入" cols="150" rows="10" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="t-r m-t10 p-b50">
+						<span @click="save" class="pointer bg-yellow c-white s-12 p-5-15">发表评论</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===========================================底部=========================================== -->
+		<div class="footer">
+			<div class="container">
+				<div class="col-md-6 footer-left">
+					<h3>Get in touch</h3>
+					<form>
+						<input type="text" placeholder="Email" required="">
+						<input type="submit" value="提交">
+					</form>
+				</div>
+				<div class="col-md-3 footer-middle">
+					<h3>Address</h3>
+					<div class="address">
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
+						</p>
+					</div>
+					<div class="phone">
+						<p>028-66668888</p>
+					</div>
+				</div>
+				<div class="col-md-3 footer-right">
+					<div class="f-logo">
+						<a href="index.html">Home Page</a>
+					</div>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="copyright-left">
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/vue.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/toastr.js"></script>
+	<script type="text/javascript">
+		var timerNewOrder = null;
+		var vm = new Vue({
+			el:'#vmMain',
+			data:{
+				list1:[
+					{},{},{},
+				],
+				show:false,
+				remark:'',
+			},
+			methods:{
+					load:function(){
+						clearInterval(timerNewOrder);
+						timerNewOrder = setInterval(function(){
+							newOrderScroll(document.getElementById('noticeWrap'));
+						},50);
+					},
+					mouseover:function(){
+						clearInterval(timerNewOrder);
+					},
+					mouseout:function(){
+						timerNewOrder = setInterval(function(){
+							newOrderScroll(document.getElementById('noticeWrap'));
+						},50);
+					},
+					guide:function(boo){
+						this.show = boo;
+					},
+					save:function(){
+						if(!this.remark){
+							toastr.warning('请输入评论');
+							return;
+						}
+						toastr.success('感谢您的评论');
+						this.remark = '';
+					},
+					paging:function(val){
+						// list2
+						switch (val){
+							case 1:
+								this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 2:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 3:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 4:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 5:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 'pre':
+									if(this.pageNo == 1){
+										return;
+									}
+									this.pageNo--;
+									this.paging(this.pageNo)
+								break;
+							case 'next':
+								if(this.pageNo == 5){
+										return;
+									}
+								this.pageNo++;
+								this.paging(this.pageNo)
+								break;
+							default:
+								this.list2 = [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								break;
+						}
+					},
+					pagingComment:function(val){
+						
+						
+						if(val == 'pre'){
+							if(this.pageCommentNo <=0){
+								return;
+							}
+							this.pageCommentNo -- ;
+							
+						}
+						if(val == 'next'){
+							this.pageCommentNo ++ ;
+							
+						}
+						if(this.pageCommentNo%2 == 1){
+							this.list3 = [
+								{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},
+							]
+						}else{
+							this.list3 = [
+								{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},
+							]
+						}
+					}
+				}
+		})
+		vm.load();
+			function newOrderScroll(obj) { 
+				if(obj){
+			      	var tmp = (obj.scrollLeft)++;
+			      	//当滚动条到达右边顶端时
+			      	if (obj.scrollLeft == tmp) {
+			      		obj.innerHTML += obj.innerHTML;
+			      	}
+			      	//当滚动条滚动了初始内容的宽度时滚动条回到最左端
+			      	if (obj.scrollLeft >= obj.firstChild.offsetWidth) {
+			      		obj.scrollLeft = 0;
+			      	} 
+			     }
+		    }
+	</script>
+</body>
+
+</html>

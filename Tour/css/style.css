@@ -32,7 +32,7 @@ body, html {
     transition: all 0.5s;
 }
 a {
-	color: #797979;
+	color: #8f2020;
 	text-decoration: none;
 	-webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -43,7 +43,7 @@ a {
 a:hover, a:focus {
 	text-decoration: none;
 	outline: none;
-	color:#f78536;
+	color: #E51C23;
 	-webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;

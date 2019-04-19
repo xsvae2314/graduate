@@ -20,15 +20,15 @@
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -50,7 +50,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -125,7 +125,7 @@
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 												<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
 													<div class="x_slider_form_heading_wrapper float_left">
-														<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
+														<h3><img class="w-40" src="../img/index/lv.png"/> 度假旅游</h3>
 													</div>
 													<div class="m-t20">
 														<div class="p10 row"> 
@@ -134,11 +134,21 @@
 																<b>周边游</b>
 															</div>
 															<div class="col-4 c-9 pointer tour-city"> 九寨沟 </div>
-															<div class="col-4 c-9 pointer tour-city"> 峨眉山 </div>
-															<div class="col-4 c-9 pointer tour-city"> 乐山大佛 </div>
+															<div class="col-4 c-9 pointer tour-city"> 泸沽湖 </div>
+															<div class="col-4 c-9 pointer tour-city"> 稻城亚丁 </div>
 															<div class="col-4 c-9 pointer tour-city"> 青城山 </div>
 															<div class="col-4 c-9 pointer tour-city"> 海螺沟 </div>
 															<div class="col-4 c-9 pointer tour-city"> 西岭雪山 </div>
+														</div>
+														<div class="p10 row"> 
+															<div class="col-12 relative c-3">
+																<div class="line-banner"></div>
+																<b>川内游</b>
+															</div>
+															<div class="col-3 c-9 pointer tour-city"> 成都 </div>
+															<div class="col-3 c-9 pointer tour-city"> 南充 </div>
+															<div class="col-3 c-9 pointer tour-city"> 宜宾 </div>
+															<div class="col-3 c-9 pointer tour-city"> 广安 </div>
 														</div>
 														<div class="p10 row"> 
 															<div class="col-12 relative c-3">
@@ -147,18 +157,8 @@
 															</div>
 															<div class="col-3 c-9 pointer tour-city"> 北京 </div>
 															<div class="col-3 c-9 pointer tour-city"> 上海 </div>
-															<div class="col-3 c-9 pointer tour-city"> 厦门 </div>
-															<div class="col-3 c-9 pointer tour-city"> 昆明 </div>
-														</div>
-														<div class="p10 row"> 
-															<div class="col-12 relative c-3">
-																<div class="line-banner"></div>
-																<b>出境游</b>
-															</div>
-															<div class="col-3 c-9 pointer tour-city"> 香港 </div>
-															<div class="col-3 c-9 pointer tour-city"> 台湾 </div>
-															<div class="col-3 c-9 pointer tour-city"> 泰国 </div>
-															<div class="col-3 c-9 pointer tour-city"> 日本 </div>
+															<div class="col-3 c-9 pointer tour-city"> 西安 </div>
+															<div class="col-3 c-9 pointer tour-city"> 三亚 </div>
 														</div>
 													</div>
 												</div>
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="carousel-item" style="background-image: url(../img/index/banner.png);background-size: cover;height: 500px;">
+					<div class="carousel-item" style="background-image: url(../img/index/峨眉山banner.jpg);background-size: cover;height: 500px;">
 						<div class="container">
 							<div class="row">
 								<div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -180,7 +180,7 @@
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 												<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
 													<div class="x_slider_form_heading_wrapper float_left">
-														<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
+														<h3><img class="w-40" src="../img/index/lv.png"/> 度假旅游</h3>
 													</div>
 													<div class="m-t20">
 														<div class="p10 row"> 
@@ -189,11 +189,21 @@
 																<b>周边游</b>
 															</div>
 															<div class="col-4 c-9 pointer tour-city"> 九寨沟 </div>
-															<div class="col-4 c-9 pointer tour-city"> 峨眉山 </div>
-															<div class="col-4 c-9 pointer tour-city"> 乐山大佛 </div>
+															<div class="col-4 c-9 pointer tour-city"> 泸沽湖 </div>
+															<div class="col-4 c-9 pointer tour-city"> 稻城亚丁 </div>
 															<div class="col-4 c-9 pointer tour-city"> 青城山 </div>
 															<div class="col-4 c-9 pointer tour-city"> 海螺沟 </div>
 															<div class="col-4 c-9 pointer tour-city"> 西岭雪山 </div>
+														</div>
+														<div class="p10 row"> 
+															<div class="col-12 relative c-3">
+																<div class="line-banner"></div>
+																<b>川内游</b>
+															</div>
+															<div class="col-3 c-9 pointer tour-city"> 成都 </div>
+															<div class="col-3 c-9 pointer tour-city"> 南充 </div>
+															<div class="col-3 c-9 pointer tour-city"> 宜宾 </div>
+															<div class="col-3 c-9 pointer tour-city"> 广安 </div>
 														</div>
 														<div class="p10 row"> 
 															<div class="col-12 relative c-3">
@@ -202,18 +212,8 @@
 															</div>
 															<div class="col-3 c-9 pointer tour-city"> 北京 </div>
 															<div class="col-3 c-9 pointer tour-city"> 上海 </div>
-															<div class="col-3 c-9 pointer tour-city"> 厦门 </div>
-															<div class="col-3 c-9 pointer tour-city"> 昆明 </div>
-														</div>
-														<div class="p10 row"> 
-															<div class="col-12 relative c-3">
-																<div class="line-banner"></div>
-																<b>出境游</b>
-															</div>
-															<div class="col-3 c-9 pointer tour-city"> 香港 </div>
-															<div class="col-3 c-9 pointer tour-city"> 台湾 </div>
-															<div class="col-3 c-9 pointer tour-city"> 泰国 </div>
-															<div class="col-3 c-9 pointer tour-city"> 日本 </div>
+															<div class="col-3 c-9 pointer tour-city"> 西安 </div>
+															<div class="col-3 c-9 pointer tour-city"> 三亚 </div>
 														</div>
 													</div>
 												</div>
@@ -224,7 +224,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="carousel-item" style="background-image: url(../img/index/banner.png);background-size: cover;height: 500px;">
+					<div class="carousel-item" style="background-image: url(../img/index/嘉阳小火车banner.jpg);background-size: cover;height: 500px;">
 						<div class="container">
 							<div class="row">
 								<div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -235,7 +235,7 @@
 											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 												<div class="x_slider_form_main_wrapper float_left" data-animation="animated fadeIn">
 													<div class="x_slider_form_heading_wrapper float_left">
-														<h3><img class="w-40" src="../img/index/lv.png"/> 旅游度假</h3>
+														<h3><img class="w-40" src="../img/index/lv.png"/> 度假旅游</h3>
 													</div>
 													<div class="m-t20">
 														<div class="p10 row"> 
@@ -244,11 +244,21 @@
 																<b>周边游</b>
 															</div>
 															<div class="col-4 c-9 pointer tour-city"> 九寨沟 </div>
-															<div class="col-4 c-9 pointer tour-city"> 峨眉山 </div>
-															<div class="col-4 c-9 pointer tour-city"> 乐山大佛 </div>
+															<div class="col-4 c-9 pointer tour-city"> 泸沽湖 </div>
+															<div class="col-4 c-9 pointer tour-city"> 稻城亚丁 </div>
 															<div class="col-4 c-9 pointer tour-city"> 青城山 </div>
 															<div class="col-4 c-9 pointer tour-city"> 海螺沟 </div>
 															<div class="col-4 c-9 pointer tour-city"> 西岭雪山 </div>
+														</div>
+														<div class="p10 row"> 
+															<div class="col-12 relative c-3">
+																<div class="line-banner"></div>
+																<b>川内游</b>
+															</div>
+															<div class="col-3 c-9 pointer tour-city"> 成都 </div>
+															<div class="col-3 c-9 pointer tour-city"> 南充 </div>
+															<div class="col-3 c-9 pointer tour-city"> 宜宾 </div>
+															<div class="col-3 c-9 pointer tour-city"> 广安 </div>
 														</div>
 														<div class="p10 row"> 
 															<div class="col-12 relative c-3">
@@ -257,18 +267,8 @@
 															</div>
 															<div class="col-3 c-9 pointer tour-city"> 北京 </div>
 															<div class="col-3 c-9 pointer tour-city"> 上海 </div>
-															<div class="col-3 c-9 pointer tour-city"> 厦门 </div>
-															<div class="col-3 c-9 pointer tour-city"> 昆明 </div>
-														</div>
-														<div class="p10 row"> 
-															<div class="col-12 relative c-3">
-																<div class="line-banner"></div>
-																<b>出境游</b>
-															</div>
-															<div class="col-3 c-9 pointer tour-city"> 香港 </div>
-															<div class="col-3 c-9 pointer tour-city"> 台湾 </div>
-															<div class="col-3 c-9 pointer tour-city"> 泰国 </div>
-															<div class="col-3 c-9 pointer tour-city"> 日本 </div>
+															<div class="col-3 c-9 pointer tour-city"> 西安 </div>
+															<div class="col-3 c-9 pointer tour-city"> 三亚 </div>
 														</div>
 													</div>
 												</div>
@@ -293,21 +293,60 @@
 		<div class="p-l20 p-r20 p-t10 bg-white"> 
 			<div class="p-t20 o-hidden flex">
 				<div class="w-pre80 p-l10 p-r10">
-					<span class="c-yellow s-16 p-r30" style="border-bottom: 3px solid #f78536;padding-bottom: 5px;"><b>特惠</b> </span>
+					<div class="t-c relative">
+						<span @click="tabHui('spots')" :class="tabHuiTxt=='spots'?'c-yellow':''" class="p-l10 p-r10 pointer">热门景点</span> 
+						<span @click="tabHui('hotel')" :class="tabHuiTxt=='hotel'?'c-yellow':''" class="p-l10 p-r10 pointer">热门酒店</span>
+						<span class="c-yellow s-16 p-r30" style="border-bottom: 3px solid #f78536;padding-bottom: 5px;position: absolute;left: 0;"><b>特惠</b> </span> 
+					</div>
 					<div class="bg-yellow" style="height: 1px;margin-top: 7px;margin-right: 15px;margin-bottom: 10px;"></div>
-					<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
+					<div v-if="tabHuiTxt=='spots'" class="row" style="padding: 0;margin: 0 0 0 -15px;">
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-							<a href="spots-detail.html" target="_blank">
+							<a href="spots-detail峨眉山.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/index/特惠峨眉山.jpg"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											峨眉山是中国"四大佛教名山"之一，地势陡峭，风景秀丽，素有"峨眉天下秀"之称。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">150</span>起</div>
+										峨眉山金顶
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥70</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail乐山大佛.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/index/特惠乐山大佛.jpg"/>
+										<div class="lsspots">
+											乐山大佛景区位于乐山市郊，岷江、大渡河、青衣江三江交汇处，山上茂林修竹终年葱茏，山下三江汇聚，享有西南山水之冠的美誉，为历代文人墨客所咏赞。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">90</span>起</div>
+										乐山大佛
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥40</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="spots-detail峨眉山.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/index/特惠东方佛都.jpg"/>
+										<div class="lsspots">
+											东方佛都景区现所辖凌云九峰之四峰。凌云九峰，唐代"峰各有寺"，抗元战火将四峰寺庙毁去。而今的东方佛都循古迹恢复旧貌，保留唐代原有山林风貌，依山取势、高低错落、林隐千佛、洞中百窟。
+										</div>
+									</div>
+									<div class="flex between p-t20 p-b20 p-l10 p-r10">
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">50</span>起</div>
+										东方佛都
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥10</div>
 									</div>
 								</div>
 							</a>
@@ -316,14 +355,15 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/index/特惠黑竹沟.jpg"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											黑竹沟位于乐山市峨边彝族自治县境内，当地乡名:斯豁，即死亡之谷。曾被国内外舆论广泛称为"中国百慕大"的瑰宝。由于黑竹沟藏有不少未解开的"谜"，当地彝族和汉族把黑竹沟称之为南林区的"魔鬼三角洲"。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">50</span>起</div>
+										黑竹沟
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥10</div>
 									</div>
 								</div>
 							</a>
@@ -332,14 +372,15 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/index/特惠嘉阳小火车.jpg"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											嘉阳小火车，是运行在四川南部的小县城--犍为县城西20公里处的一条只有19.84千米的窄轨铁路上的"老爷火车"。有"工业革命的活化石"，"工业革命的绝版景观"，比大熊猫还要珍贵的国宝之美誉。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">100</span>起</div>
+										嘉阳小火车
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥20</div>
 									</div>
 								</div>
 							</a>
@@ -348,82 +389,325 @@
 							<a href="spots-detail.html" target="_blank">
 								<div class="b-gray thlist pointer">
 									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
+										<img class="w-full" src="../img/index/特惠沐川漂流.jpg"/>
 										<div class="lsspots">
-											乐山景点乐山景点乐山景点
+											沐川龙门大峡谷，位于"绿色明珠""生态名县"--四川省沐川县城2公里处。距西南重镇成都、重庆200公里，距乐山市80公里。这里，竹林婆娑，层山葳蕤，四季常青，云遮雾绕，峡谷内有我国目前最刺激最生态的竹海峡谷漂流。
 										</div>
 									</div>
 									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-							<a href="spots-detail.html" target="_blank">
-								<div class="b-gray thlist pointer">
-									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
-										<div class="lsspots">
-											乐山景点乐山景点乐山景点
-										</div>
-									</div>
-									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-							<a href="spots-detail.html" target="_blank">
-								<div class="b-gray thlist pointer">
-									<div class="relative">
-										<img class="w-full" src="../img/index/x.png"/>
-										<div class="lsspots">
-											乐山景点乐山景点乐山景点
-										</div>
-									</div>
-									<div class="flex between p-t20 p-b20 p-l10 p-r10">
-										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">140</span>起</div>
-										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥50</div>
+										<div class="s-12"> <span class="c-red">￥</span><span class="c-red s-16">60</span>起</div>
+										龙门大峡谷
+										<div class="bg-green c-white p-2-15 s-12 r5"> 省￥10</div>
 									</div>
 								</div>
 							</a>
 						</div>
 						
 					</div>
+					<div v-if="tabHuiTxt=='hotel'" class="row" style="padding: 0;margin: 0 0 0 -15px;">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail乐山禅驿.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山禅驿·嘉定院子酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山禅驿·嘉定院子酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=5?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥792</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区大佛景区嘉定坊C区</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山盘龙开元名都大酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山盘龙开元名都大酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=5?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥389</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">柏杨西路888号（近嘉兴路美食街）</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山广寒宫酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山广寒宫酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥210</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区朝霞路698号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山谧寻酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山谧寻酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥399</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区绿心南路2599号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山金海棠大酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金海棠大酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥298</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区海棠路512号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山三江悦度假酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山三江悦度假酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥838</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区大佛景区嘉定坊C区3栋01号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			
 				</div>
 				<div class="w-pre20 p-r10">
 					<img class="w-full" src="../img/index/cc.png"/>
 					<div class="m-t10 b-gray p-l10 p-r10 p-t10">
 						<div class="flex between p-b5 b-byellow s-15">
 							<div class="c-yellow">乐山旅游攻略</div>
-							<div class="c-9 pointer">更多</div>
+							<div class="c-9 pointer"><a href="travel.html">更多</a></div>
 						</div>
 						<div class="flex p-t15 p-b10 b-bgray">
 							<div><img class="w-40" src="../img/index/xz_03.png"/></div>
 							<div>
-								<h4 class="s-16">Travel Plans</h4>
-								<p class="s-12 p-t5 p-b5">Facilis ipsum reprehenderit nem molestias. Aut cum mollitia.</p>
-								<span class="c-white bg-yellow r30 p-t3 p-b3 p-l20 p-r20 s-12 pointer">下载</span>
+								<h4 class="s-16">十方普贤圣像</h4>
+								<p class="s-12 p-t5 p-b5">十方普贤圣像是金顶的中心当太阳的霞光照在佛像的宝顶上时，无数的祥光瑞气从金佛上反射出来，为云海镶上瑰丽的金边。</p>
+								<span class="c-white bg-yellow r30 p-t3 p-b3 p-l20 p-r20 s-12 pointer"><a href="下载文件/十方普贤圣像.rar">下载</a></span>
 							</div>
 						</div>
 						<div class="flex p-t15 p-b10 b-bgray">
 							<div><img class="w-40" src="../img/index/xz_03.png"/></div>
 							<div>
-								<h4 class="s-16">Travel Plans</h4>
-								<p class="s-12 p-t5 p-b5">Facilis ipsum reprehenderit nem molestias. Aut cum mollitia.</p>
-								<span class="c-white bg-yellow r30 p-t3 p-b3 p-l20 p-r20 s-12 pointer">下载</span>
+								<h4 class="s-16">峨眉山一线天</h4>
+								<p class="s-12 p-t5 p-b5">在牛心岭下，沿着黑龙江西行上山，山径在江两岸迂回曲折。行至“山重水复疑无路”的极深处，有一峡谷，名白云峡。</p>
+								<span class="c-white bg-yellow r30 p-t3 p-b3 p-l20 p-r20 s-12 pointer"><a href="下载文件/峨眉山一线天.rar">下载</a></span>
 							</div>
 						</div>
 						<div class="flex p-t15 p-b10">
 							<div><img class="w-40" src="../img/index/xz_03.png"/></div>
 							<div>
-								<h4 class="s-16">Travel Plans</h4>
-								<p class="s-12 p-t5 p-b5">Facilis ipsum reprehenderit nem molestias. Aut cum mollitia.</p>
-								<span class="c-white bg-yellow r30 p-t3 p-b3 p-l20 p-r20 s-12 pointer">下载</span>
+								<h4 class="s-16">乐山大佛景区</h4>
+								<p class="s-12 p-t5 p-b5">乐山大佛位于峨眉山东31公里的乐山市，依凌云山栖霞峰临江峭壁凿造而成，又名凌云大佛，为弥勒坐像，是乐山最著名的景观。</p>
+								<span class="c-white bg-yellow r30 p-t3 p-b3 p-l20 p-r20 s-12 pointer"><a href="下载文件/乐山大佛景区.rar">下载</a></span>
 							</div>
 						</div>
 					</div>
@@ -457,7 +741,7 @@
 					<div class="b-gray p-l10 p-r10">
 						<div class="flex between p-b5 b-byellow s-15 p-t10">
 							<div class="c-yellow">游客点评</div>
-							<div class="c-9 pointer">更多</div>
+							<div class="c-9 pointer"><a href="">更多</a></div>
 						</div>
 						<div v-for="i in list3"v class="flex p-t15 p-b10 b-bf0 align-center">
 							<div><img class="w-50" :src="i.img"/></div>
@@ -497,19 +781,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -517,7 +801,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>
@@ -539,20 +823,21 @@
 					{ img:'../img/index/x.png',price:'140',discount:'50' ,text:'乐山景点乐山景点乐山景点'},
 				],
 				list2:[
-					{ img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻' },
-					{ img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻' },
-					{ img:'../img/index/b_03.png' ,text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'},
-					{ img:'../img/index/b_03.png' ,text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'}
+					{ img:'../img/index/旅游新闻/旅游新闻1.jpg',text:'2018年1月13日，“山水佛地 灵秀乐山”乐山旅游西北宣传营销中心2018年首发团走进乐山。感受峨眉山金顶冰雪盛景，体验全球“绝版”嘉阳小火车，饱览千年大佛之雄壮……为期4天的旅行，让来自西安等地的30多名游客切身体验了一把乐山高品质的旅行线路与舒心的服务。' },
+					{ img:'../img/index/旅游新闻/旅游新闻2.jpg',text:'2018年3月15日，来自祖国宝岛台湾的近百名游客走进乐山，品美食、乘游船、观大佛，切身感受嘉州“醉”美春色。此次台湾旅行团是2018年春节之后来乐的首发大团，也是近年来台湾游客来乐人数最多的旅行团。' },
+					{ img:'../img/index/旅游新闻/旅游新闻3.jpg' ,text:'绿心环线上的海棠花、桃花、油菜花、玉兰花等各色花朵竞相绽放，美不胜收。既可拂去都市尘嚣，又能在城市中心举步可达，面对如此春色满园的天然“氧吧”，市民纷纷扎堆于此，赏花拍照、骑行畅游、散步闲聊，尽情接受大自然的洗涤。'},
+					{ img:'../img/index/旅游新闻/旅游新闻4.jpg' ,text:'2018年4月29日至5月1日，四川省春季音乐季暨第三届乐山·峨眉山佛光花海音乐节在峨眉山下的佛光花海园区盛大举行。姜育恒、辛晓琪、孟庭苇等一大波明星大咖共同追忆“似水流年”，世界百大DJ、猴子军团乐队、黄家强乐队等奉上“嗨到爆”的“电音之夜”。'}
 				],
 				list3:[
-					{ img:'../img/index/13.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
-					{ img:'../img/index/15.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
-					{ img:'../img/index/14.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
-					{ img:'../img/index/13.jpg' ,title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'},
+					{ img:'../img/index/游客头像/游客1.jpeg' ,title:'我去了乐山大佛，感觉很好玩，推荐大家去玩一下。',date:'07-08-2018',yan:'4550',remark:'300'},
+					{ img:'../img/index/游客头像/游客2.jpeg' ,title:'峨眉山玩了3天，总的感觉很不错，风景优美，尤其是在金顶看日出。',date:'03-09-2018',yan:'4500',remark:'560'},
+					{ img:'../img/index/游客头像/游客3.png' ,title:'第一天去乐山大佛，第二天去坐了嘉阳小火车，尤其是菜籽花特别好看，总的不错，值得推荐。',date:'25-12-2018',yan:'6200',remark:'954'},
+					{ img:'../img/index/游客头像/游客4.jpeg' ,title:'去了神秘的黑竹沟，感觉进了原始森林，还特别好玩。',date:'1-1-2019',yan:'560',remark:'36'},
 				],
 				pageNo:1,
 				pageCommentNo:1,
 				show:false,
+				tabHuiTxt:'spots'
 			},
 			methods:{
 					load:function(){
@@ -575,6 +860,9 @@
 					toDetail:function(n){
 						window.open('spots-detail'+n+'.html','_blank');
 					},
+					tabHui:function(name){
+						this.tabHuiTxt = name;
+					},
 					paging:function(val){
 						// list2
 						switch (val){
@@ -582,13 +870,13 @@
 								this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻1.jpg',text:'2018年1月13日，“山水佛地 灵秀乐山”乐山旅游西北宣传营销中心2018年首发团走进乐山。感受峨眉山金顶冰雪盛景，体验全球“绝版”嘉阳小火车，饱览千年大佛之雄壮……为期4天的旅行，让来自西安等地的30多名游客切身体验了一把乐山高品质的旅行线路与舒心的服务。'
 									},{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻2.jpg',text:'2018年3月15日，来自祖国宝岛台湾的近百名游客走进乐山，品美食、乘游船、观大佛，切身感受嘉州“醉”美春色。此次台湾旅行团是2018年春节之后来乐的首发大团，也是近年来台湾游客来乐人数最多的旅行团。'
 									},{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻3.jpg',text:'绿心环线上的海棠花、桃花、油菜花、玉兰花等各色花朵竞相绽放，美不胜收。既可拂去都市尘嚣，又能在城市中心举步可达，面对如此春色满园的天然“氧吧”，市民纷纷扎堆于此，赏花拍照、骑行畅游、散步闲聊，尽情接受大自然的洗涤。'
 									},{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻4.jpg',text:'2018年4月29日至5月1日，四川省春季音乐季暨第三届乐山·峨眉山佛光花海音乐节在峨眉山下的佛光花海园区盛大举行。姜育恒、辛晓琪、孟庭苇等一大波明星大咖共同追忆“似水流年”，世界百大DJ、猴子军团乐队、黄家强乐队等奉上“嗨到爆”的“电音之夜”。'
 									}
 								]
 								
@@ -597,13 +885,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻5.jpg',text:'2018年8月3日至5日，中国乐山·马边彝族风情狂欢节暨第三届小凉山火把节盛大举行。为期3天的活动，包括“孟获达斯”摔跤比赛、开幕式、“彝风习习——小凉山马边歌谣”音乐会、“小凉山男神、女神”选美大赛、彝族风情狂欢夜等，同时还有游览参观、民族风情展示、特色风物展示、坝坝宴、篝火晚会、野外宿营等系列配套活动，吸引了成千上万中外游客前往参观体验。'
 									},{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻6.jpg',text:'2018年9月7日至9日，第五届四川国际旅游交易博览会在峨眉山市举行。本届旅博会以“美好生活引领优质旅游”为主题，设全球精品旅游、中国特色旅游、四川优质旅游、旅游文创、旅游惠民、中国特色旅游商品大赛评选展示、户外旅游体验七大展区。布展面积达3.5万平方米，有国际标准展位1500余个，有37个国家和地区、国内28个省（市、自治区）、四川省内全部21个市（州）的636家展商参展。'
 									},{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻7.jpg',text:'2018年9月30日，金口河大峡谷大渡河畔，随着“大峡谷号”游船惊艳起航，金口河区水上旅游翻开崭新篇章。“大峡谷号”游船总长17.1米，船宽4.5米，每次可承载32人游览观光。大峡谷水上游览航线，从新光村码头至白熊沟，往返16公里。'
 									},{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻8.jpg',text:'过彝族年是怎样一种体验？2018年11月17日晚，一场迎接彝历新年的篝火晚会在峨边彝族自治县黑竹沟镇底底古村热闹举行。热情好客的彝族俊男靓女载歌载舞，与游客手拉手、肩并肩，围着熊熊燃烧的篝火，欢呼劲舞。'
 									}
 								]
 								
@@ -612,13 +900,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻5.jpg',text:'2018年8月3日至5日，中国乐山·马边彝族风情狂欢节暨第三届小凉山火把节盛大举行。为期3天的活动，包括“孟获达斯”摔跤比赛、开幕式、“彝风习习——小凉山马边歌谣”音乐会、“小凉山男神、女神”选美大赛、彝族风情狂欢夜等，同时还有游览参观、民族风情展示、特色风物展示、坝坝宴、篝火晚会、野外宿营等系列配套活动，吸引了成千上万中外游客前往参观体验。'
 									},{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻6.jpg',text:'2018年9月7日至9日，第五届四川国际旅游交易博览会在峨眉山市举行。本届旅博会以“美好生活引领优质旅游”为主题，设全球精品旅游、中国特色旅游、四川优质旅游、旅游文创、旅游惠民、中国特色旅游商品大赛评选展示、户外旅游体验七大展区。布展面积达3.5万平方米，有国际标准展位1500余个，有37个国家和地区、国内28个省（市、自治区）、四川省内全部21个市（州）的636家展商参展。'
 									},{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻7.jpg',text:'2018年9月30日，金口河大峡谷大渡河畔，随着“大峡谷号”游船惊艳起航，金口河区水上旅游翻开崭新篇章。“大峡谷号”游船总长17.1米，船宽4.5米，每次可承载32人游览观光。大峡谷水上游览航线，从新光村码头至白熊沟，往返16公里。'
 									},{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻8.jpg',text:'过彝族年是怎样一种体验？2018年11月17日晚，一场迎接彝历新年的篝火晚会在峨边彝族自治县黑竹沟镇底底古村热闹举行。热情好客的彝族俊男靓女载歌载舞，与游客手拉手、肩并肩，围着熊熊燃烧的篝火，欢呼劲舞。'
 									}
 								]
 								
@@ -627,13 +915,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻5.jpg',text:'2018年8月3日至5日，中国乐山·马边彝族风情狂欢节暨第三届小凉山火把节盛大举行。为期3天的活动，包括“孟获达斯”摔跤比赛、开幕式、“彝风习习——小凉山马边歌谣”音乐会、“小凉山男神、女神”选美大赛、彝族风情狂欢夜等，同时还有游览参观、民族风情展示、特色风物展示、坝坝宴、篝火晚会、野外宿营等系列配套活动，吸引了成千上万中外游客前往参观体验。'
 									},{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻6.jpg',text:'2018年9月7日至9日，第五届四川国际旅游交易博览会在峨眉山市举行。本届旅博会以“美好生活引领优质旅游”为主题，设全球精品旅游、中国特色旅游、四川优质旅游、旅游文创、旅游惠民、中国特色旅游商品大赛评选展示、户外旅游体验七大展区。布展面积达3.5万平方米，有国际标准展位1500余个，有37个国家和地区、国内28个省（市、自治区）、四川省内全部21个市（州）的636家展商参展。'
 									},{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻7.jpg',text:'2018年9月30日，金口河大峡谷大渡河畔，随着“大峡谷号”游船惊艳起航，金口河区水上旅游翻开崭新篇章。“大峡谷号”游船总长17.1米，船宽4.5米，每次可承载32人游览观光。大峡谷水上游览航线，从新光村码头至白熊沟，往返16公里。'
 									},{
-										img:'../img/index/11.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻8.jpg',text:'过彝族年是怎样一种体验？2018年11月17日晚，一场迎接彝历新年的篝火晚会在峨边彝族自治县黑竹沟镇底底古村热闹举行。热情好客的彝族俊男靓女载歌载舞，与游客手拉手、肩并肩，围着熊熊燃烧的篝火，欢呼劲舞。'
 									}
 								]
 								
@@ -642,13 +930,13 @@
 									this.pageNo = val;
 								this.list2 =  [
 									{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻5.jpg',text:'2018年8月3日至5日，中国乐山·马边彝族风情狂欢节暨第三届小凉山火把节盛大举行。为期3天的活动，包括“孟获达斯”摔跤比赛、开幕式、“彝风习习——小凉山马边歌谣”音乐会、“小凉山男神、女神”选美大赛、彝族风情狂欢夜等，同时还有游览参观、民族风情展示、特色风物展示、坝坝宴、篝火晚会、野外宿营等系列配套活动，吸引了成千上万中外游客前往参观体验。'
 									},{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻6.jpg',text:'2018年9月7日至9日，第五届四川国际旅游交易博览会在峨眉山市举行。本届旅博会以“美好生活引领优质旅游”为主题，设全球精品旅游、中国特色旅游、四川优质旅游、旅游文创、旅游惠民、中国特色旅游商品大赛评选展示、户外旅游体验七大展区。布展面积达3.5万平方米，有国际标准展位1500余个，有37个国家和地区、国内28个省（市、自治区）、四川省内全部21个市（州）的636家展商参展。'
 									},{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻7.jpg',text:'2018年9月30日，金口河大峡谷大渡河畔，随着“大峡谷号”游船惊艳起航，金口河区水上旅游翻开崭新篇章。“大峡谷号”游船总长17.1米，船宽4.5米，每次可承载32人游览观光。大峡谷水上游览航线，从新光村码头至白熊沟，往返16公里。'
 									},{
-										img:'../img/index/12.jpg',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻8.jpg',text:'过彝族年是怎样一种体验？2018年11月17日晚，一场迎接彝历新年的篝火晚会在峨边彝族自治县黑竹沟镇底底古村热闹举行。热情好客的彝族俊男靓女载歌载舞，与游客手拉手、肩并肩，围着熊熊燃烧的篝火，欢呼劲舞。'
 									}
 								]
 								
@@ -670,13 +958,13 @@
 							default:
 								this.list2 = [
 									{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻5.jpg',text:'2018年8月3日至5日，中国乐山·马边彝族风情狂欢节暨第三届小凉山火把节盛大举行。为期3天的活动，包括“孟获达斯”摔跤比赛、开幕式、“彝风习习——小凉山马边歌谣”音乐会、“小凉山男神、女神”选美大赛、彝族风情狂欢夜等，同时还有游览参观、民族风情展示、特色风物展示、坝坝宴、篝火晚会、野外宿营等系列配套活动，吸引了成千上万中外游客前往参观体验。'
 									},{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻6.jpg',text:'2018年9月7日至9日，第五届四川国际旅游交易博览会在峨眉山市举行。本届旅博会以“美好生活引领优质旅游”为主题，设全球精品旅游、中国特色旅游、四川优质旅游、旅游文创、旅游惠民、中国特色旅游商品大赛评选展示、户外旅游体验七大展区。布展面积达3.5万平方米，有国际标准展位1500余个，有37个国家和地区、国内28个省（市、自治区）、四川省内全部21个市（州）的636家展商参展。'
 									},{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻7.jpg',text:'2018年9月30日，金口河大峡谷大渡河畔，随着“大峡谷号”游船惊艳起航，金口河区水上旅游翻开崭新篇章。“大峡谷号”游船总长17.1米，船宽4.5米，每次可承载32人游览观光。大峡谷水上游览航线，从新光村码头至白熊沟，往返16公里。'
 									},{
-										img:'../img/index/b_03.png',text:'旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻旅游新闻'
+										img:'../img/index/旅游新闻/旅游新闻8.jpg',text:'过彝族年是怎样一种体验？2018年11月17日晚，一场迎接彝历新年的篝火晚会在峨边彝族自治县黑竹沟镇底底古村热闹举行。热情好客的彝族俊男靓女载歌载舞，与游客手拉手、肩并肩，围着熊熊燃烧的篝火，欢呼劲舞。'
 									}
 								]
 								break;
@@ -696,27 +984,17 @@
 						}
 						if(this.pageCommentNo%2 == 1){
 							this.list3 = [
-								{
-									img:'../img/index/13.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},{
-									img:'../img/index/14.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},{
-									img:'../img/index/15.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},{
-									img:'../img/index/13.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},
+								{ img:'../img/index/游客头像/游客1.jpeg' ,title:'我去了乐山大佛，感觉很好玩，推荐大家去玩一下。',date:'07-08-2018',yan:'4550',remark:'300'},
+					{ img:'../img/index/游客头像/游客2.jpeg' ,title:'峨眉山玩了3天，总的感觉很不错，风景优美，尤其是在金顶看日出。',date:'03-09-2018',yan:'4500',remark:'560'},
+					{ img:'../img/index/游客头像/游客3.png' ,title:'第一天去乐山大佛，第二天去坐了嘉阳小火车，尤其是菜籽花特别好看，总的不错，值得推荐。',date:'25-12-2018',yan:'6200',remark:'954'},
+					{ img:'../img/index/游客头像/游客4.jpeg' ,title:'去了神秘的黑竹沟，感觉进了原始森林，还特别好玩。',date:'1-1-2019',yan:'560',remark:'36'},
 							]
 						}else{
 							this.list3 = [
-								{
-									img:'../img/index/15.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},{
-									img:'../img/index/13.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},{
-									img:'../img/index/14.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},{
-									img:'../img/index/15.jpg',title:'Web page editors their default modal text.',date:'07 july,2019',yan:'33',remark:'16'
-								},
+								{ img:'../img/index/游客头像/游客5.jpg' ,title:'我去了乐山大佛，又在乐山玩了几天，感觉很好玩，推荐大家去玩一下。',date:'22-11-2018',yan:'550',remark:'2300'},
+					{ img:'../img/index/游客头像/游客6.jpg' ,title:'峨眉山玩了3天，总的感觉很不错，风景优美，尤其是在金顶看日出。',date:'23-09-2018',yan:'4260',remark:'5640'},
+					{ img:'../img/index/游客头像/游客7.jpeg' ,title:'第一天去乐山大佛，第二天去坐了嘉阳小火车，尤其是菜籽花特别好看，总的不错，值得推荐。',date:'03-12-2018',yan:'550',remark:'954'},
+					{ img:'../img/index/游客头像/游客8.png' ,title:'去了神秘的黑竹沟，感觉进了原始森林，还特别好玩。',date:'3-1-2019',yan:'660',remark:'55'},
 							]
 						}
 					}

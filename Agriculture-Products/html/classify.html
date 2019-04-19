@@ -179,19 +179,23 @@
             list:[],
             tabbartxt:'1',
             shoppingCartCount:'',
-            isshow:false
+            isshow:false,
+            tabBarNum:1,
         },
         methods:{
         	load:function(){
 	        	if(getQueryString('type')){
 	        		this.tabBar(getQueryString('type'));
+	        		this.tabBarNum = getQueryString('type');
 	        	}else{
 	        		this.tabBar(1);
+	        		this.tabBarNum = 1;
 	        	}
         	},
         	// 点击蔬菜 水果 茶叶 粮油 养殖 切换内容显示
         	tabBar:function(type){
         		this.tabbartxt = type;
+        		this.tabBarNum = type;
         		switch (type){
         			//蔬菜
         			case '1':
@@ -295,7 +299,7 @@
         	},
         	// 跳转到详情
         	toDetail:function(detail,n){
-        		if(n==0){
+        		if(n==0 &&this.tabBarNum == 1 ){
         			window.open("product-detail.html?type="+n,"_blank"); 
         		}
         	},

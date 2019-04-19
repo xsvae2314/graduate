@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>住宿</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta name="description" content="Xpedia" />
+	<meta name="keywords" content="Xpedia" />
+	<meta name="author" content="" />
+	<meta name="MobileOptimized" content="320" />
+	<link rel="stylesheet" type="text/css" href="../css/xpedia.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	<style type="text/css">
+		h3{padding-left: 30px;}
+		#table{margin-bottom: 0;border: 0;}
+		#table tr th,#table tr td{border-left: 0!important;border-right: 0;text-align: center;}
+	</style>
+</head>
+
+<body>
+	<div id="vmMain" v-cloak>
+		<!-- ===========================================导航=========================================== -->
+		<div class="hs_navigation_header_wrapper p-t20 p-b20">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+						<nav class="hs_main_menu d-none d-sm-none d-xs-none d-md-block">
+							<ul>
+								<li> <a class="menu-button" href="index.html">首页</a>
+								<li> <a class="menu-button" href="spots.html">景点</a>
+								<li> <a class="menu-button" href="food.html">美食</a> </li>
+								<li> <a class="menu-button c-yellow" href="hotel.html">住宿</a> </li>
+								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
+									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
+										<div class="flex s-14">
+											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
+											<div class="p-l10 c-6">
+												<div>
+													<span class="p-2-10 guide pointer">乐山指南 </span> | 
+													<span class="p-2-10 guide pointer">乐山特产 </span> | 
+													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
+												</div>
+												<div class="t-l">
+													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
+													<span class="p-2-10 guide pointer">乐山旅行社 </span> 
+												</div>
+											</div>
+										</div>
+										<div class="flex s-14 m-t10">
+											<div class="c-yellow" style="white-space: nowrap;">旅游服务</div>
+											<div class="p-l10 c-6">
+												<div>
+													<span class="p-2-10 guide pointer">乐山订房 </span> | 
+													<span class="p-2-10 guide pointer">乐山导游 </span> | 
+													<span class="p-2-10 guide pointer">乐山订票 </span> | 
+													<span class="p-2-10 guide pointer">乐山会议 </span> 
+												</div>
+												<div class="t-l">
+													<span class="p-2-10 guide pointer">乐山租车 </span> | 
+													<span class="p-2-10 guide pointer">乐山签证 </span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<div class="p-l20 flex between p-r20">
+							<div class="relative">
+								<input type="text" class="p-l40 s-14 search-input" placeholder="请输入您要搜索的信息"/>
+								<span class="iconfont iconsuosou s-15 search-icon"></span>
+							</div>
+							<div class="s-15 c-yellow">
+								<span class="p-r10"> <a href="login.html" class="c-yellow">登录</a></span> | 
+								<span class="p-l10"><a href="signup.html" class="c-yellow">注册</a></span> 
+							</div>
+						</div>
+					</div>
+					<div class=" col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 t-c s-12 c-0">
+						<div><span class="c-blue">乐山天气 </span>晴 <span class="c-yellow">22℃</span> ~ <span class="c-blue">10℃</span></div>
+						<div class="flex">
+							<div>
+								<img src="../img/sun.png"/>
+							</div>
+							<div class="m-l10 t-c">
+								<div>西南风 3级</div>
+								<div>2019年04月14日 <span class="c-lig-green">星期日</span> </div>
+								<div>农历己亥猪年 三月初十 </div>
+							</div>
+						</div>
+						 <!--<iframe name="weather_inc" 
+							src="http://i.tianqi.com/index.php?c=code&id=7"  width="220" height="90" frameborder="0" 
+							marginwidth="0" marginheight="0" scrolling="no">
+						</iframe>-->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- ===========================================中间内容部分===========================================  -->
+		<div class="bg-white">
+			<div class="bg-yellow">
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="hotel.html">住宿</a>/ <a href="hotel-detail乐山禅驿.html">乐山禅驿</a></div>
+			</div>
+			<div class="w-pre80 m-lpre10 p-b30 m-t30">
+				<div class="flex p10 b-gray">
+					<div class="w-full">
+						<img class="w-full" src="../img/hotels/乐山禅驿·嘉定院子酒店.jpg" alt="" />
+					</div>
+					<div class="w-full">
+						<img class="w-full" class="m-l10" src="../img/hotel-detail2.jpg" alt="" />
+					</div>
+					<div class="m-l10 w-full">
+						<div class="flex between s-13 b-bgray p-t10">
+							<div class="flex">
+								<div>
+									<img class="w-50" src="../img/hotel-detail5.jpg"/>
+								</div>
+								<div class="m-l10">
+									<span class="iconfont iconicon_xiaolian-xian c-yellow"></span> <span class="c-green">棒极了</span>
+									<br />
+									来自 <span class="s-16">155</span> 条入住点评
+								</div>
+							</div>
+							<div class="t-c p-l30">
+								<div class="c-yellow">
+									<span class="s-14">￥</span><b class="s-18">792</b><span class="s-14">起</span>
+								</div>
+								<div >
+									<span class="bg-yellow p-2-15 c-white s-12"><a href="">预订</a></span>
+								</div>
+								<div class="c-blue s-12">
+									<a href="">手机查看</a>
+								</div>
+							</div>
+						</div>
+						<div class="m-t20">
+							<div class="s-12 c-9">贝卡 2018-04-03</div>
+							<div class="m-t10 s-12">
+								和快捷酒店区别不大，但价格更高，所以性价一般。另外这家店服务态度虽然不错，但是效率还需要提高啊。
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="m-t30">
+					<div style="border-bottom: 2px solid #f78536;">
+						<span class="bg-yellow p-5-15 c-white s-12">房型预定</span> 
+					</div>
+					<div class="m-t20 b-gray">
+						<div class="flex p-l20 p-t20 align-center">
+							<div><img class="w-full" src="../img/hotels/乐山禅驿5.jpg"/></div>
+							<div>
+								<div class="s-16 c-blue p-l10">标准大床房</div>
+								<div class="m-t10 s-14">
+									<span class="p-2-10">房间28㎡</span> |
+									<span class="p-2-10">单床1.8m</span> |
+									<span class="p-2-10">可住：2人</span> |
+									<span class="p-2-10">楼层12-13层</span> |
+									<span class="p-2-10">宽带：免费WIFI</span> 
+								</div>
+							</div>
+						</div>
+					
+						<table class="table table-bordered s-14 m-t20 t-c" id="table">
+		    				<tr class="bg-f3">
+		    					<th>供应商</th>
+		    					<th>产品名称</th>
+		    					<th>早餐</th>
+		    					<th>取消规则</th>
+		    					<th>日均价</th>
+		    					<th></th>
+		    				</tr>
+			 				<tr>
+		    					<td>
+		    						<img class="w-20" src="../img/hotels/本网站.png" alt="" />
+		    						<span class="m-l10">嘉州之旅</span>
+		    					</td>
+		    					<td>节假日高峰期</td>
+		    					<td>无早</td>
+		    					<td>不可取消</td>
+		    					<td class="c-yellow"><span class="s-13">￥</span><span class="s-16">650</span></td>
+		    					<td><span style="background: #fff5eb;color: #f78536;border: 1px solid #f78536;border-radius: 2px;padding: 2px 5px;" class="s-12"><a href="">预付</a></span> <span class="m-l10">定完</span></td>
+		    				</tr>
+		    				<tr>
+		    					<td>
+		    						<img class="w-20" src="../img/hotels/美团图标.jpg" alt="" />
+		    						<span class="m-l10">美团</span>
+		    					</td>
+		    					<td>标准价</td>
+		    					<td>无早</td>
+		    					<td>免费取消</td>
+		    					<td class="c-yellow"><span class="s-13">￥</span><span class="s-16">680</span></td>
+		    					<td> <span class="bg-yellow p-5-15 s-12 c-white m-l10"><a href="">预付</a></span></td>
+		    				</tr>
+		    				<tr>
+		    					<td>
+		    						<img class="w-20" src="../img/hotels/携程图标.png" alt="" />
+		    						<span class="m-l10">携程</span>
+		    					</td>
+		    					<td>标准价</td>
+		    					<td>无早</td>
+		    					<td>限时取消</td>
+		    					<td class="c-yellow"><span class="s-13">￥</span><span class="s-16">700</span></td>
+		    					<td> <span class="bg-yellow p-5-15 s-12 c-white m-l10"><a href="">预付</a></span></td>
+		    				</tr>
+						</table>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--===========================================底部=========================================== -->
+		<div class="footer">
+			<div class="container">
+				<div class="col-md-6 footer-left">
+					<h3>Get in touch</h3>
+					<form>
+						<input type="text" placeholder="Email" required="">
+						<input type="submit" value="提交">
+					</form>
+				</div>
+				<div class="col-md-3 footer-middle">
+					<h3>Address</h3>
+					<div class="address">
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
+						</p>
+					</div>
+					<div class="phone">
+						<p>028-66668888</p>
+					</div>
+				</div>
+				<div class="col-md-3 footer-right">
+					<div class="f-logo">
+						<a href="index.html">Home Page</a>
+					</div>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="copyright-left">
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/vue.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		var timerNewOrder = null;
+		var vm = new Vue({
+			el:'#vmMain',
+			data:{
+				list1:[
+					{},{},{},{},{},{},
+				],
+				show:false,
+			},
+			methods:{
+					load:function(){
+						clearInterval(timerNewOrder);
+						timerNewOrder = setInterval(function(){
+							newOrderScroll(document.getElementById('noticeWrap'));
+						},50);
+					},
+					mouseover:function(){
+						clearInterval(timerNewOrder);
+					},
+					mouseout:function(){
+						timerNewOrder = setInterval(function(){
+							newOrderScroll(document.getElementById('noticeWrap'));
+						},50);
+					},
+					guide:function(boo){
+						this.show = boo;
+					},
+					paging:function(val){
+						// list2
+						switch (val){
+							case 1:
+								this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 2:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 3:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 4:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 5:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 'pre':
+									if(this.pageNo == 1){
+										return;
+									}
+									this.pageNo--;
+									this.paging(this.pageNo)
+								break;
+							case 'next':
+								if(this.pageNo == 5){
+										return;
+									}
+								this.pageNo++;
+								this.paging(this.pageNo)
+								break;
+							default:
+								this.list2 = [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								break;
+						}
+					},
+					pagingComment:function(val){
+						
+						
+						if(val == 'pre'){
+							if(this.pageCommentNo <=0){
+								return;
+							}
+							this.pageCommentNo -- ;
+							
+						}
+						if(val == 'next'){
+							this.pageCommentNo ++ ;
+							
+						}
+						if(this.pageCommentNo%2 == 1){
+							this.list3 = [
+								{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},
+							]
+						}else{
+							this.list3 = [
+								{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},
+							]
+						}
+					}
+				}
+		})
+		vm.load();
+			function newOrderScroll(obj) { 
+				if(obj){
+			      	var tmp = (obj.scrollLeft)++;
+			      	//当滚动条到达右边顶端时
+			      	if (obj.scrollLeft == tmp) {
+			      		obj.innerHTML += obj.innerHTML;
+			      	}
+			      	//当滚动条滚动了初始内容的宽度时滚动条回到最左端
+			      	if (obj.scrollLeft >= obj.firstChild.offsetWidth) {
+			      		obj.scrollLeft = 0;
+			      	} 
+			     }
+		    }
+	</script>
+</body>
+
+</html>

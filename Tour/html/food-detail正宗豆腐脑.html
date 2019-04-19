@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>美食</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta name="description" content="Xpedia" />
+	<meta name="keywords" content="Xpedia" />
+	<meta name="author" content="" />
+	<meta name="MobileOptimized" content="320" />
+	<link rel="stylesheet" type="text/css" href="../css/xpedia.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	<style type="text/css">
+		h3{padding-left: 30px;}
+		.around:hover{color: #f78536;}
+	</style>
+</head>
+
+<body>
+	<div id="vmMain" v-cloak>
+		<!-- ===========================================导航=========================================== -->
+		<div class="hs_navigation_header_wrapper p-t20 p-b20">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+						<nav class="hs_main_menu d-none d-sm-none d-xs-none d-md-block">
+							<ul>
+								<li> <a class="menu-button" href="index.html">首页</a>
+								<li> <a class="menu-button" href="spots.html">景点</a>
+								<li> <a class="menu-button c-yellow" href="food.html">美食</a> </li>
+								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
+								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
+									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
+										<div class="flex s-14">
+											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
+											<div class="p-l10 c-6">
+												<div>
+													<span class="p-2-10 guide pointer">乐山指南 </span> | 
+													<span class="p-2-10 guide pointer">乐山特产 </span> | 
+													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
+												</div>
+												<div class="t-l">
+													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
+													<span class="p-2-10 guide pointer">乐山旅行社 </span> 
+												</div>
+											</div>
+										</div>
+										<div class="flex s-14 m-t10">
+											<div class="c-yellow" style="white-space: nowrap;">旅游服务</div>
+											<div class="p-l10 c-6">
+												<div>
+													<span class="p-2-10 guide pointer">乐山订房 </span> | 
+													<span class="p-2-10 guide pointer">乐山导游 </span> | 
+													<span class="p-2-10 guide pointer">乐山订票 </span> | 
+													<span class="p-2-10 guide pointer">乐山会议 </span> 
+												</div>
+												<div class="t-l">
+													<span class="p-2-10 guide pointer">乐山租车 </span> | 
+													<span class="p-2-10 guide pointer">乐山签证 </span> 
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<div class="p-l20 flex between p-r20">
+							<div class="relative">
+								<input type="text" class="p-l40 s-14 search-input" placeholder="请输入您要搜索的信息"/>
+								<span class="iconfont iconsuosou s-15 search-icon"></span>
+							</div>
+							<div class="s-15 c-yellow">
+								<span class="p-r10"> <a href="login.html" class="c-yellow">登录</a></span> | 
+								<span class="p-l10"><a href="signup.html" class="c-yellow">注册</a></span> 
+							</div>
+						</div>
+					</div>
+					<div class=" col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 t-c s-12 c-0">
+						<div><span class="c-blue">乐山天气 </span>晴 <span class="c-yellow">22℃</span> ~ <span class="c-blue">10℃</span></div>
+						<div class="flex">
+							<div>
+								<img src="../img/sun.png"/>
+							</div>
+							<div class="m-l10 t-c">
+								<div>西南风 3级</div>
+								<div>2019年04月14日 <span class="c-lig-green">星期日</span> </div>
+								<div>农历己亥猪年 三月初十 </div>
+							</div>
+						</div>
+						 <!--<iframe name="weather_inc" 
+							src="http://i.tianqi.com/index.php?c=code&id=7"  width="220" height="90" frameborder="0" 
+							marginwidth="0" marginheight="0" scrolling="no">
+						</iframe>-->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- ===========================================中间内容部分===========================================  -->
+		<div class="bg-white">
+			<div class="bg-yellow">
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="food.html">美食</a>/ <a href="food-detail正宗豆腐脑.html">正宗豆腐脑</a></div>
+			</div>
+			<div class="w-pre80 m-lpre10 p-b30">
+				<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
+					<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9 p-l10 p-r10 m-t30 o-hidden">
+						<div class="b-gray p10 p-b50">
+							<div>
+								<img class="w-full" src="../img/foods/正宗豆腐脑.jpg"/>
+							</div>
+							<div class="flex between p-t20 p-b10 b-bgray p-l10 p-r10">
+								<div class="c-6 s-18">正宗豆腐脑</div>
+								<div class="s-13 c-6">
+									<span class="iconfont iconxin c-yellow"></span> 26545人喜欢
+								</div>
+							</div>
+							<div class="p-l10 p-r10 p-t10 s-14 c-6 p-b50" >
+								乐山豆腐脑是四川乐山特色风味小吃之一，豆花上有深红的辣椒配着翠绿香菜或芹菜，色香味俱全。<br />
+乐山豆腐脑制作方法和传统意义上的开封豆腐脑有本质的区别，乐山豆腐脑不是以豆花为主，而是以绝对美味的汤汁勾芡而成的汤头为主。用味精，鸡精，大头菜颗粒，老抽，(密料)炒黄豆或炒花生米作底，勺上大半碗的用骨头汤勾芡的淀粉浓汁，在用平勺削几片雪白的豆花放在浓汁之上，让其漂浮，上面再放上芹菜和熟油辣椒，一碗美味可口的乐山豆腐脑就呈现在眼前了。
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 m-t30">
+						<div class="p-b10 b-gray">
+							<div class="bg-db p10"> 乐山周边美食 </div>
+							<div class="row p-l15 p-r15">
+								<div v-for="i in list" class="around pointer col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 t-c m-t10">
+									<img class="w-full" :src="i.img"/>
+									<div class="s-14">{{i.name}}</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--===========================================底部=========================================== -->
+		<div class="footer">
+			<div class="container">
+				<div class="col-md-6 footer-left">
+					<h3>Get in touch</h3>
+					<form>
+						<input type="text" placeholder="Email" required="">
+						<input type="submit" value="提交">
+					</form>
+				</div>
+				<div class="col-md-3 footer-middle">
+					<h3>Address</h3>
+					<div class="address">
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
+						</p>
+					</div>
+					<div class="phone">
+						<p>028-66668888</p>
+					</div>
+				</div>
+				<div class="col-md-3 footer-right">
+					<div class="f-logo">
+						<a href="index.html">Home Page</a>
+					</div>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="copyright-left">
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/vue.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		var timerNewOrder = null;
+		var vm = new Vue({
+			el:'#vmMain',
+			data:{
+				list:[
+					{ img:'../img/food/food-detail (1).png',name:'火锅' },
+					{ img:'../img/food/food-detail (2).png',name:'冒菜'},
+					{ img:'../img/food/food-detail (3).png',name:'豆花' },
+					{ img:'../img/food/food-detail (4).png',name:'担担面'},
+					{ img:'../img/food/food-detail (5).png',name:'干锅' },
+					{ img:'../img/food/food-detail (6).png',name:'串串香'},
+					{ img:'../img/food/food-detail (7).png',name:'兔头' },
+					{ img:'../img/food/food-detail (8).png',name:'夫妻肺片'},
+					{ img:'../img/food/food-detail (9).png',name:'回锅肉' },
+					{ img:'../img/food/food-detail (10).png',name:'麻婆豆腐'},
+				],
+				show:false,
+			},
+			methods:{
+					load:function(){
+						clearInterval(timerNewOrder);
+						timerNewOrder = setInterval(function(){
+							newOrderScroll(document.getElementById('noticeWrap'));
+						},50);
+					},
+					mouseover:function(){
+						clearInterval(timerNewOrder);
+					},
+					mouseout:function(){
+						timerNewOrder = setInterval(function(){
+							newOrderScroll(document.getElementById('noticeWrap'));
+						},50);
+					},
+					guide:function(boo){
+						this.show = boo;
+					},
+					paging:function(val){
+						// list2
+						switch (val){
+							case 1:
+								this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 2:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 3:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 4:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									},{
+										img:'../img/index/xz_03.png'
+									}
+								]
+								
+								break;
+								case 5:
+									this.pageNo = val;
+								this.list2 =  [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								
+								break;
+								case 'pre':
+									if(this.pageNo == 1){
+										return;
+									}
+									this.pageNo--;
+									this.paging(this.pageNo)
+								break;
+							case 'next':
+								if(this.pageNo == 5){
+										return;
+									}
+								this.pageNo++;
+								this.paging(this.pageNo)
+								break;
+							default:
+								this.list2 = [
+									{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									},{
+										img:'../img/index/b_03.png'
+									}
+								]
+								break;
+						}
+					},
+					pagingComment:function(val){
+						
+						
+						if(val == 'pre'){
+							if(this.pageCommentNo <=0){
+								return;
+							}
+							this.pageCommentNo -- ;
+							
+						}
+						if(val == 'next'){
+							this.pageCommentNo ++ ;
+							
+						}
+						if(this.pageCommentNo%2 == 1){
+							this.list3 = [
+								{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},{
+									img:'../img/index/b_03.png'
+								},
+							]
+						}else{
+							this.list3 = [
+								{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},{
+									img:'../img/index/a_03.png'
+								},
+							]
+						}
+					}
+				}
+		})
+		vm.load();
+			function newOrderScroll(obj) { 
+				if(obj){
+			      	var tmp = (obj.scrollLeft)++;
+			      	//当滚动条到达右边顶端时
+			      	if (obj.scrollLeft == tmp) {
+			      		obj.innerHTML += obj.innerHTML;
+			      	}
+			      	//当滚动条滚动了初始内容的宽度时滚动条回到最左端
+			      	if (obj.scrollLeft >= obj.firstChild.offsetWidth) {
+			      		obj.scrollLeft = 0;
+			      	} 
+			     }
+		    }
+	</script>
+</body>
+
+</html>

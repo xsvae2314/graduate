@@ -229,13 +229,14 @@
         	},
         	// 跳转到详情
         	toDetail:function(detail,n){
-        		if(n==0){
-        			window.open("product-detail.html?type=0","_blank");         
+        		if(this.cityType == 0 ){
+	        		if(n==0){
+	        			window.open("product-detail.html?type=0","_blank");         
+	        		}
+	        		if(n==1){
+	        			window.open("product-detail.html?type=1","_blank");         
+	        		}
         		}
-        		if(n==1){
-        			window.open("product-detail.html?type=1","_blank");         
-        		}
-        		
         	},
             enter:function(n){
                 for(let i=0;i<this.list.length;i++){

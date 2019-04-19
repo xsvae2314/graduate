@@ -21,15 +21,15 @@
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -40,8 +40,9 @@
 								<li> <a class="menu-button" href="food.html">美食</a> </li>
 								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
-								<li> <a class="menu-button" href="travel.html">旅游攻略</a>
-								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
 									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
 										<div class="flex s-14">
 											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
@@ -50,7 +51,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -105,13 +106,14 @@
 							marginwidth="0" marginheight="0" scrolling="no">
 						</iframe>-->
 					</div>
+					
 				</div>
 			</div>
 		</div>
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 注册</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="signup.html">注册</a></div>
 			</div>
 			<div class=" " style="background: url(../img/signup.jpg);background-size: cover;">
 				 <div style="display: flex;justify-content: flex-end;margin-right: 15%; padding-top: 40px;padding-bottom: 70px;">
@@ -174,19 +176,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -194,7 +196,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>

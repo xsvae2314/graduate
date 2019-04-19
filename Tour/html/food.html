@@ -20,15 +20,15 @@
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -39,8 +39,9 @@
 								<li> <a class="menu-button c-yellow" href="food.html">美食</a> </li>
 								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
-								<li> <a class="menu-button" href="travel.html">旅游攻略</a>
-								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
 									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
 										<div class="flex s-14">
 											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
@@ -49,7 +50,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -111,126 +112,294 @@
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 美食</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="food.html">美食</a></div>
 			</div>
 			<div class="w-pre80 m-lpre10 p-b30">
-				<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="food-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/09.jpg"/>
-									<div class="lsspots">
-										乐山美食乐山美食乐山美食
+				<div class="row" style="padding: 0;margin: 0;">
+					<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9 p-l10 p-r10 m-t30 o-hidden row"style="padding: 0;margin: 0 0 0 0;">
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail正宗豆腐脑.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/food/豆腐脑.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">正宗豆腐脑</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 15222</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山豆腐脑是四川乐山特色风味小吃之一，豆花上有深红的辣椒配着翠绿香菜或芹菜，色香味俱全。
 									</div>
 								</div>
-								<div class="flex between p-t10 p-l10 p-r10">
-									<div class="s-14 c-0">峨眉老腊肉</div>
-									<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail峨眉老腊肉.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/food/老腊肉.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 12325</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										峨眉老腊肉是四川乐山市名菜，以肉源绿色、制作工艺传承历史悠久、肉味鲜美、可长时间存放等特点深受中外游客青睐。
+									</div>
 								</div>
-								<div class="p-b10 s-14 p-l10 p-r10">
-									乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail叶儿粑.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/food/叶儿粑.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">叶儿粑</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 8889</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										制作叶儿粑选料考究，工艺精细，具有色绿形美、细软爽口的特点，为四川乐山名小吃之一。
+									</div>
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/food/乐山豆花.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">乐山豆花</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 13233</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山豆花是四川省乐山市的小吃，具有滚、嫩、绵、白的特点。
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/food/峨眉豆腐脑.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉豆腐脑</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 25130</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										豆腐脑一道著名的汉族传统小吃，常与豆腐花、豆花混用，依据各地口味不同，北方多爱咸食，而南方则偏爱甜味，亦有地区如四川乐山等喜爱酸辣口味。
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/food/雪魔芋烧鸭.png"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">雪魔芋烧鸭</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 23265</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										雪蘑芋烧鸭是四川乐山的传统特色小吃。雪蘑芋具有质地松软，香而不腻，风味独特等特点。
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+							<a href="food-detail.html" target="_blank">
+								<div class="b-gray thlist pointer">
+									<div class="relative">
+										<img class="w-full" src="../img/09.jpg"/>
+										
+									</div>
+									<div class="flex between p-t10 p-l10 p-r10">
+										<div class="s-14 c-0">峨眉老腊肉</div>
+										<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
+									</div>
+									<div class="p-b10 s-14 p-l10 p-r10">
+										乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-l10 p-r10 m-t20">
+							
+						<div class=" flex justify-center m-t30 s-12">
+							<div @click="paging(1)" :class="pageNo=='1'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">1</div>
+							<div @click="paging(2)" :class="pageNo=='2'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">2</div>
+							<div @click="paging(3)" :class="pageNo=='3'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">3</div>
+							<div @click="paging(4)" :class="pageNo=='4'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">4</div>
+							<div @click="paging(5)" :class="pageNo=='5'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">5</div>
+							<div @click="paging('pre')" class="c-yellow b-gray r5 pointer p-2-15 m-l5 m-r5">上一页</div>
+							<div @click="paging('next')" class="c-yellow b-gray r5 pointer p-2-15 m-l5 m-r5">下一页</div>
+						</div>
+						</div>
 					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="food-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/09.jpg"/>
-									<div class="lsspots">
-										乐山美食乐山美食乐山美食
-									</div>
-								</div>
-								<div class="flex between p-t10 p-l10 p-r10">
-									<div class="s-14 c-0">峨眉老腊肉</div>
-									<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
-								</div>
-								<div class="p-b10 s-14 p-l10 p-r10">
-									乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20 o-hidden">
+						<div class="p-b10 b-gray">
+							<div class="bg-db p10"> 乐山周边美食 </div>
+							<div class="row p-l15 p-r15">
+								<div v-for="i in list" class="around pointer col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 t-c m-t10">
+									<img class="w-full" :src="i.img"/>
+									<div class="s-14">{{i.name}}</div>
 								</div>
 							</div>
-						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="food-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/09.jpg"/>
-									<div class="lsspots">
-										乐山美食乐山美食乐山美食
-									</div>
-								</div>
-								<div class="flex between p-t10 p-l10 p-r10">
-									<div class="s-14 c-0">峨眉老腊肉</div>
-									<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
-								</div>
-								<div class="p-b10 s-14 p-l10 p-r10">
-									乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="food-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/09.jpg"/>
-									<div class="lsspots">
-										乐山美食乐山美食乐山美食
-									</div>
-								</div>
-								<div class="flex between p-t10 p-l10 p-r10">
-									<div class="s-14 c-0">峨眉老腊肉</div>
-									<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
-								</div>
-								<div class="p-b10 s-14 p-l10 p-r10">
-									乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="food-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/09.jpg"/>
-									<div class="lsspots">
-										乐山美食乐山美食乐山美食
-									</div>
-								</div>
-								<div class="flex between p-t10 p-l10 p-r10">
-									<div class="s-14 c-0">峨眉老腊肉</div>
-									<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
-								</div>
-								<div class="p-b10 s-14 p-l10 p-r10">
-									乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="food-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/09.jpg"/>
-									<div class="lsspots">
-										乐山美食乐山美食乐山美食
-									</div>
-								</div>
-								<div class="flex between p-t10 p-l10 p-r10">
-									<div class="s-14 c-0">峨眉老腊肉</div>
-									<div class=""> <span class="iconfont iconhuo c-yellow"></span> 50</div>
-								</div>
-								<div class="p-b10 s-14 p-l10 p-r10">
-									乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点
-								</div>
-							</div>
-						</a>
+						</div>
 					</div>
 				</div>
+				
 			</div>
+			
 		</div>
 		<!--===========================================底部=========================================== -->
 		<div class="footer">
@@ -245,19 +414,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -265,7 +434,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>
@@ -286,7 +455,20 @@
 					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'50' ,text:'乐山美食乐山美食乐山美食',remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
 					{ img:'../img/09.jpg',name:'峨眉老腊肉',people:'50' ,text:'乐山美食乐山美食乐山美食',remark:'乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点乐山景点'},
 				],
+				list:[
+					{ img:'../img/food/food-detail (1).png',name:'火锅' },
+					{ img:'../img/food/food-detail (2).png',name:'冒菜'},
+					{ img:'../img/food/food-detail (3).png',name:'豆花' },
+					{ img:'../img/food/food-detail (4).png',name:'担担面'},
+					{ img:'../img/food/food-detail (5).png',name:'干锅' },
+					{ img:'../img/food/food-detail (6).png',name:'串串香'},
+					{ img:'../img/food/food-detail (7).png',name:'兔头' },
+					{ img:'../img/food/food-detail (8).png',name:'夫妻肺片'},
+					{ img:'../img/food/food-detail (9).png',name:'回锅肉' },
+					{ img:'../img/food/food-detail (10).png',name:'麻婆豆腐'},
+				],
 				show:false,
+				pageNo:1,
 			},
 			methods:{
 					load:function(){
@@ -309,82 +491,82 @@
 					toDetail:function(){
 						window.open('food-detail.html','_blank');
 					},
-					paging:function(val){
+						paging:function(val){
 						// list2
 						switch (val){
 							case 1:
 								this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
-								
+//								this.list2 =  [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
+//								
 								break;
 								case 2:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									}
-								]
-								
+//								this.list2 =  [
+//									{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									}
+//								]
+//								
 								break;
 								case 3:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
+//								this.list2 =  [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
 								
 								break;
 								case 4:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									},{
-										img:'../img/index/xz_03.png'
-									}
-								]
+//								this.list2 =  [
+//									{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									},{
+//										img:'../img/index/xz_03.png'
+//									}
+//								]
 								
 								break;
 								case 5:
 									this.pageNo = val;
-								this.list2 =  [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
+//								this.list2 =  [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
 								
 								break;
 								case 'pre':
@@ -402,17 +584,17 @@
 								this.paging(this.pageNo)
 								break;
 							default:
-								this.list2 = [
-									{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									},{
-										img:'../img/index/b_03.png'
-									}
-								]
+//								this.list2 = [
+//									{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									},{
+//										img:'../img/index/b_03.png'
+//									}
+//								]
 								break;
 						}
 					},

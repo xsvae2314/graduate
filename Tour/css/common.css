@@ -4,6 +4,8 @@
 ul,li{list-style: none;}
 body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 
+[v-cloak]{display: none;}
+
 .relative{position: relative;}
 .flex{display: flex;}
 .between{justify-content: space-between;}
@@ -189,8 +191,6 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 
 
 .guide:hover{color: #f78536;}
-
-
 
 
 

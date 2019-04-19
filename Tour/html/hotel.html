@@ -20,15 +20,15 @@
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -39,8 +39,9 @@
 								<li> <a class="menu-button" href="food.html">美食</a> </li>
 								<li> <a class="menu-button c-yellow" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button" href="traffic.html">交通 </a> </li>
-								<li> <a class="menu-button" href="travel.html">旅游攻略</a>
-								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
 									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
 										<div class="flex s-14">
 											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
@@ -49,7 +50,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -111,116 +112,162 @@
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 住宿</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="hotel.html">酒店</a></div>
 			</div>
 			<div class="w-pre80 m-lpre10 p-b30">
 				<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="hotel-detail.html" target="_blank">
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail乐山禅驿.html" target="_blank">
 							<div class="b-gray thlist pointer">
 								<div class="relative">
-									<img class="w-full" src="../img/16.jpg"/>
+									<img class="w-full" src="../img/hotel/乐山禅驿·嘉定院子酒店.jpg"/>
 								</div>
 								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
 									<div class="">
-										乐山金泰假日酒店
-									</div>
-									<div class="p-t5"> 
-										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
-									</div>
-									<div class="p-t5"> 
-										价格：<span class="c-yellow">￥140</span>
-									</div>
-									<div class="p-t5"> 
-										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="hotel-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/16.jpg"/>
-								</div>
-								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
-									<div class="">
-										乐山金泰假日酒店
+										乐山禅驿·嘉定院子酒店
 									</div>
 									<div class="p-t5"> 
 										星级：<span v-for="index of 5" :class="index<=5?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
 									</div>
 									<div class="p-t5"> 
-										价格：<span class="c-yellow">￥140</span>
+										价格：<span class="c-yellow">￥792</span>
 									</div>
 									<div class="p-t5"> 
-										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+										位置：<span class="c-yellow">市中区大佛景区嘉定坊C区</span>
 									</div>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
 						<a href="hotel-detail.html" target="_blank">
 							<div class="b-gray thlist pointer">
 								<div class="relative">
-									<img class="w-full" src="../img/16.jpg"/>
+									<img class="w-full" src="../img/hotel/乐山盘龙开元名都大酒店.jpg"/>
 								</div>
 								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
 									<div class="">
-										乐山金泰假日酒店
-									</div>
-									<div class="p-t5"> 
-										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
-									</div>
-									<div class="p-t5"> 
-										价格：<span class="c-yellow">￥140</span>
-									</div>
-									<div class="p-t5"> 
-										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="hotel-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/16.jpg"/>
-								</div>
-								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
-									<div class="">
-										乐山金泰假日酒店
-									</div>
-									<div class="p-t5"> 
-										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
-									</div>
-									<div class="p-t5"> 
-										价格：<span class="c-yellow">￥140</span>
-									</div>
-									<div class="p-t5"> 
-										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
-						<a href="hotel-detail.html" target="_blank">
-							<div class="b-gray thlist pointer">
-								<div class="relative">
-									<img class="w-full" src="../img/16.jpg"/>
-								</div>
-								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
-									<div class="">
-										乐山金泰假日酒店
+										乐山盘龙开元名都大酒店
 									</div>
 									<div class="p-t5"> 
 										星级：<span v-for="index of 5" :class="index<=5?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
 									</div>
 									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥389</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">柏杨西路888号（近嘉兴路美食街）</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山广寒宫酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山广寒宫酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥210</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区朝霞路698号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山谧寻酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山谧寻酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥399</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区绿心南路2599号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山金海棠大酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金海棠大酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥298</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区海棠路512号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/hotel/乐山三江悦度假酒店.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山三江悦度假酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=4?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥838</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">市中区大佛景区嘉定坊C区3栋01号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
 										价格：<span class="c-yellow">￥140</span>
 									</div>
 									<div class="p-t5"> 
@@ -229,8 +276,95 @@
 								</div>
 							</div>
 						</a>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 p-l10 p-r10 m-t20">
+					</div>	<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
+						<a href="hotel-detail.html" target="_blank">
+							<div class="b-gray thlist pointer">
+								<div class="relative">
+									<img class="w-full" src="../img/16.jpg"/>
+								</div>
+								<div class="p-t10 p-b10 p-l10 p-r10 s-14 c-0">
+									<div class="">
+										乐山金泰假日酒店
+									</div>
+									<div class="p-t5"> 
+										星级：<span v-for="index of 5" :class="index<=3?'c-yellow':''" class="iconfont iconxingji s-20 m-r5 c-6"></span>
+									</div>
+									<div class="p-t5"> 
+										价格：<span class="c-yellow">￥140</span>
+									</div>
+									<div class="p-t5"> 
+										位置：<span class="c-yellow">乐山市市中心区乐青路155号</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>	<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 p-l10 p-r10 m-t20">
 						<a href="hotel-detail.html" target="_blank">
 							<div class="b-gray thlist pointer">
 								<div class="relative">
@@ -253,8 +387,16 @@
 							</div>
 						</a>
 					</div>
-					
 				</div>
+				<div class=" flex justify-center m-t30 s-12">
+							<div @click="paging(1)" :class="pageNo=='1'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">1</div>
+							<div @click="paging(2)" :class="pageNo=='2'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">2</div>
+							<div @click="paging(3)" :class="pageNo=='3'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">3</div>
+							<div @click="paging(4)" :class="pageNo=='4'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">4</div>
+							<div @click="paging(5)" :class="pageNo=='5'?'b-gray':''" class="p-2-10 m-l5 m-r5 r5 pointer">5</div>
+							<div @click="paging('pre')" class="c-yellow b-gray r5 pointer p-2-15 m-l5 m-r5">上一页</div>
+							<div @click="paging('next')" class="c-yellow b-gray r5 pointer p-2-15 m-l5 m-r5">下一页</div>
+						</div>
 			</div>
 		</div>
 		<!--===========================================底部=========================================== -->
@@ -270,19 +412,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -290,7 +432,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>
@@ -312,6 +454,7 @@
 					{ img:'../img/16.jpg',name:'乐山金泰假日酒店',price:'140',discount:'50' ,num:2,address:'乐山市市中心区乐青路155号'},
 				],
 				show:false,
+				pageNo:1,
 			},
 			methods:{
 					load:function(){

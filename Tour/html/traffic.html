@@ -14,21 +14,30 @@
 	<link rel="stylesheet" type="text/css" href="../css/style1.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>选择关键字地图展示对应地址</title>
+<link rel="stylesheet" type="text/css" href="css/sty.css">
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fbXf9j0aPH4EwxPBaixZ8Ll2rGwMbFe8"></script>
+<!-- fbXf9j0aPH4EwxPBaixZ8Ll2rGwMbFe8  要替换为自己的APIkey  获取方式请到 百度地图开放平台 -->
+	
 	<style type="text/css">
 		h3{padding-left: 30px;}
+		#suggestId{background: #f8f8f8;border: 1px solid #ccc;border-radius: 5px;padding-left: 10px;height: 30px;}
 	</style>
 </head>
 
 <body>
-	<div id="vmMain">
+	<div id="vmMain" v-cloak>
 		<!-- ===========================================导航=========================================== -->
 		<div class="hs_navigation_header_wrapper p-t20 p-b20">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
 						<div class="hs_logo_wrapper d-none d-sm-none d-xs-none d-md-block">
-							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/logo.jpg" alt="logo" title="logo" /> 嘉州之旅 </div>
-							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 滚动文字滚动文字滚动文字滚动  </div>
+							<div class="s-24 c-yellow"> <img class="w-pre33" src="../img/index/logo12.png" alt="logo" title="logo" style="height: 40px;width: 45px;"/> 嘉州之旅 </div>
+							<div id="noticeWrap" @mouseover="mouseover" @mouseout="mouseout" class="s-14 c-yellow m-t15"> 乐山，古称嘉州，历史上属古蜀国，有"海棠香国"的美誉。  </div>
 						</div>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -39,8 +48,9 @@
 								<li> <a class="menu-button" href="food.html">美食</a> </li>
 								<li> <a class="menu-button" href="hotel.html">住宿</a> </li>
 								<li> <a class="menu-button c-yellow" href="traffic.html">交通 </a> </li>
-								<li> <a class="menu-button" href="travel.html">旅游攻略</a>
-								<li @mouseover="guide(true)" @mouseout="guide(false)"  class="relative"> <a class="menu-button" href="#"> 指南</a>
+								<li> <a class="menu-button" href="travel.html">旅游攻略</a></li>
+								<li @mouseover="guide(true)" @mouseout="guide(false)" class="relative"> 
+									<a class="menu-button" href="#"> 指南</a>
 									<div v-show="show" style="position: absolute;top: 50px;right: 0;z-index: 9;width: 450px;border: 1px solid #f78536;" class="p10 bg-white">
 										<div class="flex s-14">
 											<div class="c-yellow" style="white-space: nowrap;">必备信息</div>
@@ -49,7 +59,7 @@
 													<span class="p-2-10 guide pointer">乐山指南 </span> | 
 													<span class="p-2-10 guide pointer">乐山特产 </span> | 
 													<span class="p-2-10 guide pointer">休闲娱乐 </span> | 
-													<span class="p-2-10 guide pointer">乐山旅游资讯 </span> 
+													<span class="p-2-10 guide pointer">旅游资讯 </span> 
 												</div>
 												<div class="t-l">
 													<span class="p-2-10 guide pointer">乐山风景图片 </span> | 
@@ -111,20 +121,36 @@
 		<!-- ===========================================中间内容部分===========================================  -->
 		<div class="bg-white">
 			<div class="bg-yellow">
-				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15">首页 / 交通</div>
+				<div class="w-pre80 m-lpre10 c-white  p-t15 p-b15"><a href="index.html">首页</a> / <a href="traffic.html">交通</a></div>
 			</div>
-			<div class="w-pre80 m-lpre10 p-b30">
+			
+			<form name="companyForm" class="companysel" style="padding-top: 10px;padding-bottom: 10px;">
+			  <span class="p-l20">选择地址：</span>
+			  <select name="companyPick" OnChange="companyReveal()" style="border: 1px solid #ccc;border-radius: 5px;height: 30px;padding-left: 8px;">
+			    <option value="0"> 乐山市 </option>
+			    <option value="1"> 乐山大佛 </option>
+			    <option value="2"> 峨眉山风景区 </option>
+			    <option value="3"> 高铁乐山站 </option>
+			  </select>
+			  <span>地址：</span>
+			  <input name="companyField" type="text" id="suggestId"  value="乐山市" style="overflow:auto" disabled>
+			</form>
+
+<div id="l-map" style="width: 100%; height: 400px"></div> 
+			
+			
+			<div class="w-pre80 m-lpre10 p-b30 m-t10">
 				<div class="row" style="padding: 0;margin: 0 0 0 -15px;">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-l10 p-r10 m-t20">
 						<div class="b-gray">
 							<div class="p-t10 p-b10 p-l10 c-yellow bg-db" style="border-bottom: 3px solid #f78536;">火车</div>
 							<div class="p-t10 p-l10 p-b30">
-								<div class="c-yellow">乐山火车站</div>
-								<div class="m-t10">乐山</div>
-								<div class="c-yellow m-t30">乐山汽车站</div>
-								<div class="m-t10">乐山汽车客运中心站乐山肖坝旅游汽车站乐山联运汽车站五通桥客运中心</div>
-								<div class="c-yellow m-t30">乐山公交热门车站</div>
-								<div class="m-t10 p-b10">八仙洞棕树林白燕路嘉祥路口白燕路春华路口白燕路春华路口白岩竹溪文化公园白果湾芭蕉湾八一小学八一桥八仙洞351八仙洞八仙洞八车间八车间安置房爱琴海蓝78526部队605厂</div>
+								<div class="c-yellow">乐山火车站（高铁乐山站）</div>
+								<div class="m-t10">位于四川省乐山市市中区青江新区宝莲路，始建于2010年，是成贵客运专线与峨眉山支线的交汇处。</div>
+								<div class="c-yellow m-t30">乐山火车站时刻表</div>
+								<div class="m-t10">C6278 乐山-成都东 19:44-20:58 &nbsp;&nbsp;C6283 乐山-峨眉山 13:53-14:09 &nbsp;&nbsp;C6306 乐山-江油 11:48-14:31 &nbsp;&nbsp;C6264 乐山-成都南 13:01-14:28</div>
+								<div class="c-yellow m-t30">推荐乘车路线</div>
+								<div class="m-t10 p-b10">川内及川外都可以坐动车到乐山，有些地方可能需要坐汽车、公交再转高铁。</div>
 							</div>
 						</div>
 					</div>
@@ -132,9 +158,9 @@
 						<div class="b-gray">
 							<div class="p-t10 p-b10 p-l10 c-yellow bg-db" style="border-bottom: 3px solid #f78536;">汽车</div>
 							<div class="p-t10 p-l10 p-b30">
-								<div class="c-yellow">乐山火车站</div>
-								<div class="m-t10">乐山</div>
-								<div class="c-yellow m-t30">乐山汽车站</div>
+								<div class="c-yellow">乐山客运中心站</div>
+								<div class="m-t10">。 乐山汽车客运中心站是国家“一级汽车客运站”、交通部“文明客运站”、“全国用户满意服务”单位、全国道路运输“百强诚信客运站”、全国交通运输行业“首届旅客最满意汽车客运站”、四川省道路运输“十佳客运站”、四川省“全面质量管理先进企业”。</div>
+								<div class="c-yellow m-t30">你</div>
 								<div class="m-t10">乐山汽车客运中心站乐山肖坝旅游汽车站乐山联运汽车站五通桥客运中心</div>
 								<div class="c-yellow m-t30">乐山公交热门车站</div>
 								<div class="m-t10">八仙洞棕树林白燕路嘉祥路口白燕路春华路口白燕路春华路口白岩竹溪文化公园白果湾芭蕉湾八一小学八一桥八仙洞351八仙洞八仙洞八车间八车间安置房爱琴海蓝78526部队605厂</div>
@@ -170,19 +196,19 @@
 				<div class="col-md-3 footer-middle">
 					<h3>Address</h3>
 					<div class="address">
-						<p>756 gt globel Place,
-							<span>CD-Road,M 07 435.</span>
+						<p>四川乐山
+							<span>Leshan, Sichuan</span>
 						</p>
 					</div>
 					<div class="phone">
-						<p>+1(100)2345-6789</p>
+						<p>028-66668888</p>
 					</div>
 				</div>
 				<div class="col-md-3 footer-right">
 					<div class="f-logo">
-						<a href="index.html">Transit</a>
+						<a href="index.html">Home Page</a>
 					</div>
-					<p>Proin eget ipsum ultrices, aliquet velit eget, tempus tortor. Phasellus non velit sit amet diam faucibus molestie tincidunt efficitur nisi.</p>
+					<p>Welcome to visit this website, I hope it can help you and enjoy the convenience of traveling. Thank you.</p>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
@@ -190,7 +216,7 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="copyright-left">
-					<p>Copyright &copy; 2019.wwww.www.www.www</p>
+					<p>Copyright &copy; 2019.www.hjxyuanchuan.com</p>
 				</div>
 			</div>
 		</div>
@@ -390,6 +416,37 @@
 			     }
 		    }
 	</script>
+	
+	<script type="text/javascript">
+	// 百度地图API功能
+	function G(id) {
+		return document.getElementById(id);
+	}
+	var map = new BMap.Map("l-map");
+	//map.centerAndZoom("厦门",12);    // 初始化地图,设置城市和地图级别。
+	map.enableScrollWheelZoom();   	//启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom();    	//启用地图惯性拖拽，默认禁用
+	var local = new BMap.LocalSearch(map, {
+		renderOptions:{map: map}
+	});
+	var msearch = document.getElementById("suggestId").value;
+	local.search(msearch);  //百度地图关键字检索 默认加载一次
+	var company = new Array(); 
+	company[0] = "乐山市";			//这里写入每个选项对应的说明文字
+	company[1] = "乐山大佛";
+	company[2] = "峨眉山风景区";	 
+	company[3] = "高铁乐山站";
+
+	function companyReveal() {	
+	  var companyindex = document.companyForm.companyPick.selectedIndex;//取得当前下拉菜单选定项目的序号
+	  helpmsg = company[companyindex];//根据序号取得当前选项的说明
+	  document.companyForm.companyField.value = helpmsg//将说明写进文框
+	  var msearch = document.getElementById("suggestId").value;
+	  local.search(msearch);  //百度地图关键字检索 触发加载
+	}	
+</script>
+	
+	
 </body>
 
 </html>
