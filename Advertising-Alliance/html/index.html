@@ -6,77 +6,60 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>广告联盟</title>
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
 		<link rel="stylesheet" type="text/css" href="../css/common.css" />
 		<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 768px)" href="../css/tinyScreen.css" />
 		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 768px)" href="../css/largeScreen.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.css"/>
 		<style type="text/css">
-			a:hover {
-				text-decoration: none
-			}
+			a:hover { text-decoration: none ;}
+			a:link { text-decoration: none; }
+			.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+			.clearfix { *zoom: 1; }
+			.wrapper { position: relative; height: 1rem; width: 100%; overflow: hidden; 	margin: 0 auto; }
+			.wrapper .scroller { position: absolute ;}
+			.wrapper .scroller li { height: 1rem; color: #333; float: left; line-height: 1rem; font-size: 14px; text-align: center }
+			.wrapper .scroller li a { color: #333; display: block; margin: 0 .3rem }
+			.wrapper .scroller li.cur a { color: #1cbb9b; }
+			.row .active:hover{box-shadow: 0 0 10px #ead387;border: 1px solid #ead387; }
+			h3,.h3{font-size: 24px;font-weight: bold;}
+			h4,.h4{font-size: 36px;margin-bottom: 15px;font-weight: bold;}
 			
-			a:link {
-				text-decoration: none;
-			}
 			
-			.clearfix:after {
-				content: ".";
-				display: block;
-				height: 0;
-				clear: both;
-				visibility: hidden;
-			}
-			
-			.clearfix {
-				*zoom: 1;
-			}
-			
-			.wrapper {
-				position: relative;
-				height: 1rem;
-				width: 100%;
-				overflow: hidden;
-				margin: 0 auto;
-			}
-			
-			.wrapper .scroller {
-				position: absolute
-			}
-			
-			.wrapper .scroller li {
-				height: 1rem;
-				color: #333;
-				float: left;
-				line-height: 1rem;
-				font-size: 14px;
-				text-align: center
-			}
-			
-			.wrapper .scroller li a {
-				color: #333;
-				display: block;
-				margin: 0 .3rem
-			}
-			
-			.wrapper .scroller li.cur a {
-				color: #1cbb9b;
-			}
-			.row .active:hover{box-shadow: 0 0 10px #ffcd26;border: 1px solid #ffcd26; ;}
+			.swiper-container,.swiper-container-media {
+		      width: 100%;
+		      height: 100%;
+		    }
+		    .swiper-slide {
+		      text-align: center;
+		      background: #fff;
+		      display: -webkit-box;
+		      display: -ms-flexbox;
+		      display: -webkit-flex;
+		      display: flex;
+		      -webkit-box-pack: center;
+		      -ms-flex-pack: center;
+		      -webkit-justify-content: center;
+		      justify-content: center;
+		      -webkit-box-align: center;
+		      -ms-flex-align: center;
+		      -webkit-align-items: center;
+		      align-items: center;
+		    }
 		</style>
 	</head>
 
 	<body>
-
 		<div id="vmMain">
-			<!--导航-->
+			<!-- ================= 导航 ================= -->
 			<div class="bg-yellow">
 				<div class="mainWrap" id="nav-wrap">
 					<div class="m-t20 w-150 p-r20 logo f-l">
 						<img class="w-full" src="../img/logo1.jpg" />
 					</div>
 					<div class="t-r m-t20 w-100 p-t5 login p-r10 f-r">
-						<button class="bg-white-yellow p-2-25 r3 b-0 nooutline">登录</button>
+						<button class="bg-white-yellow p-2-25 r3 b-0 nooutline pointer">登录</button>
 					</div>
 					<div class="wrapper" id="retr" :style="{width:scrolleWidth+'px'}">
 						<div class="scroller">
@@ -108,464 +91,996 @@
 
 				</div>
 			</div>
-
-			<div class="bg-lig-gray">
-				<div class="mainWrap s-14">
-					<div class="p-t20">广告联盟 / 广告资源</div>
-					<div class="m-t30">
-						<h3 class="t-c">标题标题标题标题</h3>
-						<div class="t-c mainWrap tinyNo">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</div>
-						<div class="row rowWrap p-t20" style="margin: 0;">
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer active">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_03.png" />
+			<div v-if="show=='pcView'">
+				<!-- ================= 申请成为广告主 ================= -->
+				<div class="bg-lig-gray">
+					<div class="mainWrap s-14">
+						<div class="p-t20">广告联盟 / 广告资源</div>
+						<div class="m-t30 p-b30">
+							<h3 class="t-c">标题标题标题标题</h3>
+							<div class="t-c mainWrap tinyNo">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</div>
+							<div class="row rowWrap p-t20" style="margin: 0;">
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_03.png" />
+										</div>
+										<div class="c-1 title p-t10">公众号、个人微信号涨粉</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
 									</div>
-									<div class="c-1 title p-t10">公众号、个人微信号涨粉</div>
-									<div class="c-5 text p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_05.png" />
+										</div>
+										<div class="c-1 p-t10 title">APP引流</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_07.png" />
+										</div>
+										<div class="c-1 p-t10 title">公益便命民机LED屏幕广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_09.png" />
+										</div>
+										<div class="c-1 p-t10 title">公益便命民机机身广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_15.png" />
+										</div>
+										<div class="c-1 p-t10 title">广告产品包装广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_16.png" />
+										</div>
+										<div class="c-1 p-t10  title">app开屏广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_17.png" />
+										</div>
+										<div class="c-1 p-t10 title">App信息流广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_18.png" />
+										</div>
+										<div class="c-1 p-t10 title">自媒体（公众号微博朋友圈）</div>
+										<div class="c-5 p-t10 tex''">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_23.png" />
+										</div>
+										<div class="c-1 p-t10 title">朋友圈广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_24.png" />
+										</div>
+										<div class="c-1 p-t10 title">外卖包装广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_25.png" />
+										</div>
+										<div class="c-1 p-t10 title">车贴广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_26.png" />
+										</div>
+										<div class="c-1 p-t10  title">网络广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_31.png" />
+										</div>
+										<div class="c-1 p-t10 title">关键词搜索</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/ad_32.png" />
+										</div>
+										<div class="c-1 p-t10 title">电子传单</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_05.png" />
-									</div>
-									<div class="c-1 p-t10">APP引流</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_07.png" />
-									</div>
-									<div class="c-1 p-t10">公益便命民机LED屏幕广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_09.png" />
-									</div>
-									<div class="c-1 p-t10">公益便命民机机身广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_15.png" />
-									</div>
-									<div class="c-1 p-t10">广告产品包装广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_16.png" />
-									</div>
-									<div class="c-1 p-t10">app开屏广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_17.png" />
-									</div>
-									<div class="c-1 p-t10">App信息流广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_18.png" />
-									</div>
-									<div class="c-1 p-t10">自媒体（公众号微博朋友圈）</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_23.png" />
-									</div>
-									<div class="c-1 p-t10">朋友圈广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_24.png" />
-									</div>
-									<div class="c-1 p-t10">外卖包装广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_25.png" />
-									</div>
-									<div class="c-1 p-t10">车贴广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_26.png" />
-									</div>
-									<div class="c-1 p-t10">网络广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_31.png" />
-									</div>
-									<div class="c-1 p-t10">关键词搜索</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/ad_32.png" />
-									</div>
-									<div class="c-1 p-t10">电子传单</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
+							<div class="t-c m-t50 p-t30 p-b50"> <span class="bg-yellow s-18 bold apply-btn">申请成为广告主</span> </div>
 						</div>
-						<div class="t-c m-t30 p-b50"> <span class="bg-yellow p-5-25 r5">申请成为广告主</span> </div>
 					</div>
 				</div>
-			</div>
-
-			<div class="bg-white p-t20">
-				<div class="mainWrap s-15">
-					<div class="m-t20">
-						<h3 class="t-c">标题标题标题标题</h3>
-						<div class="t-c mainWrap tinyNo">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</div>
-						<div class="row p-t20" style="margin: 0;">
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med01.png" />
+				<!-- ================= 申请成为媒体主 ================= -->
+				<div class="bg-white p-t20">
+					<div class="mainWrap s-15">
+						<div class="m-t20 p-b30">
+							<h3 class="t-c">标题标题标题标题</h3>
+							<div class="t-c mainWrap tinyNo">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</div>
+							<div class="row p-t20" style="margin: 0;">
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med01.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">多媒体公益便民机</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
 									</div>
-									<div class="c-1 p-t10">多媒体公益便民机</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med02.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">无人售货机</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med03.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">免费WIFI</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med04.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">照片打印机</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med05.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">称重机</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med06.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">共享充电宝</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med07.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">APP</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med08.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">网站</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/med09.png" />
+										</div>
+										<div class="c-1 p-t10 title-media">自媒体</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med02.png" />
-									</div>
-									<div class="c-1 p-t10">无人售货机</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med03.png" />
-									</div>
-									<div class="c-1 p-t10">免费WIFI</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med04.png" />
-									</div>
-									<div class="c-1 p-t10">照片打印机</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med05.png" />
-									</div>
-									<div class="c-1 p-t10">称重机</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med06.png" />
-									</div>
-									<div class="c-1 p-t10">共享充电宝</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med07.png" />
-									</div>
-									<div class="c-1 p-t10">APP</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med08.png" />
-									</div>
-									<div class="c-1 p-t10">网站</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/med09.png" />
-									</div>
-									<div class="c-1 p-t10">自媒体</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
+							<div class="t-c m-t50 p-t30 p-b50"> <span class="bg-yellow s-18 bold apply-btn">申请成为媒体主</span> </div>
 						</div>
-						<div class="t-c m-t30 p-b50"> <span class="bg-yellow p-5-25 r5">申请成为媒体主</span> </div>
 					</div>
 				</div>
-			</div>
-
-			<div class="bg-lig-gray">
-				<div class="mainWrapPre90 s-15">
-					<div class="row p-t20" style="margin: 0;">
+				<!-- ================= 广告主 ================= -->
+				<div class="bg-lig-gray p-b50 s-15">
+					<div class="row p-b50" style="margin: 0;padding-top: 80px;">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p10">
-							<h3 class="c-other-yellow">广告主</h3>
-							<div>
+							<div class="w-pre80 m-lpre20">
+								<h4 class="c-other-yellow p-t50 m-l20">广告主</h4>
+								<div class="m-l20 p-r20 s-20 p-t10 l-h40">
+									广告资源采购环节标准化、流程化、广告主直接与媒体对接，<b class="c-yellow">没有中间商赚差价</b>。采用一站式撮合交易，去除广告投放过多中间环节，集合化购买大大降低广告采购成本，为广告主提供简单、高效、省钱、放心的一站式自助广告投放
+								</div>
+								<div class="m-t30 p-b50 m-l20"> <span class="bg-yellow p-8-25 r5 s-20" >申请成为广告主</span> </div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p10 m-t30">
+							<div class="m-lpre10">
+								<img class="w-pre90" src="../img/qu_01.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ================= 媒体主 ================= -->
+				<div class="bg-white s-15">
+					<div class="row p-t20" style="margin: 0;">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 p10">
+							<div class="relative" style="display: inline;">
+								<img class="w-pre90" src="../img/qu_02.png" />
+								<span style="position: absolute;right: -25px;top: 30%;" class="s-30 c-other-yellow">媒体主</span>
+							</div>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6 p10">
+							<div class="w-pre90 m-lpre5">
+								<h4 class="c-other-yellow m-t50 p-t50 m-l20">媒体主 -- 即时实现广告资源变现</h4>
+								<div class="m-l20 p-r20 s-20 p-t10 l-h40">
+									依托场景大数据精准的人群分析能力和海量的优质广告投放，悠庭广告联盟通过丰富的广告样式为资源主提供最优质的商业化解决方案。
+									<br />
+									帮助 <b class="c-0">免费纸巾机、自主贩卖机、LED显示屏、共享设备、灯箱等运营商；APP、网站、公众号等自媒体主；</b>实现广告位资源变现。
+									
+									<br />
+									<b class="c-yellow">悠庭科技</b>依托日产近千台的多媒体广告礼品派送机、无人售货机、无线充电宝等设备帮助没有资源的伙伴也能轻松拥有媒体资源，合伙人无风险购买设备（不盈利可退）即可注册成为平台资源主，从而获得高额的广告收益。
+								</div>
+								<div class="m-t30 p-b50 m-l20"> <span class="bg-yellow p-8-25 r5 s-20" >申请成为媒体主</span> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ================= 城市合伙人 ================= -->
+				<div class="bg-lig-gray p-t50 p-b50">
+					<div class="mainWrapPre90 s-15">
+						<div class="row" style="margin: 0;">
+							<h4 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 c-other-yellow p-l20">城市运营商 - 交易平台城市合伙人</h4>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p10">
+								<div class="m-l20 s-20 p-t10" style="line-height: 40px;">
+									针对不同类型的合作需求，采取不同的合作模式：<br />
+									城市合伙人分为省级、省会城市、地市级、区县级；<br />
+									合伙人享有独家区域保护政策，区域越大，收益越大；<br />
+									合伙人拥有多重收益，广告交易销售提成、广告收益分成、设备销售分成；<br />
+									合伙人可使用平台品牌使用权等。<br />
+									合伙人拥有二级代理后台；开通微信小程序远程管理设备， <br />
+									总部对接线上线下广告资源及流量推广，共享广告业务<br />
+								</div>
+								<div class="m-t50 p-b50 m-l20"> <span class="bg-yellow p-8-25 r5 s-20" >申请成为广告主</span> </div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p10" style="margin-top: -50px;">
+								<img class="w-full" src="../img/qu_03.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- =================   ================= -->
+				<div class="bg-white p-t20">
+					<div class="mainWrap s-15">
+						<div class="m-t30">
+							<h3 class="t-c">标题标题标题标题</h3>
+							<div class="t-c mainWrap tinyNo">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</div>
+							<div class="row p-t20" style="margin: 0;">
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/foo_09.png" />
+										</div>
+										<div class="c-1 p-t10 title">公众号、个人微信号涨粉</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowrightalt2 c-orange s-20"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/foo_11.png" />
+										</div>
+										<div class="c-1 p-t10 title">APP引流</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowrightalt2 c-orange s-20"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/foo_13.png" />
+										</div>
+										<div class="c-1 p-t10 title">公益便命民机LED屏幕广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowrightalt2 c-orange s-20"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/foo_15.png" />
+										</div>
+										<div class="c-1 p-t10 title">公益便命民机机身广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowrightalt2 c-orange s-20"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/foo_21.png" />
+										</div>
+										<div class="c-1 p-t10 title">广告产品包装广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowrightalt2 c-orange s-20"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/foo_22.png" />
+										</div>
+										<div class="c-1 p-t10 title">app开屏广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowrightalt2 c-orange s-20"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
+									<div class="r3 bg-white shadow-c t-c p15 pointer active">
+										<div class="p-t10">
+											<img class="w-pre30" src="../img/foo_23.png" />
+										</div>
+										<div class="c-1 p-t10 title">App信息流广告</div>
+										<div class="c-5 p-t10 text">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t20 p-b10">
+											<span class="iconfont iconarrowrightalt2 c-orange s-20"></span>
+										</div>
+									</div>
+								</div>
+	
+							</div>
+							<div class="t-c m-t30 p-b50"> </div>
+						</div>
+					</div>
+				</div>
+				<!-- =================  表单 ================= -->
+				<div class="bg-gray p-t50 p-b30">
+					<div class=" w-pre80 m-lpre10">
+						<div class="t-c s-24 bold p-b10">联系我们</div>
+						<div class="flex p-t20">
+							<div class="p-t10 p-l10 p-r10 w-full">
+								<input class="nooutline b-lig-gray r5 bg-white w-full h-38 p-l10" placeholder="姓名"/>
+							</div>
+								<div class="p-t10 p-l10 p-r10 w-full w-full">
+								<input class="nooutline b-lig-gray r5 bg-white w-full h-38 p-l10" placeholder="电话"/>
+							</div>
+						</div>
+						
+						<div class="p-t20 p-l10 p-r10">
+							<textarea name="" rows="8"   class="nooutline b-lig-gray r5 bg-white w-full h-100 p10" placeholder="留言"></textarea>
+						</div>
+						<div class="p-t20 p-l10 p-r10 t-c p-b10">
+							  <span class="bg-yellow s-18 bold p-8-25 r10 pointer">提交</span> 
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 手机端显示 -->
+			<div v-if="show=='phoneView'">	
+				<!-- 申请成为广告主 -->
+				<div class="bg-lig-gray">
+					<div class="t-c s-18 p-t30">标题标题标题标题</div>
+					<div class="w-pre80 m-lpre10 relative m-t30 swiper-adver">
+						<div class="swiper-container">
+						    <div class="swiper-wrapper" >
+						      	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_03.png" />
+										</div>
+										<div class="c-1 title p-t10">公众号、个人微信号涨粉</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_05.png" />
+										</div>
+										<div class="c-1 title p-t10">APP引流</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+							    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_07.png" />
+										</div>
+										<div class="c-1 title p-t10">公益便命民机LED屏幕广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_09.png" />
+										</div>
+										<div class="c-1 title p-t10">公益便命民机机身广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+							    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_15.png" />
+										</div>
+										<div class="c-1 title p-t10">广告产品包装广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_16.png" />
+										</div>
+										<div class="c-1 title p-t10">app开屏广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+							    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_17.png" />
+										</div>
+										<div class="c-1 title p-t10">App信息流广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_18.png" />
+										</div>
+										<div class="c-1 title p-t10">朋友圈广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+							    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_23.png" />
+										</div>
+										<div class="c-1 title p-t10">外卖包装广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_24.png" />
+										</div>
+										<div class="c-1 title p-t10">车贴广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+							    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_25.png" />
+										</div>
+										<div class="c-1 title p-t10">网络广告</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_26.png" />
+										</div>
+										<div class="c-1 title p-t10">关键词搜索</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+							    <div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_31.png" />
+										</div>
+										<div class="c-1 title p-t10">电子传单</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/ad_32.png" />
+										</div>
+										<div class="c-1 title p-t10">自媒体（公众号微博朋友圈）</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+						    </div>
+				  		</div>
+				  		 <div class="swiper-button-next" style="right: -30px;"></div>
+					    <div class="swiper-button-prev" style="left: -30px;"></div>
+					    
+					</div>
+					<div class="t-c p-t20 p-b30"> <span class="bg-yellow s-12 apply-btn">申请成为广告主</span> </div>
+				</div>
+			 	<!-- 申请成为媒体主 -->
+				<div class="bg-white">
+					<div class="t-c s-18 p-t30">标题标题标题标题</div>
+					<div class="w-pre80 swiper-media m-lpre10 relative m-t30">
+						<div class="swiper-container ">
+						    <div class="swiper-wrapper" >
+						      	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med01.png" />
+										</div>
+										<div class="c-1 title p-t10">多媒体公益便民机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med02.png" />
+										</div>
+										<div class="c-1 title p-t10">无人售货机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+						    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med03.png" />
+										</div>
+										<div class="c-1 title p-t10">免费WIFI</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med04.png" />
+										</div>
+										<div class="c-1 title p-t10">照片打印机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+						    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med05.png" />
+										</div>
+										<div class="c-1 title p-t10">称重机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med06.png" />
+										</div>
+										<div class="c-1 title p-t10">共享充电宝</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+						    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med07.png" />
+										</div>
+										<div class="c-1 title p-t10">APP</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med08.png" />
+										</div>
+										<div class="c-1 title p-t10">网站</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+							   <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med09.png" />
+										</div>
+										<div class="c-1 title p-t10">自媒体</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowup c-5"></span>
+										</div>
+									</div>
+							    </div>
+						    </div>
+				  		</div>
+				  		 <div class="swiper-button-next" style="right: -30px;"></div>
+					    <div class="swiper-button-prev" style="left: -30px;"></div>
+					    
+					</div>
+					<div class="t-c p-t20 p-b30"> <span class="bg-yellow s-12 apply-btn">申请成为媒体主</span> </div>
+				</div>
+			 	<!--    -->
+				<div class="bg-lig-gray p-b30">
+					<div class="t-c s-18 p-t30">标题标题标题标题</div>
+					<div class="w-pre80 swiper-nothing m-lpre10 relative m-t30">
+						<div class="swiper-container ">
+						    <div class="swiper-wrapper" >
+						      	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med01.png" />
+										</div>
+										<div class="c-1 title p-t10">多媒体公益便民机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med02.png" />
+										</div>
+										<div class="c-1 title p-t10">无人售货机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+							    </div>
+						    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med03.png" />
+										</div>
+										<div class="c-1 title p-t10">免费WIFI</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med04.png" />
+										</div>
+										<div class="c-1 title p-t10">照片打印机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+							    </div>
+						    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med05.png" />
+										</div>
+										<div class="c-1 title p-t10">称重机</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med06.png" />
+										</div>
+										<div class="c-1 title p-t10">共享充电宝</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+							    </div>
+						    	<div class="swiper-slide">
+						      		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med07.png" />
+										</div>
+										<div class="c-1 title p-t10">APP</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+						      	</div>
+							    <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med08.png" />
+										</div>
+										<div class="c-1 title p-t10">网站</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+							    </div>
+							   <div class="swiper-slide">
+						    		<div class="r3 bg-white shadow-c t-c p10 pointer active">
+										<div>
+											<img class="w-pre30" src="../img/med09.png" />
+										</div>
+										<div class="c-1 title p-t10">自媒体</div>
+										<div class="c-5 text p-t10">介绍文字介绍介绍文字介绍文字介绍文字介绍文字</div>
+										<div class="p-t10">
+											<span class="iconfont iconarrowrightalt2 c-orange"></span>
+										</div>
+									</div>
+							    </div>
+						    </div>
+				  		</div>
+				  		 <div class="swiper-button-next" style="right: -30px;"></div>
+					    <div class="swiper-button-prev" style="left: -30px;"></div>
+					</div>
+				</div>
+			 	<!-- ================= 广告主 ================= -->
+				<div class="bg-lig-gray p-b30 s-15 p-t50" style="background: #f3f3f3;">
+					<div class="flex" style="margin: 0;">
+						<div class="w-full p-l20">
+							<h4 class="c-other-yellow s-14">广告主</h4>
+							<div class="p-r20 s-9 l-h18">
 								广告资源采购环节标准化、流程化、广告主直接与媒体对接，<b class="c-yellow">没有中间商赚差价</b>。采用一站式撮合交易，去除广告投放过多中间环节，集合化购买大大降低广告采购成本，为广告主提供简单、高效、省钱、放心的一站式自助广告投放
 							</div>
-							<div class="m-t30 p-b50"> <span class="bg-yellow p-5-25 r5">申请成为广告主</span> </div>
+							<div class="p-t20 p-b30"> <span class="bg-yellow s-12 apply-btn">申请成为广告主</span> </div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p10">
-							<img class="w-pre80" src="../img/qu_01.png" />
+						<div class="w-pre80 p-t20">
+							<img class="w-full" src="../img/qu_01.png" />
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="bg-white s-15">
-				<div class="row p-t20" style="margin: 0;">
-					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 p10">
-						<img class="w-pre80" src="../img/qu_02.png" />
+			 	<!-- ================= 媒体主 ================= -->
+				<div class="bg-white s-15">
+					<div class="flex p-t20" style="margin: 0;">
+							<div class="relative w-pre60 p-t20" style="display: inline;">
+								<img class="w-full" src="../img/qu_02.png" />
+								<span style="position: absolute;right: -15px;top: 35%;" class="s-14 c-other-yellow">媒体主</span>
+							</div>
+							<div class="w-full">
+								<h4 class="c-other-yellow m-l20 s-14">媒体主 -- 即时实现广告资源变现</h4>
+								<div class="m-l20 p-r10 s-9  l-h18">
+									依托场景大数据精准的人群分析能力和海量的优质广告投放，悠庭广告联盟通过丰富的广告样式为资源主提供最优质的商业化解决方案。
+									<br />
+									帮助 <b class="c-0">免费纸巾机、自主贩卖机、LED显示屏、共享设备、灯箱等运营商；APP、网站、公众号等自媒体主；</b>实现广告位资源变现。
+									
+									<br />
+									<b class="c-yellow">悠庭科技</b>依托日产近千台的多媒体广告礼品派送机、无人售货机、无线充电宝等设备帮助没有资源的伙伴也能轻松拥有媒体资源，合伙人无风险购买设备（不盈利可退）即可注册成为平台资源主，从而获得高额的广告收益。
+								</div>
+								<div class="p-t20 p-b30 m-l20"> <span class="bg-yellow s-12 apply-btn">申请成为媒体主</span> </div>
+						</div>
 					</div>
-					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-6 p10">
-						<h3 class="c-other-yellow">媒体主 -- 即时实现广告资源变现</h3>
+				</div>
+				<!-- ================= 城市合伙人 ================= -->
+				<div class="bg-lig-gray p-t50 p-b50">
+					<h4 class="c-other-yellow m-l20 s-14">城市运营商 - 交易平台城市合伙人</h4>
+					<div class="flex p-l20">
 						<div>
-							依托场景大数据精准的人群分析能力和海量的优质广告投放，悠庭广告联盟<b class="c-0">没有中间商赚差价</b>。采用一站式撮合交易，去除广告投放过多中间环节，
-							<br />
-							<b class="c-yellow">悠庭科技</b> 集合化购买大大降低广告采购成本，为广告主提供简单、高效、省钱、放心的一站式自助广告投放
-						</div>
-						<div class="m-t30 p-b50"> <span class="bg-yellow p-5-25 r5">申请成为媒体主</span> </div>
-					</div>
-				</div>
-			</div>
-
-			<div class="bg-lig-gray">
-				<div class="mainWrapPre90 s-15">
-					<h3 class="c-other-yellow p-t20" style="margin: 0;padding-left: 10px;">城市运营商 - 交易平台城市合伙人</h3>
-					<div class="row" style="margin: 0;">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p10">
-							<div>
-								广告资源采购环节标准化、流程化、广告主直接与媒体对接；<br />
-								<b class="c-yellow">没有中间商赚差价</b>。采用一站式撮合交易，去除化购买大大降低
-								<br /> 广告采购成本，为广告主提供简单、高效、省钱、放心的一站式
-								<br /> 广告采购成本，为广告主提供简单、高效、省钱、放心的一站式自助广告投放
-								<br /> 广告采购成本，为广告主提供简单、高效、省钱、放心的一
-								<br /> 广告采购成本，为广告主提供简单、高效、省钱、放心的一
-								<br />
+							<div class="s-9 l-h18">
+								针对不同类型的合作需求，采取不同的合作模式：<br />
+								城市合伙人分为省级、省会城市、地市级、区县级；<br />
+								合伙人享有独家区域保护政策，区域越大，收益越大；<br />
+								合伙人拥有多重收益，广告交易销售提成、广告收益分成、设备销售分成；<br />
+								合伙人可使用平台品牌使用权等。<br />
+								合伙人拥有二级代理后台；开通微信小程序远程管理设备， <br />
+								总部对接线上线下广告资源及流量推广，共享广告业务<br />
 							</div>
-							<div class="m-t30 p-b50"> <span class="bg-yellow p-5-25 r5">申请成为广告主</span> </div>
+							<div class="p-t20"> <span class="bg-yellow s-12 apply-btn">申请成为运营商</span> </div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p10">
-							<img class="w-pre90" src="../img/qu_03.png" />
+						<div class="w-pre60 p-t20">
+							<img class="w-full" src="../img/qu_03.png" />
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="bg-white p-t20">
-				<div class="mainWrap s-15">
-					<div class="m-t30">
-						<h3 class="t-c">标题标题标题标题</h3>
-						<div class="t-c mainWrap tinyNo">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</div>
-						<div class="row p-t20" style="margin: 0;">
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/foo_09.png" />
-									</div>
-									<div class="c-1 p-t10">公众号、个人微信号涨粉</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/foo_11.png" />
-									</div>
-									<div class="c-1 p-t10">APP引流</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/foo_13.png" />
-									</div>
-									<div class="c-1 p-t10">公益便命民机LED屏幕广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/foo_15.png" />
-									</div>
-									<div class="c-1 p-t10">公益便命民机机身广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/foo_21.png" />
-									</div>
-									<div class="c-1 p-t10">广告产品包装广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/foo_22.png" />
-									</div>
-									<div class="c-1 p-t10">app开屏广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p10">
-								<div class="r3 bg-white shadow-c t-c p15 pointer">
-									<div class="p-t10">
-										<img class="w-pre30" src="../img/foo_23.png" />
-									</div>
-									<div class="c-1 p-t10">App信息流广告</div>
-									<div class="c-5 p-t10">介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字</div>
-									<div class="p-t20 p-b10">
-										<span class="iconfont iconarrowup c-5"></span>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="t-c m-t30 p-b50"> </div>
+				<!-- ================= 表单 ================= -->
+				<div class="bg-white p-t20 p-b30">
+					<div class="t-c s-16 p-b10">联系我们</div>
+					<div class="p-t10 p-l10 p-r10">
+						<input class="nooutline b-lig-gray r5 bg-white w-full h-38 p-l10" placeholder="姓名"/>
+					</div>
+						<div class="p-t10 p-l10 p-r10">
+						<input class="nooutline b-lig-gray r5 bg-white w-full h-38 p-l10" placeholder="电话"/>
+					</div>
+					<div class="p-t10 p-l10 p-r10">
+						<textarea name="" rows="8"   class="nooutline b-lig-gray r5 bg-white w-full h-100 p10" placeholder="留言"></textarea>
+					</div>
+					<div class="p-t20 p-l10 p-r10 t-c p-b10">
+						  <span class="bg-yellow s-12 apply-btn">提交</span> 
 					</div>
 				</div>
 			</div>
-
 			<!-- 底部 -->
-			<div class="bg-5 c-white">
+			<div class="bg-5 c-white tiny-p-b30">
 				<div class="mainWrap p-t10">
 					<div class="row" style="margin: 0;">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p10 flex">
@@ -584,7 +1099,7 @@
 								<div class="p-t15 pointer">朋友圈广告</div>
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p10 flex">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p10 flex tiny-p-t30">
 							<div class="w-full">
 								<div class="s-15 pointer"><b>联系我们</b> </div>
 								<div class="p-t15 pointer">邮箱：232412512@qq.com</div>
@@ -592,17 +1107,16 @@
 								<div class="p-t10 pointer">运营中心地址：江苏省无锡市东方广场</div>
 								<div class="p-t10 pointer">工厂地址：上海松江天马工业田风露3号</div>
 							</div>
-							<div class="w-full">
+							<div class="w-full tiny-wpre60">
 								<div class="s-15 pointer"> <b>微信公众号</b></div>
 								<div class="p-t15 pointer">
-									<img class="w-pre30" src="../img/erwei.png" alt="" />
+									<img class="w-pre30 tiny-wpre80" src="../img/erwei.png" alt="" />
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 			<div class="bg-5 p15 c-white t-c" style="border-top: 1px solid #ffcd26;">
 				版权所有&copy;2019上海悠庭网络科技有限公司 All rights reserved 沪ICP呗16029136号
 			</div>
@@ -613,19 +1127,70 @@
 		<script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/iscroll.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/navbarscroll.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/swiper.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var navWrap = document.getElementById('nav-wrap');
 			var scrolleWidth = navWrap.offsetWidth - 260;
 			var vm = new Vue({
 				el: '#vmMain',
 				data: {
-					scrolleWidth: scrolleWidth
+					scrolleWidth: scrolleWidth,
+					show:'pcView'
 				},
 				methods: {
-
+					load:function(){
+						if(window.screen.width > 768){
+							this.show = 'pcView';
+						}else{
+							this.show = 'phoneView';
+						}
+					},
+					
 				}
 			})
+			vm.load();
 			$('.wrapper').navbarscroll();
+			// 手机端swiper
+			window.onload = function(){
+				//  申请成为广告主
+				var swiper = new Swiper('.swiper-adver .swiper-container', {
+			      slidesPerView:2,
+			      spaceBetween: 10,
+			      slidesPerGroup: 2,
+			      loop: true,
+			      loopFillGroupWithBlank: true,
+			      navigation: {
+			        nextEl: '.swiper-adver .swiper-button-next',
+			        prevEl: '.swiper-adver .swiper-button-prev',
+			      },
+			    });
+			    //  申请成为媒体主
+			    var swiperMedia = new Swiper('.swiper-media .swiper-container', {
+			      slidesPerView:2,
+			      spaceBetween: 10,
+			      slidesPerGroup: 2,
+			      loop: true,
+			      loopFillGroupWithBlank: true,
+			      navigation: {
+			        nextEl: '.swiper-media .swiper-button-next',
+			        prevEl: '.swiper-media .swiper-button-prev',
+			      },
+			    });
+			    
+			    //  申请成为媒体主
+			    var swiperNothing = new Swiper('.swiper-nothing .swiper-container', {
+			      slidesPerView:2,
+			      spaceBetween: 10,
+			      slidesPerGroup: 2,
+			      loop: true,
+			      loopFillGroupWithBlank: true,
+			      navigation: {
+			        nextEl: '.swiper-nothing .swiper-button-next',
+			        prevEl: '.swiper-nothing .swiper-button-prev',
+			      },
+			    });
+				
+		 }     
 		</script>
 	</body>
 
