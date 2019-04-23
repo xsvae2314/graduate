@@ -1,13 +1,4 @@
 
-
-
-.mainWrap{
-		width: 80%;margin-left: 10%;
-	}
-	.mainWrapPre90{width: 90%;margin-left: 10%;}
-	
-.apply-btn{padding: 15px 50px;border-radius: 10px;}
-
-.title{font-size: 14px;font-weight: bold;}
-.text{font-size: 12px;}
-.title-media{font-size: 16px;font-weight: bold;}
+.logo-img{padding-left: 50px;}
+.logo-img>img{width: 100px;}
+.banner-img{background-size: cover}
