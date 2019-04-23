@@ -1,0 +1,26 @@
+
+#nav-wrap{padding-bottom: 10px!important;}
+.logo{padding-bottom: 10px;}
+
+
+.mainWrap{ width: 100%;padding-left: 2%;padding-right: 2%; }
+.wrapper{width: 100%!important;}
+.mainWrapPre90{width: 100%;padding-left: 2%;}
+
+.tinyNo{display: none;}
+
+.title{font-size: 12px;}
+.text{font-size: 12px;}
+
+.rowWrap{width: 100%;overflow: hidden;}
+
+.apply-btn{padding: 5px 30px;border-radius: 5px;}
+
+.title{font-size: 10px;font-weight: bold;}
+.text{font-size: 9px;}
+.title-media{font-size: 16px;font-weight: bold;}
+
+.tiny-p-b30{padding-bottom: 30px;}
+.tiny-p-t30{padding-top: 30px!important;}
+.tiny-wpre80{width: 80%;}
+.tiny-wpre60{width: 60%;}
