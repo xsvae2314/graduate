@@ -3,3 +3,5 @@
 .tiny-nav-ul{width: 100%;text-align: center;}
 .banner-img{background-position: 50% 50%; background-repeat: no-repeat;}
 .update-wrap{width: 100%;}
+.people-wrap{width: 100%;}
+.tiny-ellipsis{ width: 200px;  overflow: hidden; white-space: nowrap;  text-overflow: ellipsis;}

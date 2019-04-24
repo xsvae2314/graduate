@@ -71,6 +71,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 
 
 .c-white{color: #fff!important;}
+.c-lig-white{color: #bdd3f5;}
 .c-0{color: #120e0b;}
 .c-1{color: #191a1c;}
 .c-3{color: #333;}
@@ -98,13 +99,13 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .bg-pink{background: #fcf5ed;}
 .bg-black{background: #000;}
 .bg-white{background: #fff;}
-.bg-blue{background: #0290fc;}
+.bg-blue{background: #4a86e8;}
 .bg-db{background: #dbdbdb;}
 .bg-f3{background: #f3f3f3;}
 .bg-white-yellow{background: #fff2c6;}
 .bg-lig-gray{background: #f8f9fb;}
 .bg-5{background: #535353;}
-
+.bg-f8{background: #f8f8f8;}
 
 .b-none{border: none;}
 .b-0{border: none!important;}
@@ -126,6 +127,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .p5{padding: 5px!important;}
 .p10{padding: 10px!important;}
 .p15{padding: 15px;}
+.p20{padding: 20px;}
 .p-t50{padding-top: 50px;}
 .p-t30{padding-top: 30px;}
 .p-t20{padding-top: 20px;}
@@ -188,7 +190,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .m-r100{margin-right: 100px;}
 
 
-
+.circle{border-radius: 50%;}
 .r3{border-radius: 3px;}
 .r5{border-radius: 5px;}
 .r10{border-radius: 10px;}
@@ -197,6 +199,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .r-r-t5{border-top-right-radius: 5px;}
 
 .l-h18{line-height: 18px;}
+.l-h23{line-height: 23px;}
 .l-h28{line-height: 28px;}
 .l-h40{line-height: 40px!important;}
 
@@ -213,4 +216,4 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .row{flex-wrap: wrap; display: flex;}
 
 .paging{display: inline-block;width: 28px;height: 28px;line-height: 28px;background: #b5b5b5;color: #fff;border-radius: 50%;margin: 10px 5px;cursor: pointer;font-size: 14px;}
-
+.people-img{width: 56%;margin-left: 22%;overflow: hidden;padding-top: 20px;padding-bottom: 10px;}

@@ -64,13 +64,10 @@
 								<a href="gallery.html">著书立说</a>
 							</li>
 							<li>
-								<a href="contact.html">寻传</a>
+								<a href="contact.html">祭祖</a>
 							</li>
 							<li>
-								<a href="gallery.html">祭祖</a>
-							</li>
-							<li>
-								<a href="contact.html">价格</a>
+								<a href="gallery.html">业务及合作</a>
 							</li>
 						</ul>
 					</div>
@@ -171,7 +168,7 @@
 						</div>
 						<div class="p-l10 p-r10">
 							<div class="hover-orange s-16">无需编程，设计响应式酷站！</div>
-							<div class="m-t10 c-9 s-12">CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能。双击编辑修改文字！CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能。双击编辑修改文字！</div>
+							<div class="m-t10 c-9 s-12 tiny-ellipsis">CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能。双击编辑修改文字！CoolSite360，采用标准的html及css规范，使您的设计便于维护及二次开发，通过导出功能，可输出干净的html文档结构及css样式表，便于后期添加个性化功能。双击编辑修改文字！</div>
 							<div class="m-t10 s-12 c-8"> <span>21epub</span><span>2014.11.11</span></div>
 						</div>
 					</div>
@@ -193,20 +190,47 @@
 					<div class="line"> </div>
 				</div>
 				
-				<div class="p-l10 p-r10 m-t40 flex" style="flex-wrap: wrap;">
-					<div v-for="i,index in list3" class="p10 quality w-pre20">
+				<div class="p-l10 p-r10 m-t40 flex wrap">
+					<div v-for="i,index in list3" class="p10 quality people-wrap">
 						<div class="bg-blue c-white">
-							<div>
-								<img src="../img/img03.jpg"/>
+							<div class="t-c people-img">
+								<img class="w-full circle" src="../img/img04.jpg"/>
 							</div>
 							<div class="p-l10 p-r10">
-								<div class="hover-orange s-16">无需编程，设计响应式酷站！</div>
-								<div class="m-t10 s-12 c-8"> <span>21epub</span><span>2014.11.11</span></div>
+								<div class="s-17">武则天</div>
+								<div class="m-t10 s-14">（1860-2018）</div>
+								<div class="s-13 l-h23 p-b10 p-t10 c-lig-white">
+									这是一个大气磅礴的王朝，这是中国历史上空前绝后的一代女皇。她的智慧和韬略，令男权社会的须眉俯首称臣。她是怎么样从唐太宗的才人变成唐高宗的皇后的？
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!--  ================== 按姓氏查找 ================== -->
+			<div>
+				<div class="divingLine">
+					<div class="line"> </div>
+					<span class="title"> 
+						<div class="bold s-20 t-c">按姓氏查找</div>
+						<div class="t-c p-t5">查寻传记</div> 
+					</span>
+					<div class="line"> </div>
+				</div>
+				
+				<div class="update-wrap row p0 m0">
+					<div v-for="i,index in list4" class="col-lg-2 col-md-2 col-sm-2 col-xs-4 p0 m0">
+						<div class=" p5">
+							<div class="quality p20 bg-f8">
+								<img class="w-full" src="../img/img05.jpg"/>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			
 			<div style="height: 200px;"></div>
 		
 		</div>
@@ -246,6 +270,17 @@
 						{showHover:false},
 						{showHover:false}
 					],
+					list4:[
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false}
+					]
 				},
 				methods: {
 					load: function() {
