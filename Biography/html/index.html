@@ -124,7 +124,6 @@
 				</div>
 			</div>
 			<!--  ================== 精品传记 ================== -->
-			
 			<div>
 				<div class="divingLine">
 					<div class="line"> </div>
@@ -134,9 +133,38 @@
 					</span>
 					<div class="line"> </div>
 				</div>
-				
 				<div class="row p0 m0 p-l10 p-r10 m-t40">
 					<div v-for="i,index in list1" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 m0 p5">
+						<div class="quality relative">
+							<div class="img-wrap" @mouseenter="enter(index)" @mouseleave="leave(index)">
+								<img class="w-full"  src="../img/img01.jpg"/>
+								<div v-if="i.showHover" class="hover-cover">
+									<div class="c-white t-c w-full">sdafas</div>
+								</div>
+							</div>
+							<div class="p10">
+								<div class="s-18 p-t5">设计响应式酷站</div>
+								<div class="m-t10 l-h28 s-14">CoolSite360，采用标准的html及css规范，使您的设计便于维护及...</div>
+								<div class="m-t10 s-14 p-b5"> Read more... </div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--  ================== 最近更新 ================== -->
+			<div>
+				<div class="divingLine">
+					<div class="line"> </div>
+					<span class="title"> 
+						<div class="bold s-20 t-c">最近更新</div>
+						<div class="t-c p-t5">查看更多</div> 
+					</span>
+					<div class="line"> </div>
+				</div>
+				
+				<div class="row p0 m0 p-l10 p-r10 m-t40">
+					<div v-for="i,index in list2" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 m0 p5">
 						<div class="quality relative">
 							<div class="img-wrap" @mouseenter="enter(index)" @mouseleave="leave(index)">
 								<img class="w-full"  src="../img/img01.jpg"/>
@@ -178,6 +206,12 @@
 						{showHover:false},
 						{showHover:false},
 						{showHover:false}
+					],
+					list2:[
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
 					]
 				},
 				methods: {
