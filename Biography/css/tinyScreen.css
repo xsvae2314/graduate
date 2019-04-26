@@ -5,3 +5,6 @@
 .update-wrap{width: 100%;}
 .people-wrap{width: 100%;}
 .tiny-ellipsis{ width: 200px;  overflow: hidden; white-space: nowrap;  text-overflow: ellipsis;}
+.tiny-navbar-nav{margin: 0!important;}
+.tiny-menu{position: absolute;  z-index: 999; width: 100%; background: #434343;padding: 0;margin: 0;}
+.tiny-no{display: none;}

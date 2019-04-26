@@ -106,6 +106,8 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .bg-lig-gray{background: #f8f9fb;}
 .bg-5{background: #535353;}
 .bg-f8{background: #f8f8f8;}
+.bg-43{background: #434343;}
+
 
 .b-none{border: none;}
 .b-0{border: none!important;}
@@ -122,6 +124,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .b-byellow{border-bottom: 1px solid #f78536;}
 .b-l0{border-left: 0!important;}
 .b-r0{border-right: 0!important;}
+.b-twhite{border-top: 1px solid #fff}
 
 .p0{padding: 0;}
 .p5{padding: 5px!important;}
@@ -217,3 +220,27 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 
 .paging{display: inline-block;width: 28px;height: 28px;line-height: 28px;background: #b5b5b5;color: #fff;border-radius: 50%;margin: 10px 5px;cursor: pointer;font-size: 14px;}
 .people-img{width: 56%;margin-left: 22%;overflow: hidden;padding-top: 20px;padding-bottom: 10px;}
+
+
+/*首页*/
+.swiper-pagination-bullet-active{background: #fff;}
+.swiper-pagination{text-align: right;padding-right: 50px;}
+.swiper-pagination-bullet{width: 10px;height: 10px;}
+.quality{cursor: pointer;}
+.quality:hover{box-shadow: rgba(0,0,0,0.188235) 0px 17px 50px 0px;transform: translate3d(0px,-2px,0px);}
+.hover-orange:hover{color: #d9534f;}
+.hover-cover{position: absolute;top: 0;left: 0;background: rgba(255,255,255,.2);width: 100%;height: 100%;align-items: center;display: flex;}
+.img-wrap{ display:block; position: relative; width:100%; height:100%; margin:0 auto;overflow: hidden; }
+.img-wrap:before { content: ""; position: absolute; width:150px; height: 100%; top: 0; left: -150px; overflow: hidden;
+	background: -moz-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.3)50%, rgba(255,255,255,0)100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,.3)), color-stop(100%, rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.3)50%, rgba(255,255,255,0)100%);
+	background: -o-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.3)50%, rgba(255,255,255,0)100%);
+	-webkit-transform: skewX(-25deg);
+	-moz-transform: skewX(-25deg) ;
+}
+.img-wrap:hover img{
+	/*transform: scale(1.2);*/
+}
+.img-wrap:hover:before { left: 150%; transition: left 1s ease 0s; }
+			

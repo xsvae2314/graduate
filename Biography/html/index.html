@@ -13,26 +13,8 @@
 		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 768px)" href="../css/largeScreen.css" />
 		<link rel="stylesheet" type="text/css" href="../css/swiper.css" />
 		<style type="text/css">
-    		.swiper-pagination-bullet-active{background: #fff;}
-		    .swiper-pagination{text-align: right;padding-right: 50px;}
-		    .swiper-pagination-bullet{width: 10px;height: 10px;}
-		    .quality{cursor: pointer;}
-		    .quality:hover{box-shadow: rgba(0,0,0,0.188235) 0px 17px 50px 0px;transform: translate3d(0px,-2px,0px);}
-			.hover-orange:hover{color: #d9534f;}
-			.hover-cover{position: absolute;top: 0;left: 0;background: rgba(255,255,255,.2);width: 100%;height: 100%;align-items: center;display: flex;}
-			.img-wrap{ display:block; position: relative; width:100%; height:100%; margin:0 auto;overflow: hidden; }
-			.img-wrap:before { content: ""; position: absolute; width:150px; height: 100%; top: 0; left: -150px; overflow: hidden;
-				background: -moz-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.3)50%, rgba(255,255,255,0)100%);
-				background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(50%, rgba(255,255,255,.3)), color-stop(100%, rgba(255,255,255,0)));
-				background: -webkit-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.3)50%, rgba(255,255,255,0)100%);
-				background: -o-linear-gradient(left, rgba(255,255,255,0)0, rgba(255,255,255,.3)50%, rgba(255,255,255,0)100%);
-				-webkit-transform: skewX(-25deg);
-				-moz-transform: skewX(-25deg) ;
-			}
-			.img-wrap:hover img{
-				/*transform: scale(1.2);*/
-			}
-			.img-wrap:hover:before { left: 150%; transition: left 1s ease 0s; }
+    		
+			
 		</style>
 	</head>
 
@@ -49,25 +31,25 @@
 						  </button>
 						<div class="f-l logo-img"><img class="" src="../img/logo.png" /></div>
 					</div>
-					<div class="collapse navbar-collapse o-hidden p-r40" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav f-r tiny-nav-ul">
+					<div class="collapse navbar-collapse o-hidden p-r40 tiny-menu" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav f-r tiny-nav-ul tiny-navbar-nav">
 							<li>
-								<a class="active" href="index.html">首页</a>
+								<a href="index.html" class="active">首页</a>
 							</li>
 							<li>
-								<a href="about.html">我们的服务</a>
+								<a href="service.html">我们的服务</a>
 							</li>
 							<li>
-								<a href="services.html">精品传记</a>
+								<a href="biography.html">精品传记</a>
 							</li>
 							<li>
-								<a href="gallery.html">著书立说</a>
+								<a href="book.html">著书立说</a>
 							</li>
 							<li>
-								<a href="contact.html">祭祖</a>
+								<a href="ancestor.html">祭祖</a>
 							</li>
 							<li>
-								<a href="gallery.html">业务及合作</a>
+								<a href="business.html">业务及合作</a>
 							</li>
 						</ul>
 					</div>
@@ -229,10 +211,47 @@
 					</div>
 				</div>
 			</div>
-			
-			
-			<div style="height: 200px;"></div>
-		
+			<!--  ================== 底部 ================== -->
+			<div class="c-white bg-43 p-t10 s-14">
+				<div class="update-wrap">
+					<div class="row p0 m0">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 p20 m0 t-c">
+							<span class="iconfont "></span>
+							<div>意派科技</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 p20 m0 t-c">
+							<span class="iconfont "></span>
+							<div>227979505</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 p20 m0 t-c">
+							<span class="iconfont "></span>
+							<div>13760000000</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p20 m0 t-c">
+						<span class="iconfont "></span>
+						<div>support@21epub.com</div>
+					</div>
+					</div>
+					<div class="row m-l10 m-r10 b-twhite">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p10 m0 t-c">
+							© 2014-2017 上海意派信息科技有限公司
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p10 m0 t-c tiny-no">
+							<div>
+								<span class="iconfont "></span>意派科技
+								<span class="iconfont "></span>227979505
+								<span class="iconfont "></span>13760000000
+							</div>
+							<div>
+								<span class="iconfont "></span>support@21epub.com
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p10 m0 t-c tiny-no">
+							沪ICP备13031638号
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
@@ -313,43 +332,6 @@
 						prevEl: '.swiper-button-prev',
 					},
 				});
-				//				//  申请成为广告主
-				//				var swiper = new Swiper('.swiper-adver .swiper-container', {
-				//					slidesPerView: 2,
-				//					spaceBetween: 10,
-				//					slidesPerGroup: 2,
-				//					loop: true,
-				//					loopFillGroupWithBlank: true,
-				//					navigation: {
-				//						nextEl: '.swiper-adver .swiper-button-next',
-				//						prevEl: '.swiper-adver .swiper-button-prev',
-				//					},
-				//				});
-				//				//  申请成为媒体主
-				//				var swiperMedia = new Swiper('.swiper-media .swiper-container', {
-				//					slidesPerView: 2,
-				//					spaceBetween: 10,
-				//					slidesPerGroup: 2,
-				//					loop: true,
-				//					loopFillGroupWithBlank: true,
-				//					navigation: {
-				//						nextEl: '.swiper-media .swiper-button-next',
-				//						prevEl: '.swiper-media .swiper-button-prev',
-				//					},
-				//				});
-				//
-				//				//  申请成为媒体主
-				//				var swiperNothing = new Swiper('.swiper-nothing .swiper-container', {
-				//					slidesPerView: 2,
-				//					spaceBetween: 10,
-				//					slidesPerGroup: 2,
-				//					loop: true,
-				//					loopFillGroupWithBlank: true,
-				//					navigation: {
-				//						nextEl: '.swiper-nothing .swiper-button-next',
-				//						prevEl: '.swiper-nothing .swiper-button-prev',
-				//					},
-				//				});
 
 			}
 		</script>
