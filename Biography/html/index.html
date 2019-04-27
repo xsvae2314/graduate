@@ -201,8 +201,8 @@
 				</div>
 				
 				<div class="update-wrap row p0 m0">
-					<div v-for="i,index in list4" class="col-lg-2 col-md-2 col-sm-2 col-xs-4 p0 m0">
-						<div class=" p5">
+					<div v-for="i,index in list4" @click="toDetail('classify.html')" class="col-lg-2 col-md-2 col-sm-2 col-xs-4 p0 m0">
+						<div class="p5">
 							<div class="quality p20 bg-f8">
 								<img class="w-full" src="../img/img05.jpg"/>
 							</div>
@@ -309,6 +309,9 @@
 						console.log("enter");
 						this.list1[n].showHover = true;
 						
+					},
+					toDetail:function(url){
+						window.open(url);
 					},
 					leave:function(n){
 						console.log('离开哦')

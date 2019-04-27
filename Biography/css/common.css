@@ -179,6 +179,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .m-t20{margin-top: 20px;}
 .m-t15{margin-top: 15px;}
 .m-t10{margin-top: 10px;}
+.m-t5{margin-top: 5px;}
 .m-t2{margin-top: 2px;}
 .m-t-2{margin-top: -2px;}
 .m-l20{margin-left: 20px;}
@@ -207,6 +208,7 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .l-h40{line-height: 40px!important;}
 
 
+.hover-blue:hover{color: #2a6496;}
 .navbar-default{background: #434343;border: 0;border-radius: 0;}
 .navbar-default .navbar-nav > li > a{color: #fff;font-size: 14px;font-weight: normal;border-bottom: 2px solid #434343;}
 .navbar-default .navbar-nav > li > a:hover{color: #fff;background: #5d5d5d;border-bottom: 2px solid #fff;}
@@ -219,13 +221,15 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 .row{flex-wrap: wrap; display: flex;}
 
 .paging{display: inline-block;width: 28px;height: 28px;line-height: 28px;background: #b5b5b5;color: #fff;border-radius: 50%;margin: 10px 5px;cursor: pointer;font-size: 14px;}
+.paging:hover{background: #eee;color: #2a6496;}
 .people-img{width: 56%;margin-left: 22%;overflow: hidden;padding-top: 20px;padding-bottom: 10px;}
 
 
 /*首页*/
-.swiper-pagination-bullet-active{background: #fff;}
-.swiper-pagination{text-align: right;padding-right: 50px;}
-.swiper-pagination-bullet{width: 10px;height: 10px;}
+.swiper-pagination-bullet-active{background: #fff!important;}
+.swiper-pagination{text-align: right!important;padding-right: 50px!important;}
+.swiper-pagination-bullet{width: 10px!important;height: 10px!important;}
+.swiper-pagination-bullet-active{background: #fff!important;}
 .quality{cursor: pointer;}
 .quality:hover{box-shadow: rgba(0,0,0,0.188235) 0px 17px 50px 0px;transform: translate3d(0px,-2px,0px);}
 .hover-orange:hover{color: #d9534f;}
@@ -243,4 +247,20 @@ body,html{ font-size: 16px; font-family: "Microsoft YaHei","arial black";}
 	/*transform: scale(1.2);*/
 }
 .img-wrap:hover:before { left: 150%; transition: left 1s ease 0s; }
-			
+
+.after-gray:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #333;
+	margin-top: 20px;
+}
+.after-lig-gray:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #bac8d4;
+	margin-top: 20px;
+}			

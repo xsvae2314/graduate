@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>业务及合作</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 768px)" href="../css/tinyScreen.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 768px)" href="../css/largeScreen.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.css" />
+		<style type="text/css">
+    	.service-middle{background: #3d85c6;box-shadow: rgba(0,0,0,0.188235) 0px 17px 50px 0px;  transform: translate3d(0px,-2px,0px);position: relative;z-index: 99;}
+
+		</style>
+	</head>
+
+	<body>
+		<div id="vmMain">
+			<!--  ================== 导航 ================== -->
+			<div class="nav-bg">
+				<nav class="navbar navbar-default shift">
+					<div class="navbar-header o-hidden">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						<div class="f-l logo-img"><img class="" src="../img/logo.png" /></div>
+					</div>
+					<div class="collapse navbar-collapse o-hidden p-r40 tiny-menu" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav f-r tiny-nav-ul tiny-navbar-nav">
+							<li>
+								<a href="index.html">首页</a>
+							</li>
+							<li>
+								<a href="service.html">我们的服务</a>
+							</li>
+							<li>
+								<a href="biography.html">精品传记</a>
+							</li>
+							<li>
+								<a href="book.html">著书立说</a>
+							</li>
+							<li>
+								<a href="ancestor.html">祭祖</a>
+							</li>
+							<li>
+								<a href="business.html" class="active">业务及合作</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<!--  ================== 传记电子书目录 ================== -->
+			<div class="p-b50">
+				<div class="divingLine">
+					<div class="line"> </div>
+					<span class="title"> 
+						<div class="bold s-20 t-c">合作</div>
+						<div class="t-c p-t5">CREATING RESPONSIVE WEBSITES WITHOUT CODE</div> 
+					</span>
+					<div class="line"> </div>
+				</div>
+			</div>
+
+			
+				
+				
+				
+			<!--  ================== 底部 ================== -->
+			<div class="c-white bg-43 p-t10 s-14">
+				<div class="update-wrap">
+					<div class="row p0 m0">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 p20 m0 t-c">
+							<span class="iconfont "></span>
+							<div>意派科技</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 p20 m0 t-c">
+							<span class="iconfont "></span>
+							<div>227979505</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 p20 m0 t-c">
+							<span class="iconfont "></span>
+							<div>13760000000</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p20 m0 t-c">
+						<span class="iconfont "></span>
+						<div>support@21epub.com</div>
+					</div>
+					</div>
+					<div class="row m-l10 m-r10 b-twhite">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p10 m0 t-c">
+							© 2014-2017 上海意派信息科技有限公司
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p10 m0 t-c tiny-no">
+							<div>
+								<span class="iconfont "></span>意派科技
+								<span class="iconfont "></span>227979505
+								<span class="iconfont "></span>13760000000
+							</div>
+							<div>
+								<span class="iconfont "></span>support@21epub.com
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p10 m0 t-c tiny-no">
+							沪ICP备13031638号
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/swiper.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#vmMain',
+				data: {
+					list1:[
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false},
+						{showHover:false}
+					],
+				},
+				methods: {
+					load: function() {
+
+					},
+					enter:function(n){
+						console.log("enter");
+						this.list1[n].showHover = true;
+						
+					},
+					leave:function(n){
+						console.log('离开哦')
+						this.list1[n].showHover = false;
+					},
+				}
+			})
+			vm.load();
+			
+		</script>
+	</body>
+
+</html>

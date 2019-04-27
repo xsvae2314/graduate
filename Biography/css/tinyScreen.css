@@ -8,3 +8,21 @@
 .tiny-navbar-nav{margin: 0!important;}
 .tiny-menu{position: absolute;  z-index: 999; width: 100%; background: #434343;padding: 0;margin: 0;}
 .tiny-no{display: none;}
+.flex-pre20{width: 100%;}
+.people-introduce{padding: 10px 10px 20px 10px;}
+.tiny-after-gray:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #333;
+	margin-top: 20px;
+}
+.tiny-after-lig-gray:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #bac8d4;
+	margin-top: 20px;
+}
